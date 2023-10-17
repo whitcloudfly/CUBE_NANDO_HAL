@@ -59,7 +59,7 @@ void PVD_IRQHandler(void);
 void FLASH_IRQHandler(void);
 void RCC_IRQHandler(void);
 void SPI1_IRQHandler(void);
-void USART1_IRQHandler(void);
+void USART3_IRQHandler(void);
 void FSMC_IRQHandler(void);
 void OTG_FS_IRQHandler(void);
 void OTG_HS_EP1_OUT_IRQHandler(void);

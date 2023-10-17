@@ -64,7 +64,7 @@
 typedef void (*app_func_t)(void);
 typedef struct __attribute__((__packed__))
 {
-    uint8_t active_image; // 标识当前活动的应用程序映像编�??????
+    uint8_t active_image; // 标识当前活动的应用程序映像编�?????????
 } config_t;
 /* USER CODE END PD */
 
@@ -98,50 +98,49 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
   app_func_t app; // 函数指针，用于跳转到应用程序
-  uint32_t jump_addr, vt_offset, sp_addr; // 跳转地址、向量表偏移量�?�堆栈指针地�??????
+  uint32_t jump_addr, vt_offset, sp_addr; // 跳转地址、向量表偏移量�?�堆栈指针地�?????????
   volatile config_t *config = (config_t *)BOOT_DATA_ADDRESS;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-//  HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
-//  SystemClock_Config();
+  SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-//  MX_GPIO_Init();
-//  MX_USART1_UART_Init();
+  MX_GPIO_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  uart_init(); // 初始化串口
-  printf(VERSION); // 打印引导程序版本�??????
+  printf(VERSION); // 打印引导程序版本�??????????
 
   printf("Start application: ");
-  if (!config->active_image) // �??????查当前活动的应用程序映像编号
+  if (!config->active_image) // �??????????查当前活动的应用程序映像编号
   {
       printf("0\r\n");
-      vt_offset = APP1_ADDRESS_OFFSET; // 应用程序1的向量表偏移�??????
-      jump_addr = *(__IO uint32_t *)(APP1_ADDRESS + 4); // 应用程序1的跳转地�??????
-      sp_addr = *(__IO uint32_t *)APP1_ADDRESS; // 应用程序1的堆栈指针地�??????
+      vt_offset = APP1_ADDRESS_OFFSET; // 应用程序1的向量表偏移�??????????
+      jump_addr = *(__IO uint32_t *)(APP1_ADDRESS + 4); // 应用程序1的跳转地�??????????
+      sp_addr = *(__IO uint32_t *)APP1_ADDRESS; // 应用程序1的堆栈指针地�??????????
   }
   else
   {
       printf("1\r\n");
-      vt_offset = APP2_ADDRESS_OFFSET; // 应用程序2的向量表偏移�??????
-      jump_addr = *(__IO uint32_t *)(APP2_ADDRESS + 4); // 应用程序2的跳转地�??????
-      sp_addr = *(__IO uint32_t *)APP2_ADDRESS; // 应用程序2的堆栈指针地�??????
+      vt_offset = APP2_ADDRESS_OFFSET; // 应用程序2的向量表偏移�??????????
+      jump_addr = *(__IO uint32_t *)(APP2_ADDRESS + 4); // 应用程序2的跳转地�??????????
+      sp_addr = *(__IO uint32_t *)APP2_ADDRESS; // 应用程序2的堆栈指针地�??????????
   }
 
-  /* 重新定位向量�?????? */
+  /* 重新定位向量�?????????? */
   SCB->VTOR = FLASH_BASE | vt_offset;
   /* 初始化应用程序的堆栈指针 */
   __set_MSP(sp_addr);
@@ -154,8 +153,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-/*  while (1)
-  {*/
+//  while (1)
+//  {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -186,7 +185,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLN = 64;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -200,10 +199,10 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }

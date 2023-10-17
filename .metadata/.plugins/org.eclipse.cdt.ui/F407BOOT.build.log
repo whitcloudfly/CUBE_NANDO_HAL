@@ -1,0 +1,16 @@
+00:08:12 **** Incremental Build of configuration Debug for project F407BOOT ****
+make -j8 all 
+arm-none-eabi-gcc -o "F407BOOT.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\CUBE_WORK\F407BOOT\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F407BOOT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F407BOOT.elf
+ 
+arm-none-eabi-size   F407BOOT.elf 
+arm-none-eabi-objdump -h -S  F407BOOT.elf  > "F407BOOT.list"
+   text	   data	    bss	    dec	    hex	filename
+  12740	    112	   1976	  14828	   39ec	F407BOOT.elf
+Finished building: default.size.stdout
+ 
+Finished building: F407BOOT.list
+ 
+
+00:08:12 Build Finished. 0 errors, 0 warnings. (took 556ms)
+

@@ -30,11 +30,11 @@
 #include "nand_programmer.h"
 //#include "usb.h"
 #include "cdc.h"
-//#include "led.h"
+#include "led.h"
 //#include "uart.h"
-//#include "jtag.h"
+#include "jtag.h"
 #include "version.h"
-//#include "clock.h"
+#include "clock.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -56,21 +56,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+/*uint16_t device_id;
+uint32_t JEDEC_ID;
+uint8_t read_buf[10] = {0};
+uint8_t write_buf[10] = {0};
+int i;
+uint8_t Buffer[1];*/
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-// 声明用于处理USB发�?�完成的回调函数
-void USB_TX_Complete_Callback(void) {
-    // 在这里处理USB发�?�完成的操作
-}
 
-// 声明用于处理USB接收数据的回调函�?
-void USB_RX_Callback(uint8_t *RX_Data, uint32_t *Len) {
-    // 在这里处理接收到的USB数据
-}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,28 +105,35 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_RTC_Init();
-  MX_SPI1_Init();
   MX_USB_DEVICE_Init();
-  MX_USART1_UART_Init();
   MX_FSMC_Init();
+  MX_SPI1_Init();
+  MX_USART3_UART_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-//  uart_init();
+//  device_id = W25QXX_ReadID();
+//  printf("W25Q256jv Device ID is 0x%04x\r\n", device_id);
+//  JEDEC_ID = W25QXX_ReadJDID();
+//  printf("----W25X_JEDEC_DEVICE_ID = %08x\r\n", JEDEC_ID);
+
   printf("\r\nNAND programmer ver: %d.%d.%d\r\n", SW_VERSION_MAJOR,
       SW_VERSION_MINOR, SW_VERSION_BUILD);
 
-//  if (!is_external_clock_avail())
+  if (!is_external_clock_avail())
       printf("External clock not detected. Fallback to internal clock.\r\n");
 
   printf("JTAG init...");
-//  jtag_init();
+  jtag_init();
   printf("done.\r\n");
 
   printf("LED init...");
-//  led_init();
+  led_init();
   printf("done.\r\n");
 
   printf("USB init...");
-//  usb_init();
+  MX_USB_DEVICE_Init();
   printf("done.\r\n");
 
   printf("CDC init...");
@@ -147,13 +152,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//  while (1)
-//  {
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-//  }
   /* USER CODE END 3 */
 }
 
@@ -201,6 +204,47 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief NVIC Configuration.
+  * @retval None
+  */
+static void MX_NVIC_Init(void)
+{
+  /* PVD_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(PVD_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(PVD_IRQn);
+  /* FLASH_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(FLASH_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(FLASH_IRQn);
+  /* RCC_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(RCC_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(RCC_IRQn);
+  /* SPI1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(SPI1_IRQn);
+  /* USART3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART3_IRQn);
+  /* FSMC_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(FSMC_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(FSMC_IRQn);
+  /* OTG_FS_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(OTG_FS_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(OTG_FS_IRQn);
+  /* OTG_HS_EP1_OUT_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(OTG_HS_EP1_OUT_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(OTG_HS_EP1_OUT_IRQn);
+  /* OTG_HS_EP1_IN_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(OTG_HS_EP1_IN_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(OTG_HS_EP1_IN_IRQn);
+  /* OTG_HS_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(OTG_HS_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(OTG_HS_IRQn);
+  /* FPU_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(FPU_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(FPU_IRQn);
 }
 
 /* USER CODE BEGIN 4 */

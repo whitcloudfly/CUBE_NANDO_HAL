@@ -459,7 +459,7 @@ static int8_t CDC_Receive_HS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 11 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceHS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceHS);
-  HAL_UART_Transmit(&huart1, (uint8_t *)&Buf, Len,0xFFFF);
+//  HAL_UART_Transmit(&huart3, (uint8_t *)&Buf, Len,0xFFFF);
   return (USBD_OK);
   /* USER CODE END 11 */
 }
