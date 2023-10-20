@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\CUBE_NANDO_HAL\nando\nand_programmer3.5.0\firmware"/>
 			<item value="E:\CUBE_WORK\F407BOOT"/>
 			<item value="E:\STM32CubeIDE\workspace_1.13.2\TEST"/>
 			<item value="E:\CUBE_WORK\F407TEST"/>

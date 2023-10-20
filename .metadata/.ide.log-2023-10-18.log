@@ -1,0 +1,42 @@
+2023-10-19 00:00:25,402 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:00:27,417 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:00:29,422 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:00:31,426 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:23,618 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-10-19 00:02:26,032 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:28,036 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:30,042 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:32,046 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:34,052 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:51,024 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:53,030 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:02:55,035 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:01,616 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:03,623 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:08,020 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:10,024 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:12,028 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:14,032 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:03:16,037 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:04:13,126 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:04:15,131 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:04:17,134 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:04:19,139 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:04:21,144 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:05:53,699 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-10-19 00:05:55,811 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2023-10-19 00:05:57,933 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:05:59,940 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:01,943 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:03,949 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:05,954 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:07,958 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:09,963 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:10,089 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:12,092 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2023-10-19 00:06:12,342 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:14,536 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:14,902 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:15,017 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:15,121 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+2023-10-19 00:06:15,578 [ERROR] AdobePublisher:162 - Exception while opening the connection: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake

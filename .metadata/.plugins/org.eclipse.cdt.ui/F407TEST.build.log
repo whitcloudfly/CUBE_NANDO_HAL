@@ -1,10 +1,22 @@
-00:20:57 **** Incremental Build of configuration Debug for project F407TEST ****
+00:05:50 **** Incremental Build of configuration Debug for project F407TEST ****
 make -j8 all 
+arm-none-eabi-gcc -o "F407TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\CUBE_WORK\F407TEST\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F407TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F407TEST.elf
+ 
 arm-none-eabi-size   F407TEST.elf 
+arm-none-eabi-objdump -h -S  F407TEST.elf  > "F407TEST.list"
+arm-none-eabi-objcopy  -O ihex  F407TEST.elf  "F407TEST.hex"
+arm-none-eabi-objcopy  -O binary  F407TEST.elf  "F407TEST.bin"
    text	   data	    bss	    dec	    hex	filename
-  48896	    420	  20188	  69504	  10f80	F407TEST.elf
+  49320	    420	  20220	  69960	  11148	F407TEST.elf
 Finished building: default.size.stdout
  
+Finished building: F407TEST.hex
+Finished building: F407TEST.bin
+ 
+ 
+Finished building: F407TEST.list
+ 
 
-00:20:57 Build Finished. 0 errors, 0 warnings. (took 312ms)
+00:05:51 Build Finished. 0 errors, 0 warnings. (took 870ms)
 

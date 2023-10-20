@@ -1,0 +1,114 @@
+/*  Copyright (C) 2020 NANDO authors
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 3.
+ */
+/*这段代码是一个微控制器的引导程序（bootloader）。让我们逐步理解代码的功能：
+
+1. 代码包含了一些头文件，例如 "uart.h" 和 "version.h"，以及标准库文件如 "stdio.h" 和 "string.h"。
+
+2. 代码定义了闪存（flash）的布局，指定了闪存不同部分的地址和大小。
+
+3. 定义了宏函数 `STR` 和 `MAKE_STR`，用于将数值常量转换为字符串字面值。
+
+4. 宏 `VERSION` 通过使用 "version.h" 头文件中定义的 `SW_VERSION_MAJOR`、`SW_VERSION_MINOR` 和 `SW_VERSION_BUILD` 常量，创建一个表示引导程序版本的字符串。
+
+5. 代码定义了两个常量 `APP1_ADDRESS` 和 `APP2_ADDRESS`，它们分别表示存储在闪存中的两个应用程序映像的地址。
+
+6. `BOOT_DATA_ADDRESS` 常量表示存储引导程序配置数据的地址。
+
+7. 代码定义了函数指针类型 `app_func_t` 和结构体 `config_t`，后者用于保存引导程序的配置数据。
+
+8. 在 `main` 函数中，初始化了串口（UART），并打印了引导程序的版本号。
+
+9. 代码检查 `config` 结构体的 `active_image` 字段，以确定要启动的应用程序映像。如果 `active_image` 为 0，则选择 `APP1_ADDRESS` 作为应用程序地址；如果非零，则选择 `APP2_ADDRESS`。
+
+10. 使用 `NVIC_SetVectorTable` 函数将向量表（vector table）重新定位，指定所选应用程序映像在闪存中的偏移量。
+
+11. 使用 `__set_MSP` 函数将堆栈指针设置为所选应用程序映像中指定的地址。
+
+12. 最后，通过调用函数指针 `app`，引导程序跳转到应用程序映像的起始地址。
+
+总体而言，这段代码展示了一个基本的引导程序实现，根据配置值选择并启动存储在闪存中的两个应用程序映像之一。*/
+
+#include "uart.h"
+#include "version.h"
+#include <stdio.h>
+#include <string.h>
+
+/* Flash layout
+ * ------------ 0x08000000
+ * |bootloader |
+ * |14K        |
+ * -------------0x08003800
+ * |data       |
+ * |2K         |
+ * ------------ 0x08004000
+ * |image1     |   
+ * |120K       |
+ * -------------0x08022000
+ * |image2     |
+ * |120K       |
+ * -------------0x08040000
+ */
+
+#define STR(a) #a
+#define MAKE_STR(a) STR(a)
+#define VERSION "\r\nBootloader ver: " MAKE_STR(SW_VERSION_MAJOR) "." MAKE_STR(SW_VERSION_MINOR) "." MAKE_STR(SW_VERSION_BUILD) "\r\n"
+
+#define APP1_ADDRESS_OFFSET 0x4000
+#define APP1_ADDRESS (FLASH_BASE + APP1_ADDRESS_OFFSET)
+#define APP2_ADDRESS_OFFSET 0x22000
+#define APP2_ADDRESS (FLASH_BASE + APP2_ADDRESS_OFFSET)
+
+#define BOOT_DATA_ADDRESS 0x08003800
+
+typedef void (*app_func_t)(void);
+typedef struct __attribute__((packed))
+{
+    uint8_t active_image; // Identifies the currently active application image
+} config_t;
+
+app_func_t app;
+uint32_t jump_addr, vt_offset, sp_addr;
+volatile config_t *config = (config_t *)BOOT_DATA_ADDRESS;
+
+void SystemClock_Config(void);
+
+int main(void)
+{
+    HAL_Init();
+
+    /* Configure the system clock */
+    SystemClock_Config();
+
+    /* Initialize USART1 for printf */
+    MX_USART1_UART_Init();
+
+    printf(VERSION);
+
+    if (!config->active_image) {
+        printf("Start application: 0\r\n");
+        vt_offset = APP1_ADDRESS_OFFSET;
+        jump_addr = *(__IO uint32_t *)(APP1_ADDRESS + 4);
+        sp_addr = *(__IO uint32_t *)APP1_ADDRESS;
+    } else {
+        printf("Start application: 1\r\n");
+        vt_offset = APP2_ADDRESS_OFFSET;
+        jump_addr = *(__IO uint32_t *)(APP2_ADDRESS + 4);
+        sp_addr = *(__IO uint32_t *)APP2_ADDRESS;
+    }
+
+    // Relocate the vector table
+    SCB->VTOR = FLASH_BASE | vt_offset;
+
+    // Set the stack pointer
+    __set_MSP(sp_addr);
+
+    // Jump to the application
+    app = (app_func_t)jump_addr;
+    app();
+
+    while (1) {
+        // This code should never be reached, as the application is supposed to run.
+    }
+}

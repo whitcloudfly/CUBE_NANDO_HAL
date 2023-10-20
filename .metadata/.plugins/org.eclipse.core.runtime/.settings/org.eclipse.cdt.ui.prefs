@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+scalability.contentAssistAutoActivation=true
+scalability.parserBasedContentAssist=true
+scalability.semanticHighlight=true
+scalability.syntaxColor=true
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

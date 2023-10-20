@@ -1,0 +1,16 @@
+00:04:01 **** Incremental Build of configuration Debug for project TEST ****
+make -j8 all 
+arm-none-eabi-gcc -o "TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32CubeIDE\workspace_1.13.2\TEST\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST.elf
+ 
+arm-none-eabi-size   TEST.elf 
+arm-none-eabi-objdump -h -S  TEST.elf  > "TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+  64064	    920	  40064	 105048	  19a58	TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: TEST.list
+ 
+
+00:04:02 Build Finished. 0 errors, 0 warnings. (took 870ms)
+
