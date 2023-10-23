@@ -1,0 +1,4 @@
+../Core/Src/led.c:10:6:led_init	40	static
+../Core/Src/led.c:40:13:led_set	16	static
+../Core/Src/led.c:48:6:led_wr_set	16	static
+../Core/Src/led.c:53:6:led_rd_set	16	static

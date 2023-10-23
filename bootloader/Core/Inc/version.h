@@ -6,8 +6,8 @@
 #ifndef _VERSION_H_
 #define _VERSION_H_
 
-#define SW_VERSION_MAJOR F4
+#define SW_VERSION_MAJOR STM32F407VET6
 #define SW_VERSION_MINOR 0
-#define SW_VERSION_BUILD 7
+#define SW_VERSION_BUILD 0
 
 #endif

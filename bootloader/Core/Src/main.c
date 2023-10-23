@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "iwdg.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -60,6 +61,7 @@
 #define APP2_ADDRESS (FLASH_BASE + APP2_ADDRESS_OFFSET)
 
 #define BOOT_DATA_ADDRESS 0x08003800
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -114,7 +116,7 @@ int main(void)
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  SystemClock_Config();
+//  SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
@@ -123,11 +125,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+  MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
   printf(VERSION);
 
   printf("Start application: ");
-
   /* Jump to user application */
   if (!config->active_image) {
       printf(" 0\r\n");
@@ -141,15 +143,9 @@ int main(void)
       sp_addr = *(__IO uint32_t *)APP2_ADDRESS;
   }
 
-  SysTick->CTRL = 0;                                //关键代码
-
-  HAL_DeInit();                                     //可�??
-  HAL_NVIC_DisableIRQ(SysTick_IRQn);                //可�??
-  HAL_NVIC_ClearPendingIRQ(SysTick_IRQn);           //可�??
-  __disable_irq();
-
   // Relocate the vector table
   SCB->VTOR = FLASH_BASE | vt_offset;
+
   // Set the stack pointer
   __set_MSP(sp_addr);
   // Jump to the application
@@ -187,11 +183,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 5;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 8;
   RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
@@ -213,10 +211,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-
-  /** Enables the Clock Security System
-  */
-  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */

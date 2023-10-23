@@ -1,0 +1,5 @@
+../Core/Src/cdc.c:59:12:cdc_send	24	static
+../Core/Src/cdc.c:83:12:cdc_send_ready	8	static
+../Core/Src/cdc.c:88:17:cdc_peek	16	static
+../Core/Src/cdc.c:93:13:cdc_consume	16	static
+../Core/Src/cdc.c:109:6:cdc_init	8	static

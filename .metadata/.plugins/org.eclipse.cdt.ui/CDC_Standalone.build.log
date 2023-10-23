@@ -1,0 +1,10 @@
+23:30:23 **** Incremental Build of configuration Debug for project CDC_Standalone ****
+make -j8 all 
+arm-none-eabi-size   STM324xG-EVAL_USBD-FS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19236	    344	  13648	  33228	   81cc	STM324xG-EVAL_USBD-FS.elf
+Finished building: default.size.stdout
+ 
+
+23:30:23 Build Finished. 0 errors, 0 warnings. (took 306ms)
+

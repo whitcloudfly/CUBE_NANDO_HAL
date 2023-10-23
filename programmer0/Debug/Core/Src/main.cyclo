@@ -1,0 +1,5 @@
+../Core/Src/main.c:77:5:_write	1
+../Core/Src/main.c:88:5:main	2
+../Core/Src/main.c:173:6:SystemClock_Config	3
+../Core/Src/main.c:219:13:MX_NVIC_Init	1
+../Core/Src/main.c:240:6:Error_Handler	1

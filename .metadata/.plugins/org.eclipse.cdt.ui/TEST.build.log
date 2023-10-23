@@ -1,16 +1,22 @@
-00:04:01 **** Incremental Build of configuration Debug for project TEST ****
+00:58:50 **** Incremental Build of configuration Debug for project TEST ****
 make -j8 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_Receive_HS':
+../USB_DEVICE/App/usbd_cdc_if.c:460:3: warning: implicit declaration of function 'CDC_Receive_handler'; did you mean 'CDC_Receive_HS'? [-Wimplicit-function-declaration]
+  460 |   CDC_Receive_handler(Buf, Len);
+      |   ^~~~~~~~~~~~~~~~~~~
+      |   CDC_Receive_HS
 arm-none-eabi-gcc -o "TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32CubeIDE\workspace_1.13.2\TEST\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TEST.elf
  
 arm-none-eabi-size   TEST.elf 
 arm-none-eabi-objdump -h -S  TEST.elf  > "TEST.list"
    text	   data	    bss	    dec	    hex	filename
-  64064	    920	  40064	 105048	  19a58	TEST.elf
+  58432	    924	  40064	  99420	  1845c	TEST.elf
 Finished building: default.size.stdout
  
 Finished building: TEST.list
  
 
-00:04:02 Build Finished. 0 errors, 0 warnings. (took 870ms)
+00:58:51 Build Finished. 0 errors, 1 warnings. (took 1s.175ms)
 
