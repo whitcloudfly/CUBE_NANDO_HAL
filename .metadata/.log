@@ -8546,3 +8546,8 @@ java.io.FileNotFoundException: E:\STM32CubeIDE\workspace_1.13.2\TEST\Debug\TEST.
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 2 2023-10-24 01:03:50.600
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2023-10-24 01:03:50.600
+!MESSAGE The project description file (.project) for 'CDC_Standalone' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

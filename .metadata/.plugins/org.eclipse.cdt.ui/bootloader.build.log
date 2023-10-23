@@ -1,10 +1,17 @@
-00:44:08 **** Incremental Build of configuration Debug for project bootloader ****
+01:09:09 **** Incremental Build of configuration Debug for project bootloader ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\bootloader\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
 arm-none-eabi-size   bootloader.elf 
+arm-none-eabi-objdump -h -S  bootloader.elf  > "bootloader.list"
    text	   data	    bss	    dec	    hex	filename
-  10540	    112	   1984	  12636	   315c	bootloader.elf
+  10352	    112	   1976	  12440	   3098	bootloader.elf
 Finished building: default.size.stdout
  
+Finished building: bootloader.list
+ 
 
-00:44:08 Build Finished. 0 errors, 0 warnings. (took 254ms)
+01:09:10 Build Finished. 0 errors, 0 warnings. (took 814ms)
 

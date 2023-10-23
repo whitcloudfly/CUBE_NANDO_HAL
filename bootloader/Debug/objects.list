@@ -1,5 +1,4 @@
 "./Core/Src/gpio.o"
-"./Core/Src/iwdg.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
 "./Core/Src/stm32f4xx_it.o"
@@ -17,7 +16,6 @@
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
-"./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
