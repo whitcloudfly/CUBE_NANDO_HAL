@@ -42,10 +42,6 @@
 
 #define UNDEFINED_CMD 0xFF
 
-#define _SPI_NAND_OP_READ_ID                    0x9F    /* 读取制造商ID和设备ID */
-#define _SPI_NAND_ADDR_MANUFACTURE_ID           0x00   /* 制造商ID的地址 */
-#define _SPI_NAND_ADDR_DEVICE_ID                0x01    /* 设备ID的地址 */
-
 extern SPI_HandleTypeDef hspi1;
 
 typedef struct __attribute__((__packed__))
@@ -67,66 +63,13 @@ static spi_conf_t spi_conf;
 // 初始化SPI Flash的GPIO引脚
 static void spi_flash_gpio_init()
 {
-	  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-	  /* USER CODE BEGIN SPI1_MspInit 0 */
-
-	  /* USER CODE END SPI1_MspInit 0 */
-	    /* SPI1 clock enable */
-	    __HAL_RCC_SPI1_CLK_ENABLE();
-
-	    __HAL_RCC_GPIOA_CLK_ENABLE();
-	    __HAL_RCC_GPIOB_CLK_ENABLE();
-	    /**SPI1 GPIO Configuration
-	    PA6     ------> SPI1_MISO
-	    PA7     ------> SPI1_MOSI
-	    PB3     ------> SPI1_SCK
-	    */
-	    GPIO_InitStruct.Pin = SPI1_MISO_Pin|SPI1_MOSI_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-	    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-	    GPIO_InitStruct.Pin = SPI1_SCK_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-	    HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
-
-	    /* SPI1 interrupt Init */
-	    HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
-	    HAL_NVIC_EnableIRQ(SPI1_IRQn);
-	  /* USER CODE BEGIN SPI1_MspInit 1 */
-
-	  /* USER CODE END SPI1_MspInit 1 */
+	HAL_SPI_MspInit(&hspi1);
 }
 
 // 取消初始化SPI Flash的GPIO引脚
 static void spi_flash_gpio_uninit()
 {
-	  /* USER CODE BEGIN SPI1_MspDeInit 0 */
-
-	  /* USER CODE END SPI1_MspDeInit 0 */
-	    /* Peripheral clock disable */
-	    __HAL_RCC_SPI1_CLK_DISABLE();
-
-	    /**SPI1 GPIO Configuration
-	    PA6     ------> SPI1_MISO
-	    PA7     ------> SPI1_MOSI
-	    PB3     ------> SPI1_SCK
-	    */
-	    HAL_GPIO_DeInit(GPIOA, SPI1_MISO_Pin|SPI1_MOSI_Pin);
-
-	    HAL_GPIO_DeInit(SPI1_SCK_GPIO_Port, SPI1_SCK_Pin);
-
-	    /* SPI1 interrupt Deinit */
-	    HAL_NVIC_DisableIRQ(SPI1_IRQn);
-	  /* USER CODE BEGIN SPI1_MspDeInit 1 */
-
-	  /* USER CODE END SPI1_MspDeInit 1 */
+	HAL_SPI_MspDeInit(&hspi1);
 }
 
 static inline void spi_flash_select_chip()
@@ -189,7 +132,7 @@ static int spi_flash_init(void *conf, uint32_t conf_size)
     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-    hspi1.Init.CRCPolynomial = 10;
+    hspi1.Init.CRCPolynomial = 7;
     if (HAL_SPI_Init(&hspi1) != HAL_OK)
     {
       Error_Handler();
@@ -205,8 +148,7 @@ static int spi_flash_init(void *conf, uint32_t conf_size)
 // 取消初始化SPI Flash
 static void spi_flash_uninit()
 {
-//    spi_flash_gpio_uninit(&hspi1);
-	HAL_SPI_MspDeInit(&hspi1);
+    spi_flash_gpio_uninit();
     /* 禁用SPI */
     __HAL_SPI_DISABLE(&hspi1);
 }
@@ -214,28 +156,15 @@ static void spi_flash_uninit()
 // 发送一个字节到SPI Flash并返回接收到的字节
 static uint8_t spi_flash_send_byte(uint8_t byte)
 {
-    uint8_t rx_byte;
+  uint32_t timeout = 0x1000000;
+  uint8_t rx_byte = 0X00;
 
-    spi_flash_select_chip();
-    // 等待TXE标志位设置，表示发送缓冲区为空
-    while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY);
+  if(HAL_SPI_TransmitReceive(&hspi1, &byte, &rx_byte, 1, timeout) != HAL_OK)
+   {
+	   rx_byte = 0XFF;
+   }
 
-    // 发送一个字节
-    if (HAL_OK == HAL_SPI_Transmit(&hspi1, &byte, 1, HAL_MAX_DELAY))
-    {
-        // 等待RXNE标志位设置，表示接收缓冲区非空
-        while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY);
-
-        // 接收一个字节
-        if (HAL_OK == HAL_SPI_Receive(&hspi1, &rx_byte, 1, HAL_MAX_DELAY))
-        {
-            return rx_byte;
-        }
-    }
-
-    spi_flash_deselect_chip();
-
-    return 0; // 发送或接收出现问题，返回0或者根据需求返回其他错误值
+  return rx_byte;
 }
 
 // 从SPI Flash中读取一个字节
@@ -292,6 +221,7 @@ static void spi_flash_read_id(chip_id_t *chip_id)
     spi_flash_select_chip();
 
     spi_flash_send_byte(spi_conf.read_id_cmd);
+    spi_flash_send_byte(0x00);  // 发送读取厂商ID的指令
 
     chip_id->maker_id = spi_flash_read_byte();
     chip_id->device_id = spi_flash_read_byte();

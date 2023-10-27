@@ -1,14 +1,79 @@
-20:38:56 **** Incremental Build of configuration Debug for project programmer0 ****
+00:58:59 **** Incremental Build of configuration Debug for project programmer0 ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/spi_nand_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/spi_nand_flash.d" -MT"Core/Src/spi_nand_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi_nand_flash.o"
+arm-none-eabi-gcc "../Core/Src/spi_nor_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/spi_nor_flash.d" -MT"Core/Src/spi_nor_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi_nor_flash.o"
+../Core/Src/spi_nand_flash.c: In function 'spi_flash_init':
+../Core/Src/spi_nand_flash.c:214:21: warning: unused variable 'spi_init' [-Wunused-variable]
+  214 |     SPI_InitTypeDef spi_init;
+      |                     ^~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_init':
+../Core/Src/spi_nor_flash.c:112:21: warning: unused variable 'spi_init' [-Wunused-variable]
+  112 |     SPI_InitTypeDef spi_init;
+      |                     ^~~~~~~~
+arm-none-eabi-gcc -o "programmer0.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: programmer0.elf
+ 
 arm-none-eabi-size   programmer0.elf 
+arm-none-eabi-objdump -h -S  programmer0.elf  > "programmer0.list"
    text	   data	    bss	    dec	    hex	filename
-  70536	    732	  40072	 111340	  1b2ec	programmer0.elf
+  68908	    732	  40072	 109712	  1ac90	programmer0.elf
 Finished building: default.size.stdout
  
-20:39:59 **** Incremental Build of configuration Debug for project programmer0 ****
+Finished building: programmer0.list
+ 
+00:59:03 **** Incremental Build of configuration Debug for project programmer0 ****
 make -j8 all 
 arm-none-eabi-size   programmer0.elf 
    text	   data	    bss	    dec	    hex	filename
-  70536	    732	  40072	 111340	  1b2ec	programmer0.elf
+  68908	    732	  40072	 109712	  1ac90	programmer0.elf
+Finished building: default.size.stdout
+ 
+00:59:55 **** Incremental Build of configuration Debug for project programmer0 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:36:
+../Core/Inc/spi_nor.h:85:17: warning: 'SPI_NOR_Reset' declared 'static' but never defined [-Wunused-function]
+   85 | static void     SPI_NOR_Reset(void);
+      |                 ^~~~~~~~~~~~~
+../Core/Inc/spi_nor.h:86:16: warning: 'W25Qxx_GetStatus' declared 'static' but never defined [-Wunused-function]
+   86 | static uint8_t W25Qxx_GetStatus(void);
+      |                ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "programmer0.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: programmer0.elf
+ 
+arm-none-eabi-size   programmer0.elf 
+arm-none-eabi-objdump -h -S  programmer0.elf  > "programmer0.list"
+   text	   data	    bss	    dec	    hex	filename
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
+Finished building: default.size.stdout
+ 
+Finished building: programmer0.list
+ 
+01:00:23 **** Incremental Build of configuration Debug for project programmer0 ****
+make -j8 all 
+arm-none-eabi-size   programmer0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
+Finished building: default.size.stdout
+ 
+01:00:50 **** Incremental Build of configuration Debug for project programmer0 ****
+make -j8 all 
+arm-none-eabi-size   programmer0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
+Finished building: default.size.stdout
+ 
+01:01:22 **** Incremental Build of configuration Debug for project programmer0 ****
+make -j8 all 
+arm-none-eabi-size   programmer0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
+Finished building: default.size.stdout
+ 
+01:01:40 **** Incremental Build of configuration Debug for project programmer0 ****
+make -j8 all 
+arm-none-eabi-size   programmer0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
 Finished building: default.size.stdout
  

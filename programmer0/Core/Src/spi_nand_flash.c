@@ -256,18 +256,15 @@ static void spi_flash_uninit()
 
 static uint8_t spi_flash_send_byte(uint8_t byte)
 {
-    uint8_t rxData;
+  uint32_t timeout = 0x1000000;
+  uint8_t rx_byte = 0X00;
 
-    // 等待SPI空闲
-    while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY);
+  if(HAL_SPI_TransmitReceive(&hspi1, &byte, &rx_byte, 1, timeout) != HAL_OK)
+   {
+	   rx_byte = 0XFF;
+   }
 
-    // 发送数据
-    HAL_SPI_Transmit(&hspi1, &byte, 1, HAL_MAX_DELAY);
-
-    // 接收数据
-    HAL_SPI_Receive(&hspi1, &rxData, 1, HAL_MAX_DELAY);
-
-    return rxData;
+  return rx_byte;
 }
 
 static inline uint8_t spi_flash_read_byte()

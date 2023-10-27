@@ -1,10 +1,10 @@
-20:39:59 **** Incremental Build of configuration Debug for project programmer0 ****
+01:01:40 **** Incremental Build of configuration Debug for project programmer0 ****
 make -j8 all 
 arm-none-eabi-size   programmer0.elf 
    text	   data	    bss	    dec	    hex	filename
-  70536	    732	  40072	 111340	  1b2ec	programmer0.elf
+  68592	    732	  40072	 109396	  1ab54	programmer0.elf
 Finished building: default.size.stdout
  
 
-20:40:00 Build Finished. 0 errors, 0 warnings. (took 387ms)
+01:01:41 Build Finished. 0 errors, 0 warnings. (took 362ms)
 

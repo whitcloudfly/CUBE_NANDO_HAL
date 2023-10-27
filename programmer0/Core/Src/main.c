@@ -57,11 +57,6 @@
 
 /* USER CODE BEGIN PV */
 
-uint8_t wData[0x100];   //写缓存数�???????
-uint8_t rData[0x100];   //读缓存数�???????
-uint8_t ID[4];          //设备ID缓存数组
-uint32_t i;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,11 +102,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_FSMC_Init();
+//  MX_FSMC_Init();
   MX_RTC_Init();
-  MX_SPI1_Init();
+//  MX_SPI1_Init();
   MX_USART1_UART_Init();
-  MX_USB_DEVICE_Init();
+//  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   printf("\r\nNAND programmer ver: %d.%d.%d\r\n", SW_VERSION_MAJOR,
       SW_VERSION_MINOR, SW_VERSION_BUILD);
@@ -140,6 +135,10 @@ int main(void)
   printf("done.\r\n");
 
 /*
+uint8_t wData[0x100];   //写缓存数�??????????
+uint8_t rData[0x100];   //读缓存数�??????????
+uint8_t ID[4];          //设备ID缓存数组
+uint32_t i;
 	printf("\r\n SPI-W25Q256JVF Example \r\n\r\n");
 
 	SPI_NOR_Init();
