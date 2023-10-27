@@ -38,34 +38,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := programmer1
+BUILD_ARTIFACT_NAME := programmer0
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-programmer1.elf \
+programmer0.elf \
 
 MAP_FILES += \
-programmer1.map \
+programmer0.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-programmer1.list \
+programmer0.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: programmer1.elf secondary-outputs
+main-build: programmer0.elf secondary-outputs
 
 # Tool invocations
-programmer1.elf programmer1.map: $(OBJS) $(USER_OBJS) D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer1\STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "programmer1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+programmer0.elf programmer0.map: $(OBJS) $(USER_OBJS) D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\STM32F407VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "programmer0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,14 +74,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-programmer1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "programmer1.list"
+programmer0.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "programmer0.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout programmer1.elf programmer1.list programmer1.map
+	-$(RM) default.size.stdout programmer0.elf programmer0.list programmer0.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -1,4 +1,4 @@
-23:19:06 **** Incremental Build of configuration Debug for project F407TEST ****
+00:32:04 **** Build of configuration Debug for project F407TEST ****
 make -j8 all 
 arm-none-eabi-size   F407TEST.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   F407TEST.elf
 Finished building: default.size.stdout
  
 
-23:19:06 Build Finished. 0 errors, 0 warnings. (took 504ms)
+00:32:05 Build Finished. 0 errors, 0 warnings. (took 309ms)
 

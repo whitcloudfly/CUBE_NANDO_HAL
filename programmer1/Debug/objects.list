@@ -14,6 +14,7 @@
 "./Core/Src/rtc.o"
 "./Core/Src/spi.o"
 "./Core/Src/spi_nand_flash.o"
+"./Core/Src/spi_nor.o"
 "./Core/Src/spi_nor_flash.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
 "./Core/Src/stm32f4xx_it.o"

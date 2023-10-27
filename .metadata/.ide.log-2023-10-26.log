@@ -1,0 +1,477 @@
+2023-10-27 00:32:13,370 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 281522872 Bytes (954204160)
+2023-10-27 00:32:13,686 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FSMC
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_OTG_HS
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_DEVICE
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RTC
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_OTG_FS
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-10-27 00:32:13,687 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-10-27 00:32:13,688 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-10-27 00:32:13,688 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-10-27 00:32:13,711 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,712 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,712 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,712 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,713 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,713 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:13,887 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\license.tmp_save
+2023-10-27 00:32:13,992 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\license.tmp
+2023-10-27 00:32:14,048 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\gpio.c_save
+2023-10-27 00:32:14,154 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\gpio.c
+2023-10-27 00:32:14,159 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\gpio.h_save
+2023-10-27 00:32:14,222 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\gpio.h
+2023-10-27 00:32:14,284 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:14,318 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:14,323 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_vars.tmp_save
+2023-10-27 00:32:14,407 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_vars.tmp
+2023-10-27 00:32:14,410 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_inc.tmp_save
+2023-10-27 00:32:14,459 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_inc.tmp
+2023-10-27 00:32:14,462 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_HalInit.tmp_save
+2023-10-27 00:32:14,551 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_HalInit.tmp
+2023-10-27 00:32:14,553 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_Msp.tmp_save
+2023-10-27 00:32:14,633 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_Msp.tmp
+2023-10-27 00:32:14,746 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:14,772 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:14,777 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2023-10-27 00:32:14,848 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_vars.tmp
+2023-10-27 00:32:14,850 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2023-10-27 00:32:14,897 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_inc.tmp
+2023-10-27 00:32:14,899 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2023-10-27 00:32:14,964 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2023-10-27 00:32:14,966 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2023-10-27 00:32:15,026 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_Msp.tmp
+2023-10-27 00:32:15,185 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:15,185 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:15,185 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:32:15,234 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:15,259 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:32:15,271 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:32:15,276 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:32:15,289 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\fsmc.c_save
+2023-10-27 00:32:15,394 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\fsmc.c
+2023-10-27 00:32:15,397 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\fsmc.h_save
+2023-10-27 00:32:15,453 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\fsmc.h
+2023-10-27 00:32:15,466 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\rtc.c_save
+2023-10-27 00:32:15,567 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\rtc.c
+2023-10-27 00:32:15,571 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\rtc.h_save
+2023-10-27 00:32:15,634 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\rtc.h
+2023-10-27 00:32:15,667 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\spi.c_save
+2023-10-27 00:32:15,755 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\spi.c
+2023-10-27 00:32:15,758 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\spi.h_save
+2023-10-27 00:32:15,838 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\spi.h
+2023-10-27 00:32:15,853 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\usart.c_save
+2023-10-27 00:32:15,928 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\usart.c
+2023-10-27 00:32:15,932 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\usart.h_save
+2023-10-27 00:32:15,989 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\usart.h
+2023-10-27 00:32:15,995 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:32:15,999 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:32:16,011 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.c_save
+2023-10-27 00:32:16,083 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.c
+2023-10-27 00:32:16,093 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.h_save
+2023-10-27 00:32:16,141 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.h
+2023-10-27 00:32:16,150 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.h_save
+2023-10-27 00:32:16,206 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.h
+2023-10-27 00:32:16,215 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.c_save
+2023-10-27 00:32:16,315 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.c
+2023-10-27 00:32:16,330 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.h_save
+2023-10-27 00:32:16,376 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.h
+2023-10-27 00:32:16,386 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.c_save
+2023-10-27 00:32:16,479 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.c
+2023-10-27 00:32:16,483 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.h_save
+2023-10-27 00:32:16,530 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.h
+2023-10-27 00:32:16,540 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.c_save
+2023-10-27 00:32:16,630 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.c
+2023-10-27 00:32:16,652 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_it.c_save
+2023-10-27 00:32:16,784 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_it.c
+2023-10-27 00:32:16,787 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_it.h_save
+2023-10-27 00:32:16,834 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_it.h
+2023-10-27 00:32:16,847 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_hal_msp.c_save
+2023-10-27 00:32:16,924 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_hal_msp.c
+2023-10-27 00:32:16,927 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\system.tmp_save
+2023-10-27 00:32:16,974 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\system.tmp
+2023-10-27 00:32:16,987 [INFO] CodeEngine:311 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-10-27 00:32:17,088 [INFO] CodeEngine:335 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_hal_conf.h
+2023-10-27 00:32:17,126 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\main.h_save
+2023-10-27 00:32:17,204 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\main.h
+2023-10-27 00:32:17,215 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\main.c_save
+2023-10-27 00:32:17,301 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\main.c
+2023-10-27 00:32:17,811 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 138mS.
+2023-10-27 00:32:17,815 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-10-27 00:32:17,962 [INFO] ConfigFileManager:1457 - The Die is : DIE413
+2023-10-27 00:32:19,214 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1399mS.
+2023-10-27 00:32:19,215 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-10-27 00:32:19,219 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-10-27 00:49:50,241 [INFO] MainUpdater:2868 - connection check result : 10
+2023-10-27 00:49:50,241 [INFO] MainUpdater:2868 - connection check result : 10
+2023-10-27 00:49:50,252 [INFO] MicroXplorer:468 - Change Database Path : 
+2023-10-27 00:49:50,252 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.92
+2023-10-27 00:49:50,288 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2023-10-27 00:49:50,289 [INFO] ThirdParty:873 - entering critical section [close project]
+2023-10-27 00:49:50,289 [INFO] ThirdParty:883 - exiting critical section [close project]
+2023-10-27 00:49:50,291 [INFO] PinOutPanel:1499 - setPackage(No Configuration,No Configuration)
+2023-10-27 00:49:50,313 [WARN] IpParametersView:151 - Warning: This peripheral hasn't parameters
+2023-10-27 00:49:50,324 [WARN] MainPanel:272 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2023-10-27 00:49:50,330 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 723435360 Bytes (961544192)
+2023-10-27 00:49:50,330 [INFO] MicroXplorer:468 - Change Database Path : 
+2023-10-27 00:49:50,330 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.92
+2023-10-27 00:49:50,330 [INFO] OpenFileManager:308 - Change cursor
+2023-10-27 00:49:50,342 [INFO] RulesReader:64 - Compatibility file has been processed (293 Rules)
+2023-10-27 00:49:50,345 [INFO] Mcu:1946 - Initializing MCU STM32F407V(E-G)Tx STM32F407VETx STM32F407VET6
+2023-10-27 00:49:51,488 [INFO] Context:659 - Trying to add GPIOservice into a context  which must be forbidden
+2023-10-27 00:49:51,900 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2023-10-27 00:49:51,900 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2023-10-27 00:49:51,900 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2023-10-27 00:49:51,900 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2023-10-27 00:49:51,900 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,909 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,910 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-10-27 00:49:51,920 [INFO] ThirdPartyModel:298 - Start build external matchings
+2023-10-27 00:49:51,998 [INFO] ThirdPartyModel:316 - End build external matchings
+2023-10-27 00:49:52,001 [INFO] ImportTextPane:194 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (5000000)
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,002 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,003 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,003 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,003 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:52,272 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 701409656 Bytes (961544192)
+2023-10-27 00:49:52,305 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2023-10-27 00:49:52,306 [INFO] ThirdParty:835 - entering critical section [change project]
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.1.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.6.3
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2023-10-27 00:49:52,306 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.8.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 4.3.2
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 2.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.3.1
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.1.0
+2023-10-27 00:49:52,307 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.5.1
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.1.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.22.1
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.0.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.1.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2023-10-27 00:49:52,308 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.1.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2023-10-27 00:49:52,309 [INFO] ThirdParty:841 - exiting critical section [change project]
+2023-10-27 00:49:52,556 [INFO] PinOutPanel:1499 - setPackage(No Configuration,No Configuration)
+2023-10-27 00:49:52,557 [INFO] PinOutPanel:1499 - setPackage(STM32F407VETx,LQFP100)
+2023-10-27 00:49:52,775 [INFO] UtilMem:75 - Before build in PCC Used Memory: 438651984 Bytes (961544192)
+2023-10-27 00:49:52,961 [INFO] UtilMem:75 - After build in PCC Used Memory: 483357232 Bytes (961544192)
+2023-10-27 00:49:52,967 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,987 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,988 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,989 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,989 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,989 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,989 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,989 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,990 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,991 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,991 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,991 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,991 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,992 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,992 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,992 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,992 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,993 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,993 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,993 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,993 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,994 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,994 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,994 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,994 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,995 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,995 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,996 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,996 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-10-27 00:49:52,999 [INFO] ApiDbMcu:507 - Load IP Config File for PDM2PCM
+2023-10-27 00:49:53,053 [INFO] CADModel:165 - CPN selected for project levelSTM32F407VET6
+2023-10-27 00:49:53,053 [INFO] CADModel:114 - Register for checkConnection events
+2023-10-27 00:49:53,105 [INFO] OpenFileManager:328 - Restore cursor
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,295 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:49:53,296 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,251 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,252 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,252 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,252 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,253 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,253 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,253 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,305 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,305 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,305 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,306 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,306 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,306 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,344 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,344 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,344 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,345 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,345 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:08,345 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,438 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,439 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,472 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:33,506 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:50:40,985 [INFO] Gpio:273 - dependency for GPIO [FSMC, RCC, SPI1, SYS, USART1, USB_OTG_FS, USB_OTG_HS]
+2023-10-27 00:52:27,441 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 569335120 Bytes (849346560)
+2023-10-27 00:52:29,380 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 654845320 Bytes (849346560)
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FSMC
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_OTG_HS
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_DEVICE
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RTC
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_OTG_FS
+2023-10-27 00:52:29,598 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-10-27 00:52:29,599 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-10-27 00:52:29,599 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-10-27 00:52:29,600 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,612 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:29,720 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\license.tmp_save
+2023-10-27 00:52:29,786 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\license.tmp
+2023-10-27 00:52:29,841 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\gpio.c_save
+2023-10-27 00:52:29,923 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\gpio.c
+2023-10-27 00:52:29,926 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\gpio.h_save
+2023-10-27 00:52:29,967 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\gpio.h
+2023-10-27 00:52:30,021 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,050 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,054 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_vars.tmp_save
+2023-10-27 00:52:30,124 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_vars.tmp
+2023-10-27 00:52:30,126 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_inc.tmp_save
+2023-10-27 00:52:30,169 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_inc.tmp
+2023-10-27 00:52:30,171 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_HalInit.tmp_save
+2023-10-27 00:52:30,243 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_HalInit.tmp
+2023-10-27 00:52:30,246 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_Msp.tmp_save
+2023-10-27 00:52:30,319 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_hs_Msp.tmp
+2023-10-27 00:52:30,369 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,415 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,421 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2023-10-27 00:52:30,485 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_vars.tmp
+2023-10-27 00:52:30,488 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2023-10-27 00:52:30,530 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_inc.tmp
+2023-10-27 00:52:30,532 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2023-10-27 00:52:30,603 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2023-10-27 00:52:30,605 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2023-10-27 00:52:30,665 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\usb_otg_fs_Msp.tmp
+2023-10-27 00:52:30,832 [WARN] IP:2114 - DEVICE_SERIAL0_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:30,832 [WARN] IP:2114 - DEVICE_SERIAL1_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:30,832 [WARN] IP:2114 - DEVICE_SERIAL2_CDC_HS not found: check if there is a RefParameter without a condition.
+2023-10-27 00:52:30,884 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,913 [WARN] IPConfigManager:2937 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2023-10-27 00:52:30,927 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:52:30,931 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:52:30,947 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\fsmc.c_save
+2023-10-27 00:52:31,033 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\fsmc.c
+2023-10-27 00:52:31,037 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\fsmc.h_save
+2023-10-27 00:52:31,100 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\fsmc.h
+2023-10-27 00:52:31,113 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\rtc.c_save
+2023-10-27 00:52:31,173 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\rtc.c
+2023-10-27 00:52:31,176 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\rtc.h_save
+2023-10-27 00:52:31,239 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\rtc.h
+2023-10-27 00:52:31,253 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\spi.c_save
+2023-10-27 00:52:31,326 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\spi.c
+2023-10-27 00:52:31,330 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\spi.h_save
+2023-10-27 00:52:31,373 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\spi.h
+2023-10-27 00:52:31,385 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\usart.c_save
+2023-10-27 00:52:31,446 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\usart.c
+2023-10-27 00:52:31,449 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\usart.h_save
+2023-10-27 00:52:31,497 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\usart.h
+2023-10-27 00:52:31,502 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:52:31,506 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-10-27 00:52:31,519 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.c_save
+2023-10-27 00:52:31,608 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.c
+2023-10-27 00:52:31,618 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.h_save
+2023-10-27 00:52:31,662 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usb_device.h
+2023-10-27 00:52:31,666 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.h_save
+2023-10-27 00:52:31,711 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.h
+2023-10-27 00:52:31,721 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.c_save
+2023-10-27 00:52:31,799 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\Target\usbd_conf.c
+2023-10-27 00:52:31,814 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.h_save
+2023-10-27 00:52:31,858 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.h
+2023-10-27 00:52:31,868 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.c_save
+2023-10-27 00:52:31,934 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_desc.c
+2023-10-27 00:52:31,938 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.h_save
+2023-10-27 00:52:31,981 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.h
+2023-10-27 00:52:31,991 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.c_save
+2023-10-27 00:52:32,074 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\USB_DEVICE\App\usbd_cdc_if.c
+2023-10-27 00:52:32,097 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_it.c_save
+2023-10-27 00:52:32,258 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_it.c
+2023-10-27 00:52:32,261 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_it.h_save
+2023-10-27 00:52:32,303 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_it.h
+2023-10-27 00:52:32,318 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_hal_msp.c_save
+2023-10-27 00:52:32,377 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\stm32f4xx_hal_msp.c
+2023-10-27 00:52:32,380 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\system.tmp_save
+2023-10-27 00:52:32,419 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\MXTmpFiles\system.tmp
+2023-10-27 00:52:32,431 [INFO] CodeEngine:311 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-10-27 00:52:32,507 [INFO] CodeEngine:335 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\stm32f4xx_hal_conf.h
+2023-10-27 00:52:32,539 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\main.h_save
+2023-10-27 00:52:32,632 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Inc\main.h
+2023-10-27 00:52:32,643 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\main.c_save
+2023-10-27 00:52:32,749 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\Core\Src\main.c
+2023-10-27 00:52:33,200 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 133mS.
+2023-10-27 00:52:33,203 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-10-27 00:52:33,352 [INFO] ConfigFileManager:1457 - The Die is : DIE413
+2023-10-27 00:52:33,354 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-10-27 00:52:33,357 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-10-27 00:52:33,359 [INFO] ApiDbMcu:507 - Load IP Config File for LIBJPEG
+2023-10-27 00:52:33,363 [INFO] ApiDbMcu:507 - Load IP Config File for LWIP
+2023-10-27 00:52:33,367 [INFO] ApiDbMcu:507 - Load IP Config File for MBEDTLS
+2023-10-27 00:52:33,369 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST
+2023-10-27 00:52:34,494 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1291mS.
+2023-10-27 00:52:34,495 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2023-10-27 00:52:34,499 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.

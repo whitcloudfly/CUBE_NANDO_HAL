@@ -55,6 +55,8 @@
 
 #define UNDEFINED_CMD 0xFF
 
+extern NAND_HandleTypeDef hnand1;
+
 typedef struct __attribute__((__packed__))
 {
     uint8_t setup_time;         // FSMC NAND Flash的时序配置参数
@@ -87,9 +89,6 @@ static uint32_t FSMC_Initialized = 0;
 
 static void nand_gpio_init(void)
 {
-	  /* USER CODE BEGIN FSMC_MspInit 0 */
-
-	  /* USER CODE END FSMC_MspInit 0 */
 	  GPIO_InitTypeDef GPIO_InitStruct = {0};
 	  if (FSMC_Initialized) {
 	    return;
@@ -104,6 +103,14 @@ static void nand_gpio_init(void)
 	  PE8   ------> FSMC_D5
 	  PE9   ------> FSMC_D6
 	  PE10   ------> FSMC_D7
+	  PE11   ------> FSMC_D8
+	  PE12   ------> FSMC_D9
+	  PE13   ------> FSMC_D10
+	  PE14   ------> FSMC_D11
+	  PE15   ------> FSMC_D12
+	  PD8   ------> FSMC_D13
+	  PD9   ------> FSMC_D14
+	  PD10   ------> FSMC_D15
 	  PD11   ------> FSMC_CLE
 	  PD12   ------> FSMC_ALE
 	  PD14   ------> FSMC_D0
@@ -116,7 +123,9 @@ static void nand_gpio_init(void)
 	  PD7   ------> FSMC_NCE2
 	  */
 	  /* GPIO_InitStruct */
-	  GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10;
+	  GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
+	                          |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
+	                          |GPIO_PIN_15;
 	  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
 	  GPIO_InitStruct.Pull = GPIO_NOPULL;
 	  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -125,9 +134,10 @@ static void nand_gpio_init(void)
 	  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
 	  /* GPIO_InitStruct */
-	  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15
-	                          |GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5
-	                          |GPIO_PIN_6|GPIO_PIN_7;
+	  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
+	                          |GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0
+	                          |GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
+	                          |GPIO_PIN_7;
 	  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
 	  GPIO_InitStruct.Pull = GPIO_NOPULL;
 	  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -143,19 +153,34 @@ static void nand_gpio_init(void)
 	  /* USER CODE END FSMC_MspInit 1 */
 }
 
-extern NAND_HandleTypeDef hnand1;
 
 static void nand_fsmc_init()
 {
-    FSMC_NAND_InitTypeDef fsmc_init;
+//    FSMC_NAND_InitTypeDef fsmc_init;
 
 //    FSMC_NAND_PCC_TimingTypeDef timing_init;
     FSMC_NAND_PCC_TimingTypeDef ComSpaceTiming = {0};
     FSMC_NAND_PCC_TimingTypeDef AttSpaceTiming = {0};
 
 //    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
-    __HAL_RCC_FSMC_CLK_ENABLE();
+//    __HAL_RCC_FSMC_CLK_ENABLE();
 
+    hnand1.Instance = FSMC_NAND_DEVICE;
+//    fsmc_init.FSMC_Bank = FSMC_Bank2_NAND;  // 设置FSMC NAND Flash的相关参数
+    hnand1.Init.NandBank = FSMC_NAND_BANK2;
+//    fsmc_init.FSMC_Waitfeature = FSMC_Waitfeature_Enable;
+    hnand1.Init.Waitfeature = FSMC_NAND_PCC_WAIT_FEATURE_ENABLE;
+//    fsmc_init.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_8b;
+    hnand1.Init.MemoryDataWidth = FSMC_NAND_PCC_MEM_BUS_WIDTH_8;
+//    fsmc_init.FSMC_ECC = FSMC_ECC_Enable;
+    hnand1.Init.EccComputation = FSMC_NAND_ECC_DISABLE;
+//    fsmc_init.FSMC_ECCPageSize = FSMC_ECCPageSize_2048Bytes;
+    hnand1.Init.ECCPageSize = FSMC_NAND_ECC_PAGE_SIZE_256BYTE;
+//    fsmc_init.FSMC_TCLRSetupTime = fsmc_conf.clr_setup_time;
+    hnand1.Init.TCLRSetupTime = fsmc_conf.clr_setup_time;
+//    fsmc_init.FSMC_TARSetupTime = fsmc_conf.ar_setup_time;
+    hnand1.Init.TARSetupTime = fsmc_conf.ar_setup_time;
+    /* ComSpaceTiming */
 //    timing_init.FSMC_SetupTime = fsmc_conf.setup_time;  // 设置时序参数
     ComSpaceTiming.SetupTime = fsmc_conf.setup_time;  // 设置时序参数
 //    timing_init.FSMC_WaitSetupTime = fsmc_conf.wait_setup_time;
@@ -164,32 +189,11 @@ static void nand_fsmc_init()
     ComSpaceTiming.HoldSetupTime = fsmc_conf.hold_setup_time;
 //    timing_init.FSMC_HiZSetupTime = fsmc_conf.hi_z_setup_time;
     ComSpaceTiming.HiZSetupTime = fsmc_conf.hi_z_setup_time;
-
-    hnand1.Instance = FSMC_NAND_DEVICE;
-//    fsmc_init.FSMC_Bank = FSMC_Bank2_NAND;  // 设置FSMC NAND Flash的相关参数
-    hnand1.Init.NandBank = FSMC_Bank_NAND;
-//    fsmc_init.FSMC_Waitfeature = FSMC_Waitfeature_Enable;
-    hnand1.Init.Waitfeature = FSMC_NAND_PCC_WAIT_FEATURE_ENABLE;
-//    fsmc_init.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_8b;
-    hnand1.Init.MemoryDataWidth = FSMC_NAND_PCC_MEM_BUS_WIDTH_8;
-//    fsmc_init.FSMC_ECC = FSMC_ECC_Enable;
-    hnand1.Init.EccComputation = FSMC_NAND_ECC_ENABLE;
-//    fsmc_init.FSMC_ECCPageSize = FSMC_ECCPageSize_2048Bytes;
-    hnand1.Init.ECCPageSize = FSMC_NAND_ECC_PAGE_SIZE_2048BYTE;
-//    fsmc_init.FSMC_TCLRSetupTime = fsmc_conf.clr_setup_time;
-    hnand1.Init.TCLRSetupTime = fsmc_conf.clr_setup_time;
-//    fsmc_init.FSMC_TARSetupTime = fsmc_conf.ar_setup_time;
-    hnand1.Init.TARSetupTime = fsmc_conf.ar_setup_time;
-//    fsmc_init.FSMC_CommonSpaceTimingStruct = &timing_init;
-/*    ComSpaceTiming.SetupTime = 252;
-    ComSpaceTiming.WaitSetupTime = 252;
-    ComSpaceTiming.HoldSetupTime = 252;
-    ComSpaceTiming.HiZSetupTime = 252;*/
-//    fsmc_init.FSMC_AttributeSpaceTimingStruct = &timing_init;
-    AttSpaceTiming.SetupTime = 252;
-    AttSpaceTiming.WaitSetupTime = 252;
-    AttSpaceTiming.HoldSetupTime = 252;
-    AttSpaceTiming.HiZSetupTime = 252;
+    /* AttSpaceTiming */
+    AttSpaceTiming.SetupTime = fsmc_conf.setup_time;
+    AttSpaceTiming.WaitSetupTime = fsmc_conf.wait_setup_time;
+    AttSpaceTiming.HoldSetupTime = fsmc_conf.hold_setup_time;
+    AttSpaceTiming.HiZSetupTime = fsmc_conf.hi_z_setup_time;
 
     if (HAL_NAND_Init(&hnand1, &ComSpaceTiming, &AttSpaceTiming) != HAL_OK)
     {
@@ -197,6 +201,7 @@ static void nand_fsmc_init()
     }  // 初始化FSMC NAND Flash
 
 //    FSMC_NANDCmd(FSMC_Bank_NAND, ENABLE);  // 使能FSMC NAND Flash
+    __HAL_RCC_FSMC_CLK_ENABLE();
 }
 
 static void nand_print_fsmc_info()

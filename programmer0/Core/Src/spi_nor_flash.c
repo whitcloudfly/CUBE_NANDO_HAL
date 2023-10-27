@@ -13,13 +13,9 @@
 *********************************************************************************************************/
 
 #include "spi_nor_flash.h"
-//#include "spi.h"
+#include "spi.h"
 #include "gpio.h"
-#include "main.h"
-#include <stdio.h>
-#include <string.h>
 #include <stm32f4xx.h>
-//#include <stm32f4xx_hal_spi.h>
 
 /**SPI1 GPIO Configuration
   PA6     ------> SPI1_MISO
@@ -71,167 +67,100 @@ static spi_conf_t spi_conf;
 // 初始化SPI Flash的GPIO引脚
 static void spi_flash_gpio_init()
 {
-	  SPI_HandleTypeDef* spiHandle;
-
 	  GPIO_InitTypeDef GPIO_InitStruct = {0};
 
+	  /* USER CODE BEGIN SPI1_MspInit 0 */
+
+	  /* USER CODE END SPI1_MspInit 0 */
 	    /* SPI1 clock enable */
 	    __HAL_RCC_SPI1_CLK_ENABLE();
 
 	    __HAL_RCC_GPIOA_CLK_ENABLE();
 	    __HAL_RCC_GPIOB_CLK_ENABLE();
 	    /**SPI1 GPIO Configuration
-	    PA4     ------> SPI1_NSS
 	    PA6     ------> SPI1_MISO
 	    PA7     ------> SPI1_MOSI
 	    PB3     ------> SPI1_SCK
 	    */
-	    /*Configure SPI1_SCK pin : PtPin */
+	    GPIO_InitStruct.Pin = SPI1_MISO_Pin|SPI1_MOSI_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	    GPIO_InitStruct.Pull = GPIO_NOPULL;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+	    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 	    GPIO_InitStruct.Pin = SPI1_SCK_Pin;
 	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
 	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
 	    HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
 
-	    /*Configure SPI1_MOSI pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_MOSI_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
-	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-	    HAL_GPIO_Init(SPI1_MOSI_GPIO_Port, &GPIO_InitStruct);
+	    /* SPI1 interrupt Init */
+	    HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
+	    HAL_NVIC_EnableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspInit 1 */
 
-	    /*Configure SPI1_MISO pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_MISO_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	    GPIO_InitStruct.Pull = GPIO_PULLUP;
-	    HAL_GPIO_Init(SPI1_MISO_GPIO_Port, &GPIO_InitStruct);
-
-	    /*Configure SPI1_CS pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_CS_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	    HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
+	  /* USER CODE END SPI1_MspInit 1 */
 }
 
 // 取消初始化SPI Flash的GPIO引脚
 static void spi_flash_gpio_uninit()
 {
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-	SPI_HandleTypeDef* spiHandle;
 	  /* USER CODE BEGIN SPI1_MspDeInit 0 */
 
 	  /* USER CODE END SPI1_MspDeInit 0 */
 	    /* Peripheral clock disable */
 	    __HAL_RCC_SPI1_CLK_DISABLE();
 
-	    /*Configure GPIO pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_SCK_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
-	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-	    HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
+	    /**SPI1 GPIO Configuration
+	    PA6     ------> SPI1_MISO
+	    PA7     ------> SPI1_MOSI
+	    PB3     ------> SPI1_SCK
+	    */
+	    HAL_GPIO_DeInit(GPIOA, SPI1_MISO_Pin|SPI1_MOSI_Pin);
 
-	    /*Configure GPIO pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_MOSI_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
-	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-	    HAL_GPIO_Init(SPI1_MOSI_GPIO_Port, &GPIO_InitStruct);
+	    HAL_GPIO_DeInit(SPI1_SCK_GPIO_Port, SPI1_SCK_Pin);
 
-	    /*Configure GPIO pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_MISO_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	    GPIO_InitStruct.Pull = GPIO_PULLUP;
-	    HAL_GPIO_Init(SPI1_MISO_GPIO_Port, &GPIO_InitStruct);
+	    /* SPI1 interrupt Deinit */
+	    HAL_NVIC_DisableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspDeInit 1 */
 
-	    /*Configure GPIO pin : PtPin */
-	    GPIO_InitStruct.Pin = SPI1_CS_Pin;
-	    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	    GPIO_InitStruct.Pull = GPIO_NOPULL;
-	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
-	    HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
+	  /* USER CODE END SPI1_MspDeInit 1 */
 }
 
-// 选中SPI Flash芯片
 static inline void spi_flash_select_chip()
 {
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
+//    GPIO_ResetBits(GPIOA, SPI_FLASH_CS_PIN);
+   	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
 }
 
-// 取消选中SPI Flash芯片
 static inline void spi_flash_deselect_chip()
 {
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
+//    GPIO_SetBits(GPIOA, SPI_FLASH_CS_PIN);
+  	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
 }
 
-// 获取SPI时钟预分频器的值
 static uint16_t spi_flash_get_baud_rate_prescaler(uint32_t spi_freq_khz)
 {
     uint32_t system_clock_khz = SystemCoreClock / 1000;
 
     if (spi_freq_khz >= system_clock_khz / 2)
-        return SPI_BAUDRATEPRESCALER_2;
+         return SPI_BAUDRATEPRESCALER_2;
     else if (spi_freq_khz >= system_clock_khz / 4)
-        return SPI_BAUDRATEPRESCALER_4;
+         return SPI_BAUDRATEPRESCALER_4;
     else if (spi_freq_khz >= system_clock_khz / 8)
-        return SPI_BAUDRATEPRESCALER_8;
+         return SPI_BAUDRATEPRESCALER_8;
     else if (spi_freq_khz >= system_clock_khz / 16)
-        return SPI_BAUDRATEPRESCALER_16;
+         return SPI_BAUDRATEPRESCALER_16;
     else if (spi_freq_khz >= system_clock_khz / 32)
-        return SPI_BAUDRATEPRESCALER_32;
+         return SPI_BAUDRATEPRESCALER_32;
     else if (spi_freq_khz >= system_clock_khz / 64)
-        return SPI_BAUDRATEPRESCALER_64;
+          return SPI_BAUDRATEPRESCALER_64;
     else if (spi_freq_khz >= system_clock_khz / 128)
-        return SPI_BAUDRATEPRESCALER_128;
+          return SPI_BAUDRATEPRESCALER_128;
     else
-        return SPI_BAUDRATEPRESCALER_256;
-}
-
-/**
-  * @brief  Initializes the SPIx peripheral according to the specified
-  *         parameters in the SPI_InitStruct.
-  * @param  SPIx: where x can be 1, 2 or 3 to select the SPI peripheral.
-  * @param  SPI_InitStruct: pointer to a SPI_InitTypeDef structure that
-  *         contains the configuration information for the specified SPI peripheral.
-  * @retval None
-  */
-void SPI_Init(SPI_HandleTypeDef* hspi, SPI_InitTypeDef* SPI_InitStruct)
-{
-    /* Check the parameters */
-
-    /* Check the SPI parameters */
-	assert_param(IS_SPI_ALL_INSTANCE(hspi->Instance));
-	assert_param(IS_SPI_MODE(hspi->Init.Mode));
-	assert_param(IS_SPI_DIRECTION(hspi->Init.Direction));
-	assert_param(IS_SPI_DATASIZE(hspi->Init.DataSize));
-	assert_param(IS_SPI_NSS(hspi->Init.NSS));
-	assert_param(IS_SPI_BAUDRATE_PRESCALER(hspi->Init.BaudRatePrescaler));
-	assert_param(IS_SPI_FIRST_BIT(hspi->Init.FirstBit));
-	assert_param(IS_SPI_TIMODE(hspi->Init.TIMode));
-
-    /* Configure SPIx: direction, NSS management, first transmitted bit, BaudRate prescaler
-       master/slave mode, CPOL and CPHA */
-    hspi->Init.Direction = SPI_InitStruct->Direction;
-    hspi->Init.Mode = SPI_InitStruct->Mode;
-    hspi->Init.DataSize = SPI_InitStruct->DataSize;
-    hspi->Init.CLKPolarity = SPI_InitStruct->CLKPolarity;
-    hspi->Init.CLKPhase = SPI_InitStruct->CLKPhase;
-    hspi->Init.NSS = SPI_InitStruct->NSS;
-    hspi->Init.BaudRatePrescaler = SPI_InitStruct->BaudRatePrescaler;
-    hspi->Init.FirstBit = SPI_InitStruct->FirstBit;
-    hspi->Init.TIMode = SPI_InitStruct->TIMode;
-
-    /* Initialize the SPI peripheral */
-    if (HAL_SPI_Init(hspi) != HAL_OK)
-    {
-        Error_Handler();
-    }
+          return SPI_BAUDRATEPRESCALER_256;
 }
 
 // 初始化SPI Flash
@@ -256,17 +185,19 @@ static int spi_flash_init(void *conf, uint32_t conf_size)
     hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
     hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
     hspi1.Init.NSS = SPI_NSS_SOFT;
-    hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+    hspi1.Init.BaudRatePrescaler = spi_flash_get_baud_rate_prescaler(spi_conf.freq);
     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
     hspi1.Init.CRCPolynomial = 10;
-    SPI_Init(&hspi1, &spi_init);
-//    MX_SPI1_Init(&hspi1);
+    if (HAL_SPI_Init(&hspi1) != HAL_OK)
+    {
+      Error_Handler();
+    }  // 根据以上配置初始化SPI1
 
     /* 使能SPI */
 //    SPI_Cmd(SPI1, ENABLE);
-    __HAL_SPI_ENABLE(&hspi1);
+    __HAL_SPI_ENABLE(&hspi1); // 初始化SPI Flash芯片
 
     return 0;
 }
@@ -279,34 +210,6 @@ static void spi_flash_uninit()
     /* 禁用SPI */
     __HAL_SPI_DISABLE(&hspi1);
 }
-
-HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-HAL_StatusTypeDef HAL_SPI_Receive(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData, uint8_t *pRxData, uint16_t Size,
-                                          uint32_t Timeout);
-
-/**
- * @brief    SPI发�?�指定长度的数据
- * @param    buf  —�?? 发�?�数据缓冲区首地�?
- * @param    size —�?? 要发送数据的字节�?
- * @retval   成功返回HAL_OK
- */
-static HAL_StatusTypeDef SPI_Transmit(uint8_t* send_buf, uint16_t size)
-{
-    return HAL_SPI_Transmit(&hspi1, send_buf, size, 100);
-}
-
-/**
- * @brief   SPI接收指定长度的数�?
- * @param   buf  —�?? 接收数据缓冲区首地址
- * @param   size —�?? 要接收数据的字节�?
- * @retval  成功返回HAL_OK
- */
-static HAL_StatusTypeDef SPI_Receive(uint8_t* recv_buf, uint16_t size)
-{
-   return HAL_SPI_Receive(&hspi1, recv_buf, size, 100);
-}
-
 
 // 发送一个字节到SPI Flash并返回接收到的字节
 static uint8_t spi_flash_send_byte(uint8_t byte)

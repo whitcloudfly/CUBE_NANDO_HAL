@@ -22,7 +22,7 @@
 __IO uint32_t packet_sent = 1;
 extern USBD_HandleTypeDef hUsbDeviceHS;
 extern __IO uint8_t Send_Buffer[VIRTUAL_COM_PORT_DATA_SIZE] ;
-__IO uint32_t packet_receive = 1;
+__IO uint32_t packet_receive=1;
 extern __IO uint8_t Receive_length;
 
 uint32_t Send_length;
@@ -49,34 +49,14 @@ uint32_t CDC_Send_DATA (uint8_t *ptrBuffer, uint8_t Send_length)
 单次发送
  */
 	  packet_sent = 0;
-//	  uint8_t result = USBD_OK;
 //      memcpy(CDC_IN_EP, (unsigned char*)ptrBuffer, Send_length);
       CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
-//      HAL_Delay(10000);
-//	  return USBD_OK;
-//      CDC_TransmitCplt_HS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
-
-	  /* USER CODE BEGIN 12 */
-/*	  USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceHS.pClassData;
-	  if (hcdc->TxState != 0){
-	    return USBD_BUSY;
-	    return packet_sent = 1;
-	  }
-	  USBD_CDC_SetTxBuffer(&hUsbDeviceHS, *ptrBuffer, Send_length);
-	  result = USBD_CDC_TransmitPacket(&hUsbDeviceHS);*/
-	  /* USER CODE END 12 */
-
-//      CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
-//    HAL_Delay(20000);
-//    USBD_CtlSendStatus(&hUsbDeviceHS);
   }
   else
   {
     return 0;
-    return USBD_OK;
   }
   return 1;
-  return USBD_BUSY;
 }
 
 /*******************************************************************************

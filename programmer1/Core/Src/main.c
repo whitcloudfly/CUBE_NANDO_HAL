@@ -28,13 +28,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "nand_programmer.h"
-//#include "usb.h"
 #include "cdc.h"
 #include "led.h"
-//#include "uart.h"
 #include "jtag.h"
 #include "version.h"
 #include "clock.h"
+#include "spi_nor.h"
 #include <stdio.h>
 #include <string.h>
 /* USER CODE END Includes */
@@ -57,12 +56,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-/*uint16_t device_id;
-uint32_t JEDEC_ID;
-uint8_t read_buf[10] = {0};
-uint8_t write_buf[10] = {0};
-int i;
-uint8_t Buffer[1];*/
+
+uint8_t wData[0x100];   //写缓存数�???????
+uint8_t rData[0x100];   //读缓存数�???????
+uint8_t ID[4];          //设备ID缓存数组
+uint32_t i;
 
 /* USER CODE END PV */
 
@@ -113,13 +111,8 @@ int main(void)
   MX_RTC_Init();
   MX_SPI1_Init();
   MX_USART1_UART_Init();
-//  MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-//  device_id = W25QXX_ReadID();
-//  printf("W25Q256jv Device ID is 0x%04x\r\n", device_id);
-//  JEDEC_ID = W25QXX_ReadJDID();
-//  printf("----W25X_JEDEC_DEVICE_ID = %08x\r\n", JEDEC_ID);
-
   printf("\r\nNAND programmer ver: %d.%d.%d\r\n", SW_VERSION_MAJOR,
       SW_VERSION_MINOR, SW_VERSION_BUILD);
 
@@ -145,6 +138,58 @@ int main(void)
   printf("Programmer init...");
   np_init();
   printf("done.\r\n");
+
+/*
+	printf("\r\n SPI-W25Q256JVF Example \r\n\r\n");
+
+	SPI_NOR_Init();
+	SPI_NOR_Read_ID(ID);
+
+	if((ID[0] != 0xEF) | (ID[1] != 0x18))
+	{
+		printf("something wrong in Step1 \r\n");
+	}
+	else
+	{
+		printf(" W25Qxx ID is : ");
+		for(i=0;i<2;i++)
+		{
+			printf("0x%02X ",ID[i]);
+		}
+		printf("\r\n");
+	}
+
+	if(SPI_NOR_Erase_Block(0) == W25Qxx_OK)
+		printf(" QSPI Erase Block OK!\r\n");
+	else
+		printf("something wrong in Step2\r\n");
+
+	for(i =0;i<0x100;i ++)
+	{
+			wData[i] = i;
+          rData[i] = 0;
+	}
+
+	if(SPI_NOR_Write(wData,0x00,0x100)== W25Qxx_OK)
+		printf(" QSPI Write OK!\r\n");
+	else
+		printf("something wrong in Step3\r\n");
+
+	if(SPI_NOR_Read(rData,0x00,0x100)== W25Qxx_OK)
+		printf(" QSPI Read ok\r\n\r\n");
+	else
+		printf("something wrong in Step4\r\n");
+
+	printf("QSPI Read Data : \r\n");
+	for(i =0;i<0x100;i++)
+		printf("0x%02X  ",rData[i]);
+	printf("\r\n\r\n");
+
+	if(memcmp(wData,rData,0x100) == 0 )
+		printf(" W25Q256JV QuadSPI Test OK\r\n");
+	else
+		printf(" W25Q256JV QuadSPI Test False\r\n");
+*/
 
   while (1)
       np_handler();
@@ -206,10 +251,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-
-  /** Enables the Clock Security System
-  */
-  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */

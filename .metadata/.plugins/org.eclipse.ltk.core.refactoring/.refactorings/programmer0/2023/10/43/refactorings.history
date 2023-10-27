@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;programmer0/Core/Inc/spi_nor&apos; to &apos;spi_nor.h&apos;" description="Rename resource &apos;spi_nor&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/spi_nor" name="spi_nor.h" stamp="1698159383027" updateReferences="true"/>
+</session>

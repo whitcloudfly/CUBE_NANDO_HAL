@@ -39,7 +39,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../USB_DEVICE/Target/usbd_conf.h ../Core/Inc/gpio.h ../Core/Inc/fsmc.h \
  ../Core/Inc/nand_programmer.h ../Core/Inc/cdc.h ../Core/Inc/cdc.h \
  ../Core/Inc/led.h ../Core/Inc/jtag.h ../Core/Inc/version.h \
- ../Core/Inc/clock.h
+ ../Core/Inc/clock.h ../Core/Inc/spi_nor.h ../Core/Inc/spi.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -91,3 +91,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/jtag.h:
 ../Core/Inc/version.h:
 ../Core/Inc/clock.h:
+../Core/Inc/spi_nor.h:
+../Core/Inc/spi.h:

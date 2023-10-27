@@ -5,3 +5,6 @@
 1697941918571	Delete resource 'bootloader1'
 1698070444598	Delete resource 'stm32f407-ld1'
 1698070451998	Delete resource 'boot'
+1698157272814	Delete resource 'CDC_Standalone'
+1698157702090	Delete resource 'programmer1'
+1698333789568	Delete resource 'programmer0/programmer Debug.launch'

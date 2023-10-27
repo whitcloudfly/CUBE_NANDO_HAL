@@ -15,8 +15,8 @@
 
 typedef uint8_t packet_buf_t[PACKET_SIZE];
 
-
-void CDC_Receive_handler(uint8_t *Buf, uint32_t Len);
+void EP1_IN_Callback ();
+void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len);
 uint32_t USB_Data_Peek(uint8_t **data);
 uint32_t USB_Data_Get(uint8_t **data);
 

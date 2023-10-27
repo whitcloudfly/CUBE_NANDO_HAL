@@ -94,11 +94,13 @@ void USB_DataRx_Sched(void)
 }
 
 // CDC接收数据回调函数
-void CDC_Receive_handler(uint8_t* Buf, uint32_t Len)
+/*void EP3_OUT_Callback(void)*/
+void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len)
 {
 	Receive_length = USBD_GetRxCount(&hUsbDeviceHS, CDC_OUT_EP);
     if (size < CIRC_BUF_SIZE)
     {
+    	printf("E3_OUT run \r\n");
         // 循环缓冲区索引移动
         tail = (tail + 1) % CIRC_BUF_SIZE;
         // 将接收到的数据复制到循环缓冲区

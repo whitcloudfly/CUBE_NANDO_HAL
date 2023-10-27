@@ -47,11 +47,11 @@ void MX_FSMC_Init(void)
   /* hnand1.Init */
   hnand1.Init.NandBank = FSMC_NAND_BANK2;
   hnand1.Init.Waitfeature = FSMC_NAND_PCC_WAIT_FEATURE_ENABLE;
-  hnand1.Init.MemoryDataWidth = FSMC_NAND_PCC_MEM_BUS_WIDTH_8;
+  hnand1.Init.MemoryDataWidth = FSMC_NAND_PCC_MEM_BUS_WIDTH_16;
   hnand1.Init.EccComputation = FSMC_NAND_ECC_DISABLE;
   hnand1.Init.ECCPageSize = FSMC_NAND_ECC_PAGE_SIZE_256BYTE;
-  hnand1.Init.TCLRSetupTime = 0;
-  hnand1.Init.TARSetupTime = 0;
+  hnand1.Init.TCLRSetupTime = 1;
+  hnand1.Init.TARSetupTime = 2;
   /* hnand1.Config */
   hnand1.Config.PageSize = 0;
   hnand1.Config.SpareAreaSize = 0;
@@ -59,7 +59,7 @@ void MX_FSMC_Init(void)
   hnand1.Config.BlockNbr = 0;
   hnand1.Config.PlaneNbr = 0;
   hnand1.Config.PlaneSize = 0;
-  hnand1.Config.ExtraCommandEnable = ENABLE;
+  hnand1.Config.ExtraCommandEnable = DISABLE;
   /* ComSpaceTiming */
   ComSpaceTiming.SetupTime = 252;
   ComSpaceTiming.WaitSetupTime = 252;
@@ -101,6 +101,14 @@ static void HAL_FSMC_MspInit(void){
   PE8   ------> FSMC_D5
   PE9   ------> FSMC_D6
   PE10   ------> FSMC_D7
+  PE11   ------> FSMC_D8
+  PE12   ------> FSMC_D9
+  PE13   ------> FSMC_D10
+  PE14   ------> FSMC_D11
+  PE15   ------> FSMC_D12
+  PD8   ------> FSMC_D13
+  PD9   ------> FSMC_D14
+  PD10   ------> FSMC_D15
   PD11   ------> FSMC_CLE
   PD12   ------> FSMC_ALE
   PD14   ------> FSMC_D0
@@ -113,7 +121,9 @@ static void HAL_FSMC_MspInit(void){
   PD7   ------> FSMC_NCE2
   */
   /* GPIO_InitStruct */
-  GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10;
+  GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
+                          |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
+                          |GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -122,9 +132,10 @@ static void HAL_FSMC_MspInit(void){
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /* GPIO_InitStruct */
-  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15
-                          |GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7;
+  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
+                          |GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0
+                          |GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
+                          |GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -168,6 +179,14 @@ static void HAL_FSMC_MspDeInit(void){
   PE8   ------> FSMC_D5
   PE9   ------> FSMC_D6
   PE10   ------> FSMC_D7
+  PE11   ------> FSMC_D8
+  PE12   ------> FSMC_D9
+  PE13   ------> FSMC_D10
+  PE14   ------> FSMC_D11
+  PE15   ------> FSMC_D12
+  PD8   ------> FSMC_D13
+  PD9   ------> FSMC_D14
+  PD10   ------> FSMC_D15
   PD11   ------> FSMC_CLE
   PD12   ------> FSMC_ALE
   PD14   ------> FSMC_D0
@@ -180,11 +199,14 @@ static void HAL_FSMC_MspDeInit(void){
   PD7   ------> FSMC_NCE2
   */
 
-  HAL_GPIO_DeInit(GPIOE, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10);
+  HAL_GPIO_DeInit(GPIOE, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
+                          |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
+                          |GPIO_PIN_15);
 
-  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15
-                          |GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7);
+  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
+                          |GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0
+                          |GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6
+                          |GPIO_PIN_7);
 
   /* Peripheral interrupt DeInit */
   HAL_NVIC_DisableIRQ(FSMC_IRQn);
