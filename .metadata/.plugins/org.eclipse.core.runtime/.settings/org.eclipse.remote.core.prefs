@@ -1,0 +1,7 @@
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/__internal_serial_connection_for_mpu=__internal_serial_connection_for_mpu
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/serial.baudRate=11
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/serial.byteSize=3
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/serial.parity=0
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/serial.portName=COM3
+connections/com.st.stm32cube.ide.mpu.remote.serial.connectionType/MPU+Serial/serial.stopBits=0
+eclipse.preferences.version=1

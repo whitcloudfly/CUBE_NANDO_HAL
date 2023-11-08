@@ -82,7 +82,6 @@ uint32_t USB_Data_Get(uint8_t **data)
 static inline void USB_DataRx_Sched_Internal(void)
 {
   if (size < CIRC_BUF_SIZE)
-//    SetEPRxValid(ENDP3);
 	  USBD_CtlReceiveStatus(&hUsbDeviceHS);
 }
 
@@ -100,7 +99,6 @@ void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len)
 	Receive_length = USBD_GetRxCount(&hUsbDeviceHS, CDC_OUT_EP);
     if (size < CIRC_BUF_SIZE)
     {
-    	printf("E3_OUT run \r\n");
         // 循环缓冲区索引移动
         tail = (tail + 1) % CIRC_BUF_SIZE;
         // 将接收到的数据复制到循环缓冲区
@@ -110,11 +108,5 @@ void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len)
         size++;
         USB_DataRx_Sched_Internal();
     }
-
-    // 发送数据到USART1
-//    HAL_UART_Transmit(&huart1, circ_buf[tail].pbuf, Receive_length, HAL_MAX_DELAY);
-
-    // 发送数据回USB HS
-//    CDC_Transmit_HS(circ_buf[tail].pbuf, Receive_length); // 假设存在一个名为USBD_CDC_Transmit_HS的函数
 }
 

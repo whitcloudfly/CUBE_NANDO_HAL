@@ -1,0 +1,10 @@
+21:53:00 **** Incremental Build of configuration Debug for project F103BOOT ****
+make -j8 all 
+arm-none-eabi-size   F103BOOT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11508	    112	   6640	  18260	   4754	F103BOOT.elf
+Finished building: default.size.stdout
+ 
+
+21:53:00 Build Finished. 0 errors, 0 warnings. (took 203ms)
+

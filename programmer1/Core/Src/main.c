@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "rtc.h"
-#include "spi.h"
+//#include "spi.h"
 #include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -27,13 +27,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "spi_nor_flash.h"
 #include "nand_programmer.h"
 #include "cdc.h"
 #include "led.h"
 #include "jtag.h"
 #include "version.h"
 #include "clock.h"
-#include "spi_nor.h"
+//#include "spi_nor.h"
 #include <stdio.h>
 #include <string.h>
 /* USER CODE END Includes */
@@ -133,10 +134,9 @@ int main(void)
   printf("Programmer init...");
   np_init();
   printf("done.\r\n");
-
 /*
-uint8_t wData[0x100];   //写缓存数�??????????
-uint8_t rData[0x100];   //读缓存数�??????????
+uint8_t wData[0x200];   //写缓存数�??????????????????????
+uint8_t rData[0x200];   //读缓存数�??????????????????????
 uint8_t ID[4];          //设备ID缓存数组
 uint32_t i;
 	printf("\r\n SPI-W25Q256JVF Example \r\n\r\n");
@@ -163,32 +163,31 @@ uint32_t i;
 	else
 		printf("something wrong in Step2\r\n");
 
-	for(i =0;i<0x100;i ++)
+	for(i =0;i<0x200;i ++)
 	{
 			wData[i] = i;
           rData[i] = 0;
 	}
 
-	if(SPI_NOR_Write(wData,0x00,0x100)== W25Qxx_OK)
+	if(SPI_NOR_Write(wData,0x00,0x200)== W25Qxx_OK)
 		printf(" QSPI Write OK!\r\n");
 	else
 		printf("something wrong in Step3\r\n");
 
-	if(SPI_NOR_Read(rData,0x00,0x100)== W25Qxx_OK)
+	if(SPI_NOR_Read(rData,0x00,0x200)== W25Qxx_OK)
 		printf(" QSPI Read ok\r\n\r\n");
 	else
 		printf("something wrong in Step4\r\n");
 
 	printf("QSPI Read Data : \r\n");
-	for(i =0;i<0x100;i++)
+	for(i =0;i<0x200;i++)
 		printf("0x%02X  ",rData[i]);
 	printf("\r\n\r\n");
 
-	if(memcmp(wData,rData,0x100) == 0 )
+	if(memcmp(wData,rData,0x200) == 0 )
 		printf(" W25Q256JV QuadSPI Test OK\r\n");
 	else
-		printf(" W25Q256JV QuadSPI Test False\r\n");
-*/
+		printf(" W25Q256JV QuadSPI Test False\r\n");*/
 
   while (1)
       np_handler();

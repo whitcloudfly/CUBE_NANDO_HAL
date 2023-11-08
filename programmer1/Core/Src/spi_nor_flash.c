@@ -13,23 +13,35 @@
 *********************************************************************************************************/
 
 #include "spi_nor_flash.h"
-#include "spi.h"
 #include "gpio.h"
 #include <stm32f4xx.h>
-
+#include <stm32f4xx_hal_spi.h>
+#include <stdio.h>
 /**SPI1 GPIO Configuration
   PA6     ------> SPI1_MISO
   PA7     ------> SPI1_MOSI
   PB3     ------> SPI1_SCK
   PB4     ------> SPI1_CS
 */
+#define SPI1_MISO_Pin GPIO_PIN_6
+#define SPI1_MISO_GPIO_Port GPIOA
+#define SPI1_MOSI_Pin GPIO_PIN_7
+#define SPI1_MOSI_GPIO_Port GPIOA
+#define SPI1_SCK_Pin GPIO_PIN_3
+#define SPI1_SCK_GPIO_Port GPIOB
+#define SPI1_CS_Pin GPIO_PIN_4
+#define SPI1_CS_GPIO_Port GPIOB
 
 #define SPI_FLASH_MISO_PIN SPI1_MISO_Pin
 #define SPI_FLASH_MOSI_PIN SPI1_MOSI_Pin
 #define SPI_FLASH_SCK_PIN SPI1_SCK_Pin
 #define SPI_FLASH_CS_PIN SPI1_CS_Pin
 
-#define FLASH_DUMMY_BYTE 0xA5
+#define FLASH_DUMMY_BYTE 0x00
+
+#define FLASH_READY 0
+#define FLASH_BUSY  1
+#define FLASH_TIMEOUT 2
 
 /* 第一地址周期 */
 #define ADDR_1st_CYCLE(ADDR) (uint8_t)((ADDR)& 0xFF)
@@ -41,8 +53,6 @@
 #define ADDR_4th_CYCLE(ADDR) (uint8_t)(((ADDR)& 0xFF000000) >> 24)
 
 #define UNDEFINED_CMD 0xFF
-
-extern SPI_HandleTypeDef hspi1;
 
 typedef struct __attribute__((__packed__))
 {
@@ -60,27 +70,92 @@ typedef struct __attribute__((__packed__))
 
 static spi_conf_t spi_conf;
 
+SPI_HandleTypeDef hspi1; //SPI 句柄
+
 // 初始化SPI Flash的GPIO引脚
-static void spi_flash_gpio_init()
+static void spi_flash_gpio_init(SPI_HandleTypeDef* spiHandle)
 {
-	HAL_SPI_MspInit(&hspi1);
+	  GPIO_InitTypeDef GPIO_InitStruct = {0};
+	  if(spiHandle->Instance==SPI1)
+	  {
+	  /* USER CODE BEGIN SPI1_MspInit 0 */
+
+	  /* USER CODE END SPI1_MspInit 0 */
+	    /* SPI1 clock enable */
+	    __HAL_RCC_SPI1_CLK_ENABLE();
+
+	    __HAL_RCC_GPIOA_CLK_ENABLE();
+	    __HAL_RCC_GPIOB_CLK_ENABLE();
+	    /**SPI1 GPIO Configuration
+	    PA6     ------> SPI1_MISO
+	    PA7     ------> SPI1_MOSI
+	    PB3     ------> SPI1_SCK
+	    */
+	    GPIO_InitStruct.Pin = SPI1_MISO_Pin|SPI1_MOSI_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	    GPIO_InitStruct.Pull = GPIO_NOPULL;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+	    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	    GPIO_InitStruct.Pin = SPI1_SCK_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	    GPIO_InitStruct.Pull = GPIO_NOPULL;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+	    HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
+
+	    GPIO_InitStruct.Pin = SPI1_CS_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	    GPIO_InitStruct.Pull = GPIO_PULLUP;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
+	    /* SPI1 interrupt Init */
+	    HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
+	    HAL_NVIC_EnableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspInit 1 */
+
+	  /* USER CODE END SPI1_MspInit 1 */
+	  }
 }
 
 // 取消初始化SPI Flash的GPIO引脚
-static void spi_flash_gpio_uninit()
+static void spi_flash_gpio_uninit(SPI_HandleTypeDef* spiHandle)
 {
-	HAL_SPI_MspDeInit(&hspi1);
+	  if(spiHandle->Instance==SPI1)
+	  {
+	  /* USER CODE BEGIN SPI1_MspDeInit 0 */
+
+	  /* USER CODE END SPI1_MspDeInit 0 */
+	    /* Peripheral clock disable */
+	    __HAL_RCC_SPI1_CLK_DISABLE();
+
+	    /**SPI1 GPIO Configuration
+	    PA6     ------> SPI1_MISO
+	    PA7     ------> SPI1_MOSI
+	    PB3     ------> SPI1_SCK
+	    */
+	    HAL_GPIO_DeInit(GPIOA, SPI1_MISO_Pin|SPI1_MOSI_Pin);
+
+	    HAL_GPIO_DeInit(SPI1_SCK_GPIO_Port, SPI1_SCK_Pin);
+
+	    HAL_GPIO_DeInit(SPI1_CS_GPIO_Port, SPI1_CS_Pin);
+
+	    /* SPI1 interrupt Deinit */
+	    HAL_NVIC_DisableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspDeInit 1 */
+
+	  /* USER CODE END SPI1_MspDeInit 1 */
+	  }
 }
 
 static inline void spi_flash_select_chip()
 {
-//    GPIO_ResetBits(GPIOA, SPI_FLASH_CS_PIN);
    	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
 }
 
 static inline void spi_flash_deselect_chip()
 {
-//    GPIO_SetBits(GPIOA, SPI_FLASH_CS_PIN);
   	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
 }
 
@@ -109,14 +184,12 @@ static uint16_t spi_flash_get_baud_rate_prescaler(uint32_t spi_freq_khz)
 // 初始化SPI Flash
 static int spi_flash_init(void *conf, uint32_t conf_size)
 {
-    SPI_InitTypeDef spi_init;
-
     if (conf_size < sizeof(spi_conf_t))
-        return -1; 
+        return -1;
 
     spi_conf = *(spi_conf_t *)conf;
 
-    spi_flash_gpio_init();
+    spi_flash_gpio_init(&hspi1);
 
     spi_flash_deselect_chip();
 
@@ -132,39 +205,33 @@ static int spi_flash_init(void *conf, uint32_t conf_size)
     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-    hspi1.Init.CRCPolynomial = 7;
-    if (HAL_SPI_Init(&hspi1) != HAL_OK)
-    {
-      Error_Handler();
-    }  // 根据以上配置初始化SPI1
+    hspi1.Init.CRCPolynomial = 10;
+    HAL_SPI_Init(&hspi1)  ;
 
-    /* 使能SPI */
-//    SPI_Cmd(SPI1, ENABLE);
-    __HAL_SPI_ENABLE(&hspi1); // 初始化SPI Flash芯片
-
+    __HAL_SPI_ENABLE(&hspi1);
+    printf("spi_flash_init \r\n");
     return 0;
 }
 
 // 取消初始化SPI Flash
 static void spi_flash_uninit()
 {
-    spi_flash_gpio_uninit();
+    spi_flash_gpio_uninit(&hspi1);
+    printf("spi_flash_uninit \r\n");
     /* 禁用SPI */
     __HAL_SPI_DISABLE(&hspi1);
 }
 
 // 发送一个字节到SPI Flash并返回接收到的字节
+//https://blog.csdn.net/2201_75917183/article/details/131967863
 static uint8_t spi_flash_send_byte(uint8_t byte)
 {
-  uint32_t timeout = 0x1000000;
-  uint8_t rx_byte = 0X00;
+	uint8_t RxData=0x00;
+ 	uint8_t TxData=byte;
 
-  if(HAL_SPI_TransmitReceive(&hspi1, &byte, &rx_byte, 1, timeout) != HAL_OK)
-   {
-	   rx_byte = 0XFF;
-   }
+    HAL_SPI_TransmitReceive(&hspi1,&TxData,&RxData,1,0xFFFFFF);
 
-  return rx_byte;
+ 	return RxData;
 }
 
 // 从SPI Flash中读取一个字节
@@ -173,11 +240,10 @@ static inline uint8_t spi_flash_read_byte()
     return spi_flash_send_byte(FLASH_DUMMY_BYTE);
 }
 
-// 读取SPI Flash的状态寄存器值
 static uint32_t spi_flash_read_status()
 {
     uint8_t status;
-    uint32_t flash_status = FLASH_STATUS_READY;
+    uint32_t flash_status = FLASH_READY;
 
     spi_flash_select_chip();
 
@@ -186,69 +252,63 @@ static uint32_t spi_flash_read_status()
     status = spi_flash_read_byte();
 
     if (spi_conf.busy_state == 1 && (status & (1 << spi_conf.busy_bit)))
-        flash_status = FLASH_STATUS_BUSY;
+        flash_status = FLASH_BUSY;
     else if (spi_conf.busy_state == 0 && !(status & (1 << spi_conf.busy_bit)))
-        flash_status = FLASH_STATUS_BUSY;
+        flash_status = FLASH_BUSY;
 
     spi_flash_deselect_chip();
-
+    printf("flash_status = 0x%02X \r\n",flash_status);
     return flash_status;
 }
 
-// 获取SPI Flash的状态，等待操作完成或超时
 static uint32_t spi_flash_get_status()
 {
     uint32_t status, timeout = 0x1000000;
 
     status = spi_flash_read_status();
 
-    /* 等待操作完成或超时 */
-    while (status == FLASH_STATUS_BUSY && timeout)
+    /* Wait for an operation to complete or a TIMEOUT to occur */
+    while (status == FLASH_BUSY && timeout)
     {
         status = spi_flash_read_status();
         timeout --;
     }
 
     if (!timeout)
-        status = FLASH_STATUS_TIMEOUT;
-
+        status = FLASH_TIMEOUT;
+    printf("get_status = 0x%02X \r\n", status);
     return status;
 }
 
-// 读取SPI Flash的ID
 static void spi_flash_read_id(chip_id_t *chip_id)
 {
     spi_flash_select_chip();
 
     spi_flash_send_byte(spi_conf.read_id_cmd);
-    spi_flash_send_byte(0x00);  // 发送读取厂商ID的指令
 
     chip_id->maker_id = spi_flash_read_byte();
     chip_id->device_id = spi_flash_read_byte();
     chip_id->third_id = spi_flash_read_byte();
     chip_id->fourth_id = spi_flash_read_byte();
-    chip_id->fifth_id = spi_flash_read_byte();
-    chip_id->sixth_id = spi_flash_read_byte();
 
     spi_flash_deselect_chip();
 }
 
-// 启用SPI Flash的写使能
 static void spi_flash_write_enable()
 {
     if (spi_conf.write_en_cmd == UNDEFINED_CMD)
         return;
-
+    printf("spi_flash_write_enable \r\n");
     spi_flash_select_chip();
     spi_flash_send_byte(spi_conf.write_en_cmd);
     spi_flash_deselect_chip();
 }
 
-// 异步写入SPI Flash的一页数据
-static void spi_flash_write_page_async(uint8_t *buf, uint32_t page, uint32_t page_size)
+static void spi_flash_write_page_async(uint8_t *buf, uint32_t page,
+    uint32_t page_size)
 {
     uint32_t i;
-
+    printf("spi_flash_write_page_async \r\n");
     spi_flash_write_enable();
 
     spi_flash_select_chip();
@@ -267,8 +327,8 @@ static void spi_flash_write_page_async(uint8_t *buf, uint32_t page, uint32_t pag
     spi_flash_deselect_chip();
 }
 
-// 从指定地址读取数据到缓冲区
-static uint32_t spi_flash_read_data(uint8_t *buf, uint32_t page, uint32_t page_offset, uint32_t data_size)
+static uint32_t spi_flash_read_data(uint8_t *buf, uint32_t page,
+    uint32_t page_offset, uint32_t data_size)
 {
     uint32_t i, addr = (page << spi_conf.page_offset) + page_offset;
 
@@ -280,7 +340,7 @@ static uint32_t spi_flash_read_data(uint8_t *buf, uint32_t page, uint32_t page_o
     spi_flash_send_byte(ADDR_2nd_CYCLE(addr));
     spi_flash_send_byte(ADDR_1st_CYCLE(addr));
 
-    /* AT45DB要求在地址后写入虚拟字节 */
+    /* AT45DB requires write of dummy byte after address */
     spi_flash_send_byte(FLASH_DUMMY_BYTE);
 
     for (i = 0; i < data_size; i++)
@@ -288,22 +348,21 @@ static uint32_t spi_flash_read_data(uint8_t *buf, uint32_t page, uint32_t page_o
 
     spi_flash_deselect_chip();
 
-    return FLASH_STATUS_READY;
+    return FLASH_READY;
 }
 
-// 从指定页读取数据到缓冲区
-static uint32_t spi_flash_read_page(uint8_t *buf, uint32_t page, uint32_t page_size)
+static uint32_t spi_flash_read_page(uint8_t *buf, uint32_t page,
+    uint32_t page_size)
 {
-    return spi_flash_read_data(buf, page, 0, page_size);
+    return spi_flash_read_data(*buf, page, 1, page_size);
 }
 
-// 从指定页的偏移量读取备用数据到缓冲区
-static uint32_t spi_flash_read_spare_data(uint8_t *buf, uint32_t page, uint32_t offset, uint32_t data_size)
+static uint32_t spi_flash_read_spare_data(uint8_t *buf, uint32_t page,
+    uint32_t offset, uint32_t data_size)
 {
     return FLASH_STATUS_INVALID_CMD;
 }
 
-// 擦除指定块
 static uint32_t spi_flash_erase_block(uint32_t page)
 {
     uint32_t addr = page << spi_conf.page_offset;
@@ -323,13 +382,11 @@ static uint32_t spi_flash_erase_block(uint32_t page)
     return spi_flash_get_status();
 }
 
-// 检查是否支持坏块管理
 static inline bool spi_flash_is_bb_supported()
 {
     return false;
 }
 
-// SPI NOR Flash的硬件抽象层
 flash_hal_t hal_spi_nor =
 {
     .init = spi_flash_init,

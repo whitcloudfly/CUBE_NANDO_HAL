@@ -22,4 +22,18 @@
 		<item key="DIALOG_HEIGHT" value="490"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
+	<section name="org.eclipse.cdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_WIDTH" value="350"/>
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_HEIGHT" value="300"/>
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_X_ORIGIN" value="919"/>
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_Y_ORIGIN" value="420"/>
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.cdt.internal.ui.typehierarchy.THInformationControlDIALOG_USE_PERSISTED_LOCATION" value="true"/>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.includebrowser.IBViewPart">
+		<item key="inactiveFilter" value="false"/>
+		<item key="systemFilter" value="false"/>
+		<item key="includedBy" value="true"/>
+		<item key="showFolders" value="false"/>
+	</section>
 </section>

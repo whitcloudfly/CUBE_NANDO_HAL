@@ -22,7 +22,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "cdc_endp.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -476,14 +476,15 @@ uint8_t CDC_Transmit_HS(uint8_t* Buf, uint16_t Len)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 12 */
+  uint8_t packet_sent = 1;
   USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceHS.pClassData;
   if (hcdc->TxState != 0){
     return USBD_BUSY;
   }
   USBD_CDC_SetTxBuffer(&hUsbDeviceHS, Buf, Len);
   result = USBD_CDC_TransmitPacket(&hUsbDeviceHS);
-  HAL_Delay(500);
-  printf("CDC_Transmit_HS \r\n");
+
+  EP1_IN_Callback();
   /* USER CODE END 12 */
   return result;
 }
@@ -504,11 +505,11 @@ static int8_t CDC_TransmitCplt_HS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 14 */
+
   UNUSED(Buf);
   UNUSED(Len);
   UNUSED(epnum);
   EP1_IN_Callback();
-  printf("EP1_IN \r\n");
   /* USER CODE END 14 */
   return result;
 }

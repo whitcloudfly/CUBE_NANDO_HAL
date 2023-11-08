@@ -5,6 +5,15 @@
 #include "stm32f4xx.h"
 #include "spi.h"
 
+#define SPI1_MISO_Pin GPIO_PIN_6
+#define SPI1_MISO_GPIO_Port GPIOA
+#define SPI1_MOSI_Pin GPIO_PIN_7
+#define SPI1_MOSI_GPIO_Port GPIOA
+#define SPI1_SCK_Pin GPIO_PIN_3
+#define SPI1_SCK_GPIO_Port GPIOB
+#define SPI1_CS_Pin GPIO_PIN_4
+#define SPI1_CS_GPIO_Port GPIOB
+
 #define SPI_NOR_FLASH_SIZE                  0x2000000 /* 128 MBits => 16MBytes */
 #define SPI_NOR_SECTOR_SIZE                 0x10000   /* 256 sectors of 64KBytes */
 #define SPI_NOR_SUBSECTOR_SIZE              0x1000    /* 4096 subsectors of 4kBytes */

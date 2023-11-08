@@ -1,0 +1,23 @@
+18:58:50 **** Clean-only build of configuration Default for project 0firmware ****
+make clean 
+make -f Makefile.windows clean
+make[1]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
+make -C bootloader clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
+make -C programmer clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
+if exist obj rd /s /q obj
+make[1]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
+
+18:58:51 Build Finished. 0 errors, 0 warnings. (took 522ms)
+

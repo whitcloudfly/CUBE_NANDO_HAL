@@ -1,0 +1,5 @@
+../Core/Src/fsmc.c:31:6:MX_FSMC_Init	40	static
+../Core/Src/fsmc.c:91:13:HAL_FSMC_MspInit	32	static
+../Core/Src/fsmc.c:158:6:HAL_NAND_MspInit	16	static
+../Core/Src/fsmc.c:170:13:HAL_FSMC_MspDeInit	8	static
+../Core/Src/fsmc.c:222:6:HAL_NAND_MspDeInit	16	static

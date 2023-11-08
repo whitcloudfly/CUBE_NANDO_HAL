@@ -26,10 +26,37 @@ __IO uint32_t packet_receive=1;
 extern __IO uint8_t Receive_length;
 
 uint32_t Send_length;
-//static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len);
+static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len);
 /* Extern variables ----------------------------------------------------------*/
 
 //extern LINE_CODING linecoding;
+/*******************************************************************************
+* Function Name  : HexToChar.
+* Description    : Convert Hex 32Bits value into char.
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)
+{
+  uint8_t idx = 0;
+
+  for( idx = 0 ; idx < len ; idx ++)
+  {
+    if( ((value >> 28)) < 0xA )
+    {
+      pbuf[ 2* idx] = (value >> 28) + '0';
+    }
+    else
+    {
+      pbuf[2* idx] = (value >> 28) + 'A' - 10;
+    }
+
+    value = value << 4;
+
+    pbuf[ 2* idx + 1] = 0;
+  }
+}
 
 /*******************************************************************************
 * Function Name  : Send DATA .
@@ -43,11 +70,6 @@ uint32_t CDC_Send_DATA (uint8_t *ptrBuffer, uint8_t Send_length)
   /*if max buffer is Not reached*/
   if(Send_length <= VIRTUAL_COM_PORT_DATA_SIZE)
   {
-/*packet_sent = 0;
-  memcpy(CDC_IN_EP, (unsigned char*)ptrBuffer, Send_length);
-  CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
-单次发送
- */
 	  packet_sent = 0;
 //      memcpy(CDC_IN_EP, (unsigned char*)ptrBuffer, Send_length);
       CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);

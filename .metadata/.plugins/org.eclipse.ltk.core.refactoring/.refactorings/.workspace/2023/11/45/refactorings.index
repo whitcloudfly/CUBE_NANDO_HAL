@@ -1,0 +1,7 @@
+1699160851128	Delete resource '0firmware/obj'
+1699160863777	Delete 2 resources
+1699160872692	Delete resource '0firmware/bootloader/obj'
+1699160881037	Delete resource '0firmware/libs/spl/obj'
+1699160888624	Delete resource '0firmware/programmer/obj'
+1699164819498	Delete resource 'F103BOOT/EWARM'
+1699164831453	Delete resource 'F103BOOT/Debug'

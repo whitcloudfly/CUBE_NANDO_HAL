@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="SPI_NOR"/>
+		<item key="selection" value="SPI1_Handler"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="hspi1"/>
+			<item value="SPI1_Handler"/>
+			<item value="hal_spi_nor"/>
+			<item value="初始化函数"/>
+			<item value=" hspi1.Init"/>
 			<item value="BSP_W25Qx"/>
 			<item value="W25Qx"/>
 			<item value="W25Q128FV"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SPI1_Handler"/>
+			<item value="hspi1"/>
+			<item value="spi_init"/>
 			<item value="SPI_NOR"/>
 			<item value="SPI"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="807"/>
-		<item key="DIALOG_Y_ORIGIN" value="255"/>
+		<item key="DIALOG_X_ORIGIN" value="545"/>
+		<item key="DIALOG_Y_ORIGIN" value="375"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="410"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
