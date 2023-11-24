@@ -1,0 +1,15 @@
+../Core/Src/spi_nor.c:144:17:spi_flash_get_baud_rate_prescaler	8
+../Core/Src/spi_nor.c:345:17:spi_flash_read_spare_data	1
+../Core/Src/spi_nor.c:370:20:spi_flash_is_bb_supported	1
+../Core/Src/spi_nor.c:211:16:spi_flash_send_byte	1
+../Core/Src/spi_nor.c:226:17:spi_flash_read_status	5
+../Core/Src/spi_nor.c:247:17:spi_flash_get_status	4
+../Core/Src/spi_nor.c:282:13:spi_flash_write_enable	2
+../Core/Src/spi_nor.c:292:13:spi_flash_write_page_async	2
+../Core/Src/spi_nor.c:315:17:spi_flash_read_data	2
+../Core/Src/spi_nor.c:339:17:spi_flash_read_page	1
+../Core/Src/spi_nor.c:351:17:spi_flash_erase_block	1
+../Core/Src/spi_nor.c:266:13:spi_flash_read_id	1
+../Core/Src/spi_nor.c:109:13:spi_flash_gpio_uninit	2
+../Core/Src/spi_nor.c:202:13:spi_flash_uninit	1
+../Core/Src/spi_nor.c:167:12:spi_flash_init	2

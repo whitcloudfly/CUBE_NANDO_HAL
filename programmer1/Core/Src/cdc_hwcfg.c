@@ -12,51 +12,27 @@
 #include "usb_device.h"
 #include "usbd_cdc.h"
 #include "usbd_ioreq.h"
-#include "usart.h" // 包含USART1相关的头文件
+#include "log.h" // 包含USART1相关的头文件
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 //ErrorStatus HSEStartUpStatus;
-//EXTI_InitTypeDef EXTI_InitStructure;
+//EXTI_ConfigTypeDef EXTI_InitStructure;
+//extern USBD_HandleTypeDef hUsbDeviceHS;
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
 __IO uint32_t packet_sent = 1;
-extern USBD_HandleTypeDef hUsbDeviceHS;
-extern __IO uint8_t Send_Buffer[VIRTUAL_COM_PORT_DATA_SIZE] ;
+extern __IO uint8_t Send_Buffer[CDC_DATA_FS_MAX_PACKET_SIZE] ;
+
 __IO uint32_t packet_receive=1;
 extern __IO uint8_t Receive_length;
 
 uint32_t Send_length;
-static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len);
+
 /* Extern variables ----------------------------------------------------------*/
 
 //extern LINE_CODING linecoding;
-/*******************************************************************************
-* Function Name  : HexToChar.
-* Description    : Convert Hex 32Bits value into char.
-* Input          : None.
-* Output         : None.
-* Return         : None.
-*******************************************************************************/
-static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)
-{
-  uint8_t idx = 0;
-
-  for( idx = 0 ; idx < len ; idx ++)
-  {
-    if( ((value >> 28)) < 0xA )
-    {
-      pbuf[ 2* idx] = (value >> 28) + '0';
-    }
-    else
-    {
-      pbuf[2* idx] = (value >> 28) + 'A' - 10;
-    }
-
-    value = value << 4;
-
-    pbuf[ 2* idx + 1] = 0;
-  }
-}
 
 /*******************************************************************************
 * Function Name  : Send DATA .
@@ -68,11 +44,14 @@ static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)
 uint32_t CDC_Send_DATA (uint8_t *ptrBuffer, uint8_t Send_length)
 {
   /*if max buffer is Not reached*/
-  if(Send_length <= VIRTUAL_COM_PORT_DATA_SIZE)
+  if(Send_length <= CDC_DATA_FS_MAX_PACKET_SIZE)
   {
-	  packet_sent = 0;
-//      memcpy(CDC_IN_EP, (unsigned char*)ptrBuffer, Send_length);
-      CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
+	/*Sent flag*/
+	packet_sent = 0;
+	/* send  packet to PMA*/
+//    CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
+    CDC_Transmit_FS((unsigned char*)ptrBuffer, Send_length);
+    DEBUG_PRINT("CDC_Send_DATA: %0x\r\n", Send_length);
   }
   else
   {
@@ -90,7 +69,8 @@ uint32_t CDC_Send_DATA (uint8_t *ptrBuffer, uint8_t Send_length)
 *******************************************************************************/
 uint32_t CDC_Receive_DATA(void)
 {
-  USBD_CtlReceiveStatus(&hUsbDeviceHS);
+//  USBD_CtlReceiveStatus(&hUsbDeviceHS);
+    USBD_CtlReceiveStatus(&hUsbDeviceFS);
   return 1 ;
 }
 
@@ -131,4 +111,3 @@ int CDC_IsPacketSent(void)
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-

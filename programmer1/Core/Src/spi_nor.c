@@ -1,268 +1,397 @@
-/*
- * spi_nor.c
- *
- *  Created on: Oct 24, 2023
- *      Author: wjunh
- */
+/*********************************************************************************************************
+*
+* File                : spi_nor.c
+* Hardware Environment:
+* Build Environment   : STM32CUBEIDE  Version: 1.13.2
+* Version             : V1.0
+* By                  :
+*
+*                                  (c) Copyright 2005-2011, WaveShare
+*                                       http://www.waveshare.net
+*                                          All Rights Reserved
+*
+*********************************************************************************************************/
 
 #include "spi_nor.h"
+#include "log.h"
+#include <stm32f4xx.h>
+#include <stm32f4xx_hal_spi.h>
+//#include <stdio.h>
+/**SPI1 GPIO Configuration
+  PA6     ------> SPI1_MISO
+  PA7     ------> SPI1_MOSI
+  PB3     ------> SPI1_SCK
+  PE2     ------> SPI1_CS
+*/
+#define SPI1_MISO_Pin GPIO_PIN_6
+#define SPI1_MISO_GPIO_Port GPIOA
+#define SPI1_MOSI_Pin GPIO_PIN_7
+#define SPI1_MOSI_GPIO_Port GPIOA
+#define SPI1_SCK_Pin GPIO_PIN_3
+#define SPI1_SCK_GPIO_Port GPIOB
+#define SPI1_CS_Pin GPIO_PIN_2
+#define SPI1_CS_GPIO_Port GPIOE
 
- /**********************************************************************************
-  * 函数功能: 模块初始化
-  */
-uint8_t SPI_NOR_Init(void)
+#define SPI_FLASH_MISO_PIN SPI1_MISO_Pin
+#define SPI_FLASH_MOSI_PIN SPI1_MOSI_Pin
+#define SPI_FLASH_SCK_PIN SPI1_SCK_Pin
+#define SPI_FLASH_CS_PIN SPI1_CS_Pin
+
+#define FLASH_DUMMY_BYTE 0xA5
+
+#define FLASH_READY 0
+#define FLASH_BUSY  1
+#define FLASH_TIMEOUT 2
+
+/* 第一地址周期 */
+#define ADDR_1st_CYCLE(ADDR) (uint8_t)((ADDR)& 0xFF)
+/* 第二地址周期 */
+#define ADDR_2nd_CYCLE(ADDR) (uint8_t)(((ADDR)& 0xFF00) >> 8)
+/* 第三地址周期 */
+#define ADDR_3rd_CYCLE(ADDR) (uint8_t)(((ADDR)& 0xFF0000) >> 16)
+/* 第四地址周期 */
+#define ADDR_4th_CYCLE(ADDR) (uint8_t)(((ADDR)& 0xFF000000) >> 24)
+
+#define UNDEFINED_CMD 0xFF
+
+typedef struct __attribute__((__packed__))
 {
-	SPI_NOR_Reset();
-	return W25Qxx_GetStatus();
+    uint8_t page_offset;    // 页偏移量
+    uint8_t read_cmd;       // 读取指令
+    uint8_t read_id_cmd;    // 读取ID指令
+    uint8_t write_cmd;      // 写入指令
+    uint8_t write_en_cmd;   // 写使能指令
+    uint8_t erase_cmd;      // 擦除指令
+    uint8_t status_cmd;     // 状态指令
+    uint8_t busy_bit;       // 忙状态位
+    uint8_t busy_state;     // 忙状态值
+    uint32_t freq;          // SPI频率
+} spi_conf_t;
+
+static spi_conf_t spi_conf;
+
+extern SPI_HandleTypeDef hspi1; //SPI 句柄
+
+// 初始化SPI Flash的GPIO引脚
+static void spi_flash_gpio_init(SPI_HandleTypeDef* spiHandle)
+{
+	  GPIO_InitTypeDef GPIO_InitStruct = {0};
+	  if(spiHandle->Instance==SPI1)
+	  {
+	  /* USER CODE BEGIN SPI1_MspInit 0 */
+
+	  /* USER CODE END SPI1_MspInit 0 */
+	    /* SPI1 clock enable */
+	    __HAL_RCC_SPI1_CLK_ENABLE();
+
+	    __HAL_RCC_GPIOA_CLK_ENABLE();
+	    __HAL_RCC_GPIOB_CLK_ENABLE();
+	    /**SPI1 GPIO Configuration
+	      PA6     ------> SPI1_MISO
+	      PA7     ------> SPI1_MOSI
+	      PB3     ------> SPI1_SCK
+	      PE2     ------> SPI1_CS
+	    */
+	    GPIO_InitStruct.Pin = SPI1_MISO_Pin|SPI1_MOSI_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	    GPIO_InitStruct.Pull = GPIO_NOPULL;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+	    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	    GPIO_InitStruct.Pin = SPI1_SCK_Pin;
+	    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	    GPIO_InitStruct.Pull = GPIO_NOPULL;
+	    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	    GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
+	    HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
+
+	    /* SPI1 interrupt Init */
+	    HAL_NVIC_SetPriority(SPI1_IRQn, 0, 0);
+	    HAL_NVIC_EnableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspInit 1 */
+
+	  /* USER CODE END SPI1_MspInit 1 */
+	  }
 }
 
-
-static void	SPI_NOR_Reset(void)
+// 取消初始化SPI Flash的GPIO引脚
+static void spi_flash_gpio_uninit(SPI_HandleTypeDef* spiHandle)
 {
-	uint8_t cmd[2] = {RESET_ENABLE_CMD,RESET_MEMORY_CMD};
+	  if(spiHandle->Instance==SPI1)
+	  {
+	  /* USER CODE BEGIN SPI1_MspDeInit 0 */
 
-	W25Qxx_Enable();
-	/* Send the reset command */
-	HAL_SPI_Transmit(&hspi1, cmd, 2, SPI_TIMEOUT_VALUE);
-	W25Qxx_Disable();
+	  /* USER CODE END SPI1_MspDeInit 0 */
+	    /* Peripheral clock disable */
+	    __HAL_RCC_SPI1_CLK_DISABLE();
 
+	    /**SPI1 GPIO Configuration
+	      PA6     ------> SPI1_MISO
+	      PA7     ------> SPI1_MOSI
+	      PB3     ------> SPI1_SCK
+	      PE2     ------> SPI1_CS
+	    */
+	    HAL_GPIO_DeInit(GPIOA, SPI1_MISO_Pin|SPI1_MOSI_Pin);
+
+	    HAL_GPIO_DeInit(SPI1_SCK_GPIO_Port, SPI1_SCK_Pin);
+
+	    /* SPI1 interrupt Deinit */
+	    HAL_NVIC_DisableIRQ(SPI1_IRQn);
+	  /* USER CODE BEGIN SPI1_MspDeInit 1 */
+
+	  /* USER CODE END SPI1_MspDeInit 1 */
+	  }
 }
 
- /**********************************************************************************
-  * 函数功能: 获取设备状态
-  */
-static uint8_t W25Qxx_GetStatus(void)
+static inline void spi_flash_select_chip()
 {
-	uint8_t cmd[] = {READ_STATUS_REG1_CMD};
-	uint8_t status;
-
-	W25Qxx_Enable();
-	/* Send the read status command */
-	HAL_SPI_Transmit(&hspi1, cmd, 1, SPI_TIMEOUT_VALUE);
-	/* Reception of the data */
-	HAL_SPI_Receive(&hspi1,&status, 1, SPI_TIMEOUT_VALUE);
-	W25Qxx_Disable();
-
-	/* Check the value of the register */
-  if((status & SPI_NOR_FSR_BUSY) != 0)
-  {
-    return W25Qxx_BUSY;
-  }
-	else
-	{
-		return W25Qxx_OK;
-	}
+   	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
 }
 
- /**********************************************************************************
-  * 函数功能: 写使能
-  */
-uint8_t SPI_NOR_WriteEnable(void)
+static inline void spi_flash_deselect_chip()
 {
-	uint8_t cmd[] = {WRITE_ENABLE_CMD};
-	uint32_t tickstart = HAL_GetTick();
+  	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
+}
 
-	/*Select the FLASH: Chip Select low */
-	W25Qxx_Enable();
-	/* Send the read ID command */
-	HAL_SPI_Transmit(&hspi1, cmd, 1, SPI_TIMEOUT_VALUE);
-	/*Deselect the FLASH: Chip Select high */
-	W25Qxx_Disable();
+static uint16_t spi_flash_get_baud_rate_prescaler(uint32_t spi_freq_khz)
+{
+    uint32_t system_clock_khz = SystemCoreClock / 1000;
 
-	/* Wait the end of Flash writing */
-	while(W25Qxx_GetStatus() == W25Qxx_BUSY);
-	{
-		/* Check for the Timeout */
-    if((HAL_GetTick() - tickstart) > SPI_TIMEOUT_VALUE)
+    if (spi_freq_khz >= system_clock_khz / 2)
+    	return SPI_BAUDRATEPRESCALER_2;
+    else if (spi_freq_khz >= system_clock_khz / 4)
+    	return SPI_BAUDRATEPRESCALER_4;
+    else if (spi_freq_khz >= system_clock_khz / 8)
+    	return SPI_BAUDRATEPRESCALER_8;
+    else if (spi_freq_khz >= system_clock_khz / 16)
+    	return SPI_BAUDRATEPRESCALER_16;
+    else if (spi_freq_khz >= system_clock_khz / 32)
+    	return SPI_BAUDRATEPRESCALER_32;
+    else if (spi_freq_khz >= system_clock_khz / 64)
+    	return SPI_BAUDRATEPRESCALER_64;
+    else if (spi_freq_khz >= system_clock_khz / 128)
+    	return SPI_BAUDRATEPRESCALER_128;
+    else
+    	return SPI_BAUDRATEPRESCALER_256;
+}
+
+// 初始化SPI Flash
+static int spi_flash_init(void *conf, uint32_t conf_size)
+{
+    SPI_InitTypeDef Init;
+
+	if (conf_size < sizeof(spi_conf_t))
+        return -1;
+
+    spi_conf = *(spi_conf_t *)conf;
+
+//    spi_flash_gpio_init(&hspi1);
+
+    spi_flash_deselect_chip();
+
+    /* 配置SPI */
+    hspi1.Instance = SPI1;
+    hspi1.Init.Mode = SPI_MODE_MASTER;
+    hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+    hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+    hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
+    hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
+    hspi1.Init.NSS = SPI_NSS_SOFT;
+    hspi1.Init.BaudRatePrescaler = spi_flash_get_baud_rate_prescaler(spi_conf.freq);
+    hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+    hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+    hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+    hspi1.Init.CRCPolynomial = 10;
+    HAL_SPI_Init(&hspi1)  ;
+
+    /* Enable SPI */
+    __HAL_SPI_ENABLE(&hspi1);
+
+    return 0;
+}
+
+// 取消初始化SPI Flash
+static void spi_flash_uninit()
+{
+    spi_flash_gpio_uninit(&hspi1);
+
+    /* 禁用SPI */
+    __HAL_SPI_DISABLE(&hspi1);
+}
+
+// 发送一个字节到SPI Flash并返回接收到的字节
+static uint8_t spi_flash_send_byte(uint8_t byte)
+{
+	uint8_t rx_byte;
+
+    HAL_SPI_TransmitReceive_IT(&hspi1,&byte,&rx_byte,1);
+
+ 	return rx_byte;
+}
+
+static inline uint8_t spi_flash_read_byte()
+{
+    return spi_flash_send_byte(FLASH_DUMMY_BYTE);
+}
+
+static uint32_t spi_flash_read_status()
+{
+    uint8_t status;
+    uint32_t flash_status = FLASH_READY;
+
+    spi_flash_select_chip();
+
+    spi_flash_send_byte(spi_conf.status_cmd);
+
+    status = spi_flash_read_byte();
+
+    if (spi_conf.busy_state == 1 && (status & (1 << spi_conf.busy_bit)))
+        flash_status = FLASH_BUSY;
+    else if (spi_conf.busy_state == 0 && !(status & (1 << spi_conf.busy_bit)))
+        flash_status = FLASH_BUSY;
+
+    spi_flash_deselect_chip();
+
+    return flash_status;
+}
+
+static uint32_t spi_flash_get_status()
+{
+    uint32_t status, timeout = 0x1000000;
+
+    status = spi_flash_read_status();
+
+    /* Wait for an operation to complete or a TIMEOUT to occur */
+    while (status == FLASH_BUSY && timeout)
     {
-			return W25Qxx_TIMEOUT;
-    }
-	}
-
-	return W25Qxx_OK;
-}
-
- /**********************************************************************************
-  * 函数功能: 获取设备ID
-  */
-void SPI_NOR_Read_ID(uint8_t *ID)
-{
-	uint8_t cmd[4] = {READ_ID_CMD,0x00,0x00,0x00};
-
-	W25Qxx_Enable();
-	/* Send the read ID command */
-	HAL_SPI_Transmit(&hspi1, cmd, 4, SPI_TIMEOUT_VALUE);
-	/* Reception of the data */
-	HAL_SPI_Receive(&hspi1,ID, 2, SPI_TIMEOUT_VALUE);
-	W25Qxx_Disable();
-
-}
-
- /**********************************************************************************
-  * 函数功能: 读数据
-  * 输入参数: 缓存数组指针、读地址、字节数
-  */
-uint8_t SPI_NOR_Read(uint8_t* pData, uint32_t ReadAddr, uint32_t Size)
-{
-	uint8_t cmd[4];
-
-	/* Configure the command */
-	cmd[0] = READ_CMD;
-	cmd[1] = (uint8_t)(ReadAddr >> 16);
-	cmd[2] = (uint8_t)(ReadAddr >> 8);
-	cmd[3] = (uint8_t)(ReadAddr);
-
-	W25Qxx_Enable();
-	/* Send the read ID command */
-	HAL_SPI_Transmit(&hspi1, cmd, 4, SPI_TIMEOUT_VALUE);
-	/* Reception of the data */
-	if (HAL_SPI_Receive(&hspi1, pData,Size,SPI_TIMEOUT_VALUE) != HAL_OK)
-  {
-    return W25Qxx_ERROR;
-  }
-	W25Qxx_Disable();
-	return W25Qxx_OK;
-}
-
- /**********************************************************************************
-  * 函数功能: 写数据
-  * 输入参数: 缓存数组指针、写地址、字节数
-  */
-uint8_t SPI_NOR_Write(uint8_t* pData, uint32_t WriteAddr, uint32_t Size)
-{
-	uint8_t cmd[4];
-	uint32_t end_addr, current_size, current_addr;
-	uint32_t tickstart = HAL_GetTick();
-
-	/* Calculation of the size between the write address and the end of the page */
-  current_addr = 0;
-
-  while (current_addr <= WriteAddr)
-  {
-    current_addr += SPI_NOR_PAGE_SIZE;
-  }
-  current_size = current_addr - WriteAddr;
-
-  /* Check if the size of the data is less than the remaining place in the page */
-  if (current_size > Size)
-  {
-    current_size = Size;
-  }
-
-  /* Initialize the adress variables */
-  current_addr = WriteAddr;
-  end_addr = WriteAddr + Size;
-
-  /* Perform the write page by page */
-  do
-  {
-		/* Configure the command */
-		cmd[0] = PAGE_PROG_CMD;
-		cmd[1] = (uint8_t)(current_addr >> 16);
-		cmd[2] = (uint8_t)(current_addr >> 8);
-		cmd[3] = (uint8_t)(current_addr);
-
-		/* Enable write operations */
-		SPI_NOR_WriteEnable();
-
-		W25Qxx_Enable();
-    /* Send the command */
-    if (HAL_SPI_Transmit(&hspi1,cmd, 4, SPI_TIMEOUT_VALUE) != HAL_OK)
-    {
-      return W25Qxx_ERROR;
+        status = spi_flash_read_status();
+        timeout --;
     }
 
-    /* Transmission of the data */
-    if (HAL_SPI_Transmit(&hspi1, pData,current_size, SPI_TIMEOUT_VALUE) != HAL_OK)
-    {
-      return W25Qxx_ERROR;
-    }
+    if (!timeout)
+        status = FLASH_TIMEOUT;
 
-        W25Qxx_Disable();
-    	/* Wait the end of Flash writing */
-		while(W25Qxx_GetStatus() == W25Qxx_BUSY);
-		{
-			/* Check for the Timeout */
-			if((HAL_GetTick() - tickstart) > SPI_TIMEOUT_VALUE)
-			{
-				return W25Qxx_TIMEOUT;
-			}
-		}
-
-    /* Update the address and size variables for next page programming */
-    current_addr += current_size;
-    pData += current_size;
-    current_size = ((current_addr + SPI_NOR_PAGE_SIZE) > end_addr) ? (end_addr - current_addr) : SPI_NOR_PAGE_SIZE;
-  } while (current_addr < end_addr);
-
-
-	return W25Qxx_OK;
+    return status;
 }
 
- /**********************************************************************************
-  * 函数功能: 扇区擦除
-  * 输入参数: 地址
-  */
-uint8_t SPI_NOR_Erase_Block(uint32_t Address)
+static void spi_flash_read_id(chip_id_t *chip_id)
 {
-	uint8_t cmd[4];
-	uint32_t tickstart = HAL_GetTick();
-	cmd[0] = SECTOR_ERASE_CMD;
-	cmd[1] = (uint8_t)(Address >> 16);
-	cmd[2] = (uint8_t)(Address >> 8);
-	cmd[3] = (uint8_t)(Address);
+    spi_flash_select_chip();
 
-	/* Enable write operations */
-	SPI_NOR_WriteEnable();
+    spi_flash_send_byte(spi_conf.read_id_cmd);
 
-	/*Select the FLASH: Chip Select low */
-	W25Qxx_Enable();
-	/* Send the read ID command */
-	HAL_SPI_Transmit(&hspi1, cmd, 4, SPI_TIMEOUT_VALUE);
-	/*Deselect the FLASH: Chip Select high */
-	W25Qxx_Disable();
+    chip_id->maker_id = spi_flash_read_byte();
+    chip_id->device_id = spi_flash_read_byte();
+    chip_id->third_id = spi_flash_read_byte();
+    chip_id->fourth_id = spi_flash_read_byte();
+    chip_id->fifth_id = spi_flash_read_byte();
+    chip_id->sixth_id = spi_flash_read_byte();
 
-	/* Wait the end of Flash writing */
-	while(W25Qxx_GetStatus() == W25Qxx_BUSY);
-	{
-		/* Check for the Timeout */
-    if((HAL_GetTick() - tickstart) > SPI_NOR_SECTOR_ERASE_MAX_TIME)
-    {
-			return W25Qxx_TIMEOUT;
-    }
-	}
-	return W25Qxx_OK;
+    spi_flash_deselect_chip();
 }
 
- /**********************************************************************************
-  * 函数功能: 芯片擦除
-  */
-uint8_t SPI_NOR_Erase_Chip(void)
+static void spi_flash_write_enable()
 {
-	uint8_t cmd[4];
-	uint32_t tickstart = HAL_GetTick();
-	cmd[0] = CHIP_ERASE_CMD;
+    if (spi_conf.write_en_cmd == UNDEFINED_CMD)
+        return;
 
-	/* Enable write operations */
-	SPI_NOR_WriteEnable();
-
-	/*Select the FLASH: Chip Select low */
-	W25Qxx_Enable();
-	/* Send the read ID command */
-	HAL_SPI_Transmit(&hspi1, cmd, 1, SPI_TIMEOUT_VALUE);
-	/*Deselect the FLASH: Chip Select high */
-	W25Qxx_Disable();
-
-	/* Wait the end of Flash writing */
-	while(W25Qxx_GetStatus() != W25Qxx_BUSY);
-	{
-		/* Check for the Timeout */
-    if((HAL_GetTick() - tickstart) > SPI_NOR_BULK_ERASE_MAX_TIME)
-    {
-			return W25Qxx_TIMEOUT;
-    }
-	}
-	return W25Qxx_OK;
+    spi_flash_select_chip();
+    spi_flash_send_byte(spi_conf.write_en_cmd);
+    spi_flash_deselect_chip();
 }
 
+static void spi_flash_write_page_async(uint8_t *buf, uint32_t page, uint32_t page_size)
+{
+    uint32_t i;
 
+    spi_flash_write_enable();
+
+    spi_flash_select_chip();
+
+    spi_flash_send_byte(spi_conf.write_cmd);
+
+    page = page << spi_conf.page_offset;
+
+    spi_flash_send_byte(ADDR_3rd_CYCLE(page));
+    spi_flash_send_byte(ADDR_2nd_CYCLE(page));
+    spi_flash_send_byte(ADDR_1st_CYCLE(page));
+
+    for (i = 0; i < page_size; i++)
+        spi_flash_send_byte(buf[i]);
+
+    spi_flash_deselect_chip();
+}
+
+static uint32_t spi_flash_read_data(uint8_t *buf, uint32_t page,
+    uint32_t page_offset, uint32_t data_size)
+{
+    uint32_t i, addr = (page << spi_conf.page_offset) + page_offset;
+
+    spi_flash_select_chip();
+
+    spi_flash_send_byte(spi_conf.read_cmd);
+
+    spi_flash_send_byte(ADDR_3rd_CYCLE(addr));
+    spi_flash_send_byte(ADDR_2nd_CYCLE(addr));
+    spi_flash_send_byte(ADDR_1st_CYCLE(addr));
+
+    /* AT45DB requires write of dummy byte after address */
+    spi_flash_send_byte(FLASH_DUMMY_BYTE);
+
+    for (i = 0; i < data_size; i++)
+        buf[i] = spi_flash_read_byte();
+
+    spi_flash_deselect_chip();
+
+    return FLASH_READY;
+}
+
+static uint32_t spi_flash_read_page(uint8_t *buf, uint32_t page,
+    uint32_t page_size)
+{
+    return spi_flash_read_data(buf, page, 0, page_size);
+}
+
+static uint32_t spi_flash_read_spare_data(uint8_t *buf, uint32_t page,
+    uint32_t offset, uint32_t data_size)
+{
+    return FLASH_STATUS_INVALID_CMD;
+}
+
+static uint32_t spi_flash_erase_block(uint32_t page)
+{
+    uint32_t addr = page << spi_conf.page_offset;
+
+    spi_flash_write_enable();
+
+    spi_flash_select_chip();
+
+    spi_flash_send_byte(spi_conf.erase_cmd);
+
+    spi_flash_send_byte(ADDR_3rd_CYCLE(addr));
+    spi_flash_send_byte(ADDR_2nd_CYCLE(addr));
+    spi_flash_send_byte(ADDR_1st_CYCLE(addr));
+
+    spi_flash_deselect_chip();
+
+    return spi_flash_get_status();
+}
+
+static inline bool spi_flash_is_bb_supported()
+{
+    return false;
+}
+
+flash_hal_t hal_spi_nor =
+{
+    .init = spi_flash_init,
+    .uninit = spi_flash_uninit,
+    .read_id = spi_flash_read_id,
+    .erase_block = spi_flash_erase_block,
+    .read_page = spi_flash_read_page,
+    .read_spare_data = spi_flash_read_spare_data, 
+    .write_page_async = spi_flash_write_page_async,
+    .read_status = spi_flash_read_status,
+    .is_bb_supported = spi_flash_is_bb_supported
+};

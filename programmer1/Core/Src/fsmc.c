@@ -59,7 +59,7 @@ void MX_FSMC_Init(void)
   hnand1.Config.BlockNbr = 0;
   hnand1.Config.PlaneNbr = 0;
   hnand1.Config.PlaneSize = 0;
-  hnand1.Config.ExtraCommandEnable = DISABLE;
+  hnand1.Config.ExtraCommandEnable = ENABLE;
   /* ComSpaceTiming */
   ComSpaceTiming.SetupTime = 252;
   ComSpaceTiming.WaitSetupTime = 252;

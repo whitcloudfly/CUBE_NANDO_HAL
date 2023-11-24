@@ -7,5 +7,5 @@
 #include <stm32f4xx.h>
 
 bool is_external_clock_avail() {
-	return (RCC->CR & RCC_CR_HSERDY) != RESET;
+	return (RCC->CR & RCC_CR_HSERDY_Msk) != RESET;
 }

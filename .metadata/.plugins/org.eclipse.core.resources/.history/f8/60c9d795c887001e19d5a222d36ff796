@@ -1,0 +1,78 @@
+/*  Copyright (C) 2020 NANDO authors
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 3.
+ */
+
+#include <sys/reent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+// 输出一个字符
+int __io_putchar(int ch);
+
+// 堆增长函数
+caddr_t _sbrk_r(struct _reent *r, int incr)
+{
+    extern char _ebss; /* 由链接器定义 */
+    static char *heap_end;
+    char *prev_heap_end;
+    register char *stack asm("sp");
+
+    if (!heap_end)
+        heap_end = &_ebss;
+    prev_heap_end = heap_end;
+
+    // 检查堆增长是否会与栈冲突
+    if (heap_end + incr > stack)
+        return (caddr_t)-1;
+
+    heap_end += incr;
+    return (caddr_t)prev_heap_end;
+}
+
+// 写入函数
+int _write(int file, char *ptr, int len)
+{
+    int i;
+
+    for (i = 0; i < len; i++)
+        __io_putchar(*ptr++);
+
+    return len;
+}
+
+// 关闭文件函数
+int _close(int file)
+{
+    return -1;
+}
+
+// 文件状态函数
+int _fstat(int file, struct stat *st)
+{
+    return -1;
+}
+
+// 判断是否为终端函数
+int _isatty(int file)
+{
+    return 0;
+}
+
+// 设置文件偏移量函数
+int _lseek(int file, int ptr, int dir)
+{
+    return -1;
+}
+
+// 读取函数
+int _read(int file, char *ptr, int len)
+{
+    return 0;
+}
+
+// 异常中断函数
+void abort(void)
+{
+    while (1);
+}

@@ -1,40 +1,10 @@
-23:30:17 **** Incremental Build of configuration Debug for project programmer1 ****
+13:01:11 **** Incremental Build of configuration Debug for project programmer1 ****
 make -j8 all 
-arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
-../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_Receive_HS':
-../USB_DEVICE/App/usbd_cdc_if.c:460:20: warning: passing argument 1 of 'EP3_OUT_Callback' from incompatible pointer type [-Wincompatible-pointer-types]
-  460 |   EP3_OUT_Callback(Buf, *Len);
-      |                    ^~~
-      |                    |
-      |                    uint8_t * {aka unsigned char *}
-In file included from ../USB_DEVICE/App/usbd_cdc_if.c:25:
-../Core/Inc/cdc_endp.h:19:33: note: expected 'uint8_t **' {aka 'unsigned char **'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   19 | void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len);
-      |                       ~~~~~~~~~~^~~
-../USB_DEVICE/App/usbd_cdc_if.c:460:25: warning: passing argument 2 of 'EP3_OUT_Callback' makes pointer from integer without a cast [-Wint-conversion]
-  460 |   EP3_OUT_Callback(Buf, *Len);
-      |                         ^~~~
-      |                         |
-      |                         uint32_t {aka long unsigned int}
-In file included from ../USB_DEVICE/App/usbd_cdc_if.c:25:
-../Core/Inc/cdc_endp.h:19:48: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
-   19 | void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len);
-      |                                      ~~~~~~~~~~^~~
-../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_Transmit_HS':
-../USB_DEVICE/App/usbd_cdc_if.c:479:11: warning: unused variable 'packet_sent' [-Wunused-variable]
-  479 |   uint8_t packet_sent = 1;
-      |           ^~~~~~~~~~~
-arm-none-eabi-gcc -o "programmer1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: programmer1.elf
- 
-arm-none-eabi-size   programmer1.elf 
-arm-none-eabi-objdump -h -S  programmer1.elf  > "programmer1.list"
+arm-none-eabi-size  programmer1.elf 
    text	   data	    bss	    dec	    hex	filename
-  68976	    732	  40072	 109780	  1acd4	programmer1.elf
+  85860	   2360	  40520	 128740	  1f6e4	programmer1.elf
 Finished building: default.size.stdout
  
-Finished building: programmer1.list
- 
 
-23:30:18 Build Finished. 0 errors, 3 warnings. (took 1s.178ms)
+13:01:11 Build Finished. 0 errors, 0 warnings. (took 356ms)
 

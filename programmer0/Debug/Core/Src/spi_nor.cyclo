@@ -1,9 +1,0 @@
-../Core/Src/spi_nor.c:13:9:SPI_NOR_Init	1
-../Core/Src/spi_nor.c:20:13:SPI_NOR_Reset	1
-../Core/Src/spi_nor.c:34:16:W25Qxx_GetStatus	2
-../Core/Src/spi_nor.c:60:9:SPI_NOR_WriteEnable	3
-../Core/Src/spi_nor.c:88:6:SPI_NOR_Read_ID	1
-../Core/Src/spi_nor.c:105:9:SPI_NOR_Read	2
-../Core/Src/spi_nor.c:131:9:SPI_NOR_Write	9
-../Core/Src/spi_nor.c:206:9:SPI_NOR_Erase_Block	3
-../Core/Src/spi_nor.c:240:9:SPI_NOR_Erase_Chip	3

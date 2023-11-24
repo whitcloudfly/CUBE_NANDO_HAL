@@ -1,71 +1,23 @@
-20:02:47 **** Incremental Build of configuration Default for project firmware ****
-make all 
-make -f Makefile.windows all
-make[1]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
-make -C bootloader
-make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make -f Makefile.windows all
-make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make -C ../libs/spl/
-make[4]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-make -f Makefile.windows all
-make[5]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-if not exist obj mkdir obj
-make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-if not exist obj mkdir obj
-arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I./ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER main.c -o obj/main.o 
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Wl,-Map=obj/bootloader_fw.map -o obj/bootloader_fw.elf obj/main.o obj/system_stm32f10x.o obj/syscalls.o obj/uart.o obj/startup_stm32f10x_hd.o -L../libs/spl/ -lstm32f10x -T./stm32_flash.ld
-arm-none-eabi-objcopy.exe --pad-to 0x8003800 -O ihex obj/bootloader_fw.elf obj/bootloader_fw.hex
-arm-none-eabi-objcopy.exe -O binary obj/bootloader_fw.elf obj/bootloader_fw.bin
-arm-none-eabi-objdump.exe -St obj/bootloader_fw.elf > obj/bootloader_fw.lst
-arm-none-eabi-size.exe obj/bootloader_fw.elf
-   text	   data	    bss	    dec	    hex	filename
-   5348	   1120	     32	   6500	   1964	obj/bootloader_fw.elf
-make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make -C programmer
-make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-make -f Makefile.windows all
-make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-make -C ../libs/spl/
-make[4]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-make -f Makefile.windows all
-make[5]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-if not exist obj mkdir obj
-make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
-if not exist obj mkdir obj
-make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-if not exist obj mkdir obj
-copy bootloader\\obj\\bootloader_fw.hex obj\\
-已复制         1 个文件。
-copy programmer\\obj\\app_fw_1.hex obj\\
-已复制         1 个文件。
-copy programmer\\obj\\app_fw_2.hex obj\\
-已复制         1 个文件。
-findstr  /r /v "^:00000001FF$" obj\\bootloader_fw.hex \
-	  >> obj\\bootloader_fw.hex.tmp
-findstr  /r /v "^:00000001FF$"  obj\\app_fw_1.hex \
-	  >> obj\\app_fw_1.hex.tmp
-type obj\\bootloader_fw.hex.tmp obj\\app_fw_1.hex.tmp \
-	  obj\\app_fw_2.hex > obj\\nando_fw.hex
+23:59:08 **** Clean-only build of configuration Default for project firmware ****
+make clean 
+make -f Makefile.windows clean
+make[1]: Entering directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware'
+make -C bootloader clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/bootloader'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/bootloader'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/bootloader'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/bootloader'
+make -C programmer clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/programmer'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/programmer'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/programmer'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware/programmer'
+if exist obj rd /s /q obj
+make[1]: Leaving directory `D:/CUBE_NANDO_HAL/nand_programmer3.5.0/firmware'
 
-obj\\bootloader_fw.hex.tmp
-
-
-
-obj\\app_fw_1.hex.tmp
-
-
-
-obj\\app_fw_2.hex
-
-
-arm-none-eabi-objcopy.exe --input-target=ihex --output-target=binary \
-	  obj\\nando_fw.hex obj\\nando_fw.bin
-make[1]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
-
-20:02:50 Build Finished. 0 errors, 0 warnings. (took 2s.962ms)
+23:59:14 Build Finished. 0 errors, 0 warnings. (took 5s.497ms)
 

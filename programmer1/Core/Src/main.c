@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "rtc.h"
-//#include "spi.h"
+#include "spi.h"
 #include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -27,16 +27,17 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "spi_nor_flash.h"
 #include "nand_programmer.h"
 #include "cdc.h"
 #include "led.h"
 #include "jtag.h"
 #include "version.h"
 #include "clock.h"
-//#include "spi_nor.h"
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include <inttypes.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,9 +106,9 @@ int main(void)
   MX_GPIO_Init();
 //  MX_FSMC_Init();
   MX_RTC_Init();
-//  MX_SPI1_Init();
   MX_USART1_UART_Init();
 //  MX_USB_DEVICE_Init();
+//  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   printf("\r\nNAND programmer ver: %d.%d.%d\r\n", SW_VERSION_MAJOR,
       SW_VERSION_MINOR, SW_VERSION_BUILD);
@@ -135,8 +136,8 @@ int main(void)
   np_init();
   printf("done.\r\n");
 /*
-uint8_t wData[0x200];   //写缓存数�??????????????????????
-uint8_t rData[0x200];   //读缓存数�??????????????????????
+uint8_t wData[0x200];   //写缓存数�????????????????????????????
+uint8_t rData[0x200];   //读缓存数�????????????????????????????
 uint8_t ID[4];          //设备ID缓存数组
 uint32_t i;
 	printf("\r\n SPI-W25Q256JVF Example \r\n\r\n");
@@ -249,6 +250,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enables the Clock Security System
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */

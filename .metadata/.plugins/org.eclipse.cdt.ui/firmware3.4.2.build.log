@@ -1,0 +1,23 @@
+07:29:57 **** Clean-only build of configuration Default for project firmware3.4.2 ****
+make clean 
+make -f Makefile.windows clean
+make[1]: Entering directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2'
+make -C bootloader clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/bootloader'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/bootloader'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/bootloader'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/bootloader'
+make -C programmer clean
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/programmer'
+make -f Makefile.windows clean
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/programmer'
+if exist obj rd /s /q obj	
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/programmer'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2/programmer'
+if exist obj rd /s /q obj
+make[1]: Leaving directory `D:/CUBE_NANDO_HAL/f103_3.4.2/f103/firmware3.4.2'
+
+07:29:59 Build Finished. 0 errors, 0 warnings. (took 1s.658ms)
+

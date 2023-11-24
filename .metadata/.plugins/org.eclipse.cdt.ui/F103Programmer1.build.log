@@ -1,0 +1,10 @@
+00:45:16 **** Incremental Build of configuration Debug for project F103Programmer1 ****
+make -j8 all 
+arm-none-eabi-size  F103Programmer1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  62400	   2248	  31784	  96432	  178b0	F103Programmer1.elf
+Finished building: default.size.stdout
+ 
+
+00:45:17 Build Finished. 0 errors, 0 warnings. (took 356ms)
+

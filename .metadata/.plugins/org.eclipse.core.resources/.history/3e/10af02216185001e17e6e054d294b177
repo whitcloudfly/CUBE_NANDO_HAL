@@ -1,0 +1,115 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : cdc.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/*
+CDC发送数据功能 (cdc_send 函数)：
+这个函数用于向USB CDC通信接口发送数据。
+它首先检查是否有之前的发送操作仍在进行，如果是，则等待之前的发送完成（通过 CDC_IsPacketSent 函数检查）。
+然后，它尝试发送数据，如果发送失败，则打印错误消息并返回-1。
+如果发送成功，函数返回0表示成功。
+
+CDC发送数据状态查询功能 (cdc_send_ready 函数)：
+这个函数用于检查CDC是否准备好发送数据。
+它通过 CDC_IsPacketSent 函数来查询CDC发送状态，并返回一个布尔值，指示CDC是否可以发送数据。
+
+CDC接收数据查看功能 (cdc_peek 函数)：
+这个函数用于查看USB CDC通信接口中的接收数据，而不会从缓冲区中删除数据。
+它调用 USB_Data_Peek 函数，该函数返回指向接收数据的指针，并返回数据的长度。
+
+CDC接收数据处理功能 (cdc_consume 函数)：
+这个函数用于处理USB CDC通信接口中的接收数据。
+它首先调用 USB_Data_Get 函数，以获取接收到的数据的指针，然后可以对数据进行处理。
+最后，它调用 USB_DataRx_Sched 函数来调度USB数据接收操作。
+
+CDC初始化功能 (cdc_init 函数)：
+这个函数用于初始化CDC通信。
+它注册了一个CDC通信回调函数结构体 cdc_comm_cb，该结构体包含了以上定义的四个功能的指针。
+然后，它启用CDC数据接收，以准备接收从USB主机发送过来的数据。
+
+总的来说，这段代码的主要功能是建立了一个USB CDC通信接口，使STM32F103可以通过USB连接与计算机或其他设备进行
+串行数据通信。它提供了发送和接收数据的功能，并通过回调函数来管理数据的传输和处理。这对于与计算机进行通信、调试和数据
+传输等应用非常有用。*/
+/*  Copyright (C) 2020 NANDO authors
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License version 3.
+ */
+/*这段代码使用CDC进行数据通信，并提供了发送、接收和处理数据的功能。在cdc_init()函数中，它注册了一个CDC通信回调函数，以便在数据到达时进行处理。*/
+
+#include "log.h"                        // 日志库头文件
+#include "nand_programmer.h"            // NAND编程器头文件
+#include "cdc_hwcfg.h"         // USB CDC硬件配置头文件
+#include "cdc_endp.h"
+
+#define SEND_TIMEOUT 0x1000000          // 发送超时时间
+
+static int cdc_send(uint8_t *data, uint32_t len)
+{
+    uint32_t timeout = SEND_TIMEOUT;
+    DEBUG_PRINT("CDC_Send: %0x\r\n", *data);
+    if (!CDC_IsPacketSent())              // 如果之前的CDC发送未完成
+    {
+        DEBUG_PRINT("Wait for previous CDC TX\r\n");  // 打印调试信息，等待上一次CDC发送完成
+        while (!CDC_IsPacketSent() && --timeout);    // 等待CDC发送完成，或者超时
+        if (!timeout)
+        {
+            ERROR_PRINT("Failed to send data, CDC is busy\r\n");   // 打印错误信息，发送超时，CDC忙碌
+            return -1;                                          // 返回错误代码
+        }
+    }
+
+    if (!CDC_Send_DATA(data, len))                              // 发送数据
+    {
+        ERROR_PRINT("Failed to send data\r\n");                  // 打印错误信息，发送数据失败
+        return -1;                                              // 返回错误代码
+    }
+
+    return 0;                                                   // 返回成功代码
+}
+
+static int cdc_send_ready()
+{
+    return CDC_IsPacketSent();                                  // 返回CDC是否可发送数据的状态
+}
+
+static uint32_t cdc_peek(uint8_t **data)
+{
+    return USB_Data_Peek(data);                                 // 查看USB数据
+}
+
+static void cdc_consume()
+{
+    uint8_t *data;
+
+    USB_Data_Get(&data);                                        // 获取USB数据
+    USB_DataRx_Sched();                                         // 调度USB数据接收
+}
+
+static np_comm_cb_t cdc_comm_cb = 
+{
+    .send = cdc_send,
+    .send_ready = cdc_send_ready,
+    .peek = cdc_peek,
+    .consume = cdc_consume,
+};
+
+void cdc_init()
+{
+    np_comm_register(&cdc_comm_cb);                             // 注册CDC通信回调函数
+
+    /* Enable receive of data */
+    CDC_Receive_DATA();                                         // 启用数据接收
+}

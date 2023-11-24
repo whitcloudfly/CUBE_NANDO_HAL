@@ -23,10 +23,10 @@
  */
 
 #include "fsmc_nand.h"
-#include "fsmc.h"
+//#include "fsmc.h"
 #include "log.h"
 #include <stm32f4xx.h>
-
+#include <stm32f4xx_ll_fsmc.h>
 
 #define CMD_AREA                   (uint32_t)(1<<16)  /* A16 = CLE  high */
 #define ADDR_AREA                  (uint32_t)(1<<17)  /* A17 = ALE high */
@@ -47,7 +47,7 @@
 /* 4th addressing cycle */
 #define ADDR_4th_CYCLE(ADDR)       (uint8_t)(((ADDR)& 0xFF000000) >> 24)
 
-#define FSMC_Bank_NAND     FSMC_Bank2_3
+#define FSMC_Bank_NAND     FSMC_NAND_BANK2;
 #define Bank_NAND_ADDR     Bank2_NAND_ADDR 
 #define Bank2_NAND_ADDR    ((uint32_t)0x70000000)     
 #define ROW_ADDRESS (addr.page + (addr.block + (addr.zone * NAND_ZONE_SIZE)) * \
@@ -89,6 +89,9 @@ static uint32_t FSMC_Initialized = 0;
 
 static void nand_gpio_init(void)
 {
+	  /* USER CODE BEGIN FSMC_MspInit 0 */
+
+	  /* USER CODE END FSMC_MspInit 0 */
 	  GPIO_InitTypeDef GPIO_InitStruct = {0};
 	  if (FSMC_Initialized) {
 	    return;

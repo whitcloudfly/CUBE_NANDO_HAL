@@ -1,0 +1,93 @@
+01:16:52 **** Incremental Build of configuration Default for project firmwareNAND ****
+make all 
+make -f Makefile.windows all
+make[1]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND'
+make -C bootloader
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/bootloader'
+make -f Makefile.windows all
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/bootloader'
+make -C ../libs/spl/
+make[4]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+if not exist obj mkdir obj
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/bootloader'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/bootloader'
+make -C programmer
+make[2]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/programmer'
+make -f Makefile.windows all
+make[3]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/programmer'
+make -C ../libs/spl/
+make[4]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/libs/spl'
+if not exist obj mkdir obj
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER main.c -o obj/main.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER syscalls.c -o obj/syscalls.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER fsmc_nand.c -o obj/fsmc_nand.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER led.c -o obj/led.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER uart.c -o obj/uart.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER jtag.c -o obj/jtag.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER clock.c -o obj/clock.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER cdc.c -o obj/cdc.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER nand_programmer.c -o obj/nand_programmer.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER nand_bad_block.c -o obj/nand_bad_block.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER flash.c -o obj/flash.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER spi_nor_flash.c -o obj/spi_nor_flash.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER spi_nand_flash.c -o obj/spi_nand_flash.o 
+arm-none-eabi-gcc.exe -c -g -Wall -Werror -O3 -include../libs/spl/stm32f10x_conf.h -I../ -I../libs/spl/CMSIS/CM3/CoreSupport/ -I../libs/spl/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ -I../libs/spl/ -I../libs/spl/STM32F10x_StdPeriph_Driver/inc -I../libs/spl/STM32_USB-FS-Device_Driver/inc -I./ -I../usb_cdc/ -MMD -MP -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -DSTM32F10X_HD -DCONFIG_BOOTLOADER usb.c -o obj/usb.o 
+arm-none-eabi-gcc.exe --specs=nosys.specs -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Wl,-Map=obj/app_fw_1.map -o obj/app_fw_1.elf obj/main.o obj/system_stm32f10x.o obj/syscalls.o obj/fsmc_nand.o obj/led.o obj/uart.o obj/jtag.o obj/clock.o obj/cdc.o obj/nand_programmer.o obj/nand_bad_block.o obj/flash.o obj/spi_nor_flash.o obj/spi_nand_flash.o obj/hw_config.o obj/stm32_it.o obj/usb_prop.o obj/usb_desc.o obj/usb_istr.o obj/usb_pwr.o obj/usb_endp.o obj/usb.o obj/startup_stm32f10x_hd.o -L../libs/spl/ -lstm32f10x \
+	  -T./stm32_flash_1.ld
+arm-none-eabi-objcopy.exe --pad-to 0x08022000 -O ihex obj/app_fw_1.elf obj/app_fw_1.hex
+arm-none-eabi-objcopy.exe -O binary obj/app_fw_1.elf obj/app_fw_1.bin
+arm-none-eabi-objdump.exe -St obj/app_fw_1.elf > obj/app_fw_1.lst
+arm-none-eabi-size.exe obj/app_fw_1.elf
+   text	   data	    bss	    dec	    hex	filename
+  65388	   2900	  20192	  88480	  159a0	obj/app_fw_1.elf
+arm-none-eabi-gcc.exe --specs=nosys.specs -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -Wl,-Map=obj/app_fw_2.map -o obj/app_fw_2.elf obj/main.o obj/system_stm32f10x.o obj/syscalls.o obj/fsmc_nand.o obj/led.o obj/uart.o obj/jtag.o obj/clock.o obj/cdc.o obj/nand_programmer.o obj/nand_bad_block.o obj/flash.o obj/spi_nor_flash.o obj/spi_nand_flash.o obj/hw_config.o obj/stm32_it.o obj/usb_prop.o obj/usb_desc.o obj/usb_istr.o obj/usb_pwr.o obj/usb_endp.o obj/usb.o obj/startup_stm32f10x_hd.o -L../libs/spl/ -lstm32f10x \
+	  -T./stm32_flash_2.ld
+arm-none-eabi-objcopy.exe --pad-to 0x08040000 -O ihex obj/app_fw_2.elf obj/app_fw_2.hex
+arm-none-eabi-objcopy.exe -O binary obj/app_fw_2.elf obj/app_fw_2.bin
+arm-none-eabi-objdump.exe -St obj/app_fw_2.elf > obj/app_fw_2.lst
+arm-none-eabi-size.exe obj/app_fw_2.elf
+   text	   data	    bss	    dec	    hex	filename
+  65388	   2900	  20192	  88480	  159a0	obj/app_fw_2.elf
+make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/programmer'
+make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND/programmer'
+if not exist obj mkdir obj
+copy bootloader\\obj\\bootloader_fw.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_1.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_2.hex obj\\
+已复制         1 个文件。
+findstr  /r /v "^:00000001FF$" obj\\bootloader_fw.hex \
+	  >> obj\\bootloader_fw.hex.tmp
+findstr  /r /v "^:00000001FF$"  obj\\app_fw_1.hex \
+	  >> obj\\app_fw_1.hex.tmp
+type obj\\bootloader_fw.hex.tmp obj\\app_fw_1.hex.tmp \
+	  obj\\app_fw_2.hex > obj\\nando_fw.hex
+
+obj\\bootloader_fw.hex.tmp
+
+
+
+obj\\app_fw_1.hex.tmp
+
+
+
+obj\\app_fw_2.hex
+
+
+arm-none-eabi-objcopy.exe --input-target=ihex --output-target=binary \
+	  obj\\nando_fw.hex obj\\nando_fw.bin
+make[1]: Leaving directory `D:/CUBE_NANDO_HAL/nand3.5.0SPINAND/firmwareNAND'
+
+01:16:56 Build Finished. 0 errors, 0 warnings. (took 3s.909ms)
+

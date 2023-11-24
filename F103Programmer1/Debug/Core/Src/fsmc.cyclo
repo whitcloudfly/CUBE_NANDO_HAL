@@ -1,0 +1,5 @@
+../Core/Src/fsmc.c:91:13:HAL_FSMC_MspInit	2
+../Core/Src/fsmc.c:173:13:HAL_FSMC_MspDeInit	2
+../Core/Src/fsmc.c:31:6:MX_FSMC_Init	2
+../Core/Src/fsmc.c:161:6:HAL_NAND_MspInit	1
+../Core/Src/fsmc.c:225:6:HAL_NAND_MspDeInit	1

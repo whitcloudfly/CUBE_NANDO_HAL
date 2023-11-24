@@ -1,23 +1,63 @@
-18:58:50 **** Clean-only build of configuration Default for project 0firmware ****
-make clean 
-make -f Makefile.windows clean
+21:34:20 **** Incremental Build of configuration Default for project 0firmware ****
+make all 
+make -f Makefile.windows all
 make[1]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
-make -C bootloader clean
+make -C bootloader
 make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make -f Makefile.windows clean
+make -f Makefile.windows all
 make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-if exist obj rd /s /q obj	
+make -C ../libs/spl/
+make[4]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+if not exist obj mkdir obj
 make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
 make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/bootloader'
-make -C programmer clean
+make -C programmer
 make[2]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-make -f Makefile.windows clean
+make -f Makefile.windows all
 make[3]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-if exist obj rd /s /q obj	
+make -C ../libs/spl/
+make[4]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+make[4]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/libs/spl'
+if not exist obj mkdir obj
 make[3]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
 make[2]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware/programmer'
-if exist obj rd /s /q obj
+if not exist obj mkdir obj
+copy bootloader\\obj\\bootloader_fw.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_1.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_2.hex obj\\
+已复制         1 个文件。
+findstr  /r /v "^:00000001FF$" obj\\bootloader_fw.hex \
+	  >> obj\\bootloader_fw.hex.tmp
+findstr  /r /v "^:00000001FF$"  obj\\app_fw_1.hex \
+	  >> obj\\app_fw_1.hex.tmp
+type obj\\bootloader_fw.hex.tmp obj\\app_fw_1.hex.tmp \
+	  obj\\app_fw_2.hex > obj\\nando_fw.hex
+
+obj\\bootloader_fw.hex.tmp
+
+
+
+obj\\app_fw_1.hex.tmp
+
+
+
+obj\\app_fw_2.hex
+
+
+arm-none-eabi-objcopy.exe --input-target=ihex --output-target=binary \
+	  obj\\nando_fw.hex obj\\nando_fw.bin
 make[1]: Leaving directory `D:/CUBE_NANDO_HAL/nando/nand_programmer3.5.0/firmware'
 
-18:58:51 Build Finished. 0 errors, 0 warnings. (took 522ms)
+21:34:27 Build Finished. 0 errors, 0 warnings. (took 7s.179ms)
 

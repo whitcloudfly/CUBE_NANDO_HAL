@@ -1,0 +1,16 @@
+../Core/Src/fsmc_nand.c:240:13:nand_reset	0	static
+../Core/Src/fsmc_nand.c:315:17:nand_read_status	0	static
+../Core/Src/fsmc_nand.c:332:17:nand_get_status	8	static
+../Core/Src/fsmc_nand.c:352:13:nand_read_id	0	static
+../Core/Src/fsmc_nand.c:372:13:nand_write_page_async	4	static
+../Core/Src/fsmc_nand.c:434:17:nand_read_data	16	static
+../Core/Src/fsmc_nand.c:497:17:nand_read_page	8	static
+../Core/Src/fsmc_nand.c:503:17:nand_read_spare_data	8	static
+../Core/Src/fsmc_nand.c:566:17:nand_erase_block	8	static
+../Core/Src/fsmc_nand.c:601:20:nand_is_bb_supported	0	static
+../Core/Src/fsmc_nand.c:607:17:nand_enable_hw_ecc	0	static
+../Core/Src/fsmc_nand.c:262:13:nand_uninit	8	static
+../Core/Src/fsmc_nand.c:90:13:nand_gpio_init	40	static
+../Core/Src/fsmc_nand.c:162:13:nand_fsmc_init	40	static
+../Core/Src/fsmc_nand.c:214:13:nand_print_fsmc_info	8	static
+../Core/Src/fsmc_nand.c:245:12:nand_init	8	static

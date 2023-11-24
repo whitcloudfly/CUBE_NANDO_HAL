@@ -14,7 +14,9 @@
 #include "usart.h" // 包含USART1相关的头文件
 #include "stdio.h"
 
-extern USBD_HandleTypeDef hUsbDeviceHS;
+//extern USBD_HandleTypeDef hUsbDeviceHS;
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
 extern __IO uint32_t packet_sent;
 uint32_t Receive_length;
 
@@ -82,7 +84,8 @@ uint32_t USB_Data_Get(uint8_t **data)
 static inline void USB_DataRx_Sched_Internal(void)
 {
   if (size < CIRC_BUF_SIZE)
-	  USBD_CtlReceiveStatus(&hUsbDeviceHS);
+//	  USBD_CtlReceiveStatus(&hUsbDeviceHS);
+	  USBD_CtlReceiveStatus(&hUsbDeviceFS);
 }
 
 void USB_DataRx_Sched(void)
@@ -92,21 +95,16 @@ void USB_DataRx_Sched(void)
   __enable_irq();
 }
 
-// CDC接收数据回调函数
-/*void EP3_OUT_Callback(void)*/
 void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len)
 {
-	Receive_length = USBD_GetRxCount(&hUsbDeviceHS, CDC_OUT_EP);
+//	Receive_length = USBD_GetRxCount(&hUsbDeviceHS, CDC_OUT_EP);
+	Receive_length = USBD_GetRxCount(&hUsbDeviceFS, CDC_OUT_EP);
     if (size < CIRC_BUF_SIZE)
     {
-        // 循环缓冲区索引移动
         tail = (tail + 1) % CIRC_BUF_SIZE;
-        // 将接收到的数据复制到循环缓冲区
-        // 将数据从 Buf 复制到 circ_buf[tail].pbuf
         memcpy(circ_buf[tail].pbuf, Buf, Receive_length);
         circ_buf[tail].len = Receive_length;
         size++;
         USB_DataRx_Sched_Internal();
     }
 }
-

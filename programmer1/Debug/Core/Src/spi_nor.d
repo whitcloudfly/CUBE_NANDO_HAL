@@ -1,4 +1,6 @@
 Core/Src/spi_nor.o: ../Core/Src/spi_nor.c ../Core/Inc/spi_nor.h \
+ ../Core/Inc/flash_hal.h ../Core/Inc/chip.h ../Core/Inc/chip_info.h \
+ ../Core/Inc/log.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -32,9 +34,12 @@ Core/Src/spi_nor.o: ../Core/Src/spi_nor.c ../Core/Inc/spi_nor.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
- ../Core/Inc/spi.h ../Core/Inc/main.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 ../Core/Inc/spi_nor.h:
+../Core/Inc/flash_hal.h:
+../Core/Inc/chip.h:
+../Core/Inc/chip_info.h:
+../Core/Inc/log.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -69,5 +74,3 @@ Core/Src/spi_nor.o: ../Core/Src/spi_nor.c ../Core/Inc/spi_nor.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
-../Core/Inc/spi.h:
-../Core/Inc/main.h:

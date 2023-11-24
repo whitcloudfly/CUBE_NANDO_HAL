@@ -1,40 +1,21 @@
-00:06:18 **** Incremental Build of configuration Debug for project F103Programmer ****
+18:29:22 **** Build of configuration Debug for project programmer0 ****
 make -j8 all 
-arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
-../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_Receive_FS':
-../USB_DEVICE/App/usbd_cdc_if.c:262:20: warning: passing argument 1 of 'EP3_OUT_Callback' from incompatible pointer type [-Wincompatible-pointer-types]
-  262 |   EP3_OUT_Callback(Buf, *Len);
-      |                    ^~~
-      |                    |
-      |                    uint8_t * {aka unsigned char *}
-In file included from ../USB_DEVICE/App/usbd_cdc_if.c:25:
-../Core/Inc/cdc_endp.h:19:33: note: expected 'uint8_t **' {aka 'unsigned char **'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   19 | void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len);
-      |                       ~~~~~~~~~~^~~
-../USB_DEVICE/App/usbd_cdc_if.c:262:25: warning: passing argument 2 of 'EP3_OUT_Callback' makes pointer from integer without a cast [-Wint-conversion]
-  262 |   EP3_OUT_Callback(Buf, *Len);
-      |                         ^~~~
-      |                         |
-      |                         uint32_t {aka long unsigned int}
-In file included from ../USB_DEVICE/App/usbd_cdc_if.c:25:
-../Core/Inc/cdc_endp.h:19:48: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
-   19 | void EP3_OUT_Callback(uint8_t **Buf, uint32_t *Len);
-      |                                      ~~~~~~~~~~^~~
-arm-none-eabi-gcc -o "F103Programmer.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\CUBE_NANDO_HAL\F103Programmer\STM32F103VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F103Programmer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: F103Programmer.elf
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "programmer0.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\programmer0\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="programmer0.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: programmer0.elf
  
-arm-none-eabi-size   F103Programmer.elf 
-arm-none-eabi-objdump -h -S  F103Programmer.elf  > "F103Programmer.list"
+arm-none-eabi-size  programmer0.elf 
+arm-none-eabi-objdump -h -S programmer0.elf  > "programmer0.list"
    text	   data	    bss	    dec	    hex	filename
-  70268	    792	  28264	  99324	  183fc	F103Programmer.elf
+  85860	   2360	  40520	 128740	  1f6e4	programmer0.elf
 Finished building: default.size.stdout
  
-Finished building: F103Programmer.list
+Finished building: programmer0.list
  
-00:06:21 **** Incremental Build of configuration Debug for project F103Programmer ****
+18:29:33 **** Incremental Build of configuration Debug for project programmer0 ****
 make -j8 all 
-arm-none-eabi-size   F103Programmer.elf 
+arm-none-eabi-size  programmer0.elf 
    text	   data	    bss	    dec	    hex	filename
-  70268	    792	  28264	  99324	  183fc	F103Programmer.elf
+  85860	   2360	  40520	 128740	  1f6e4	programmer0.elf
 Finished building: default.size.stdout
  

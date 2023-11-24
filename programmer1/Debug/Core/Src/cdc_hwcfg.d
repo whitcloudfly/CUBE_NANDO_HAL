@@ -44,7 +44,7 @@ Core/Src/cdc_hwcfg.o: ../Core/Src/cdc_hwcfg.c ../Core/Inc/stm32f4xx_it.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  ../USB_DEVICE/App/usb_device.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- ../Core/Inc/usart.h ../Core/Inc/main.h
+ ../Core/Inc/log.h
 ../Core/Inc/stm32f4xx_it.h:
 ../Core/Inc/cdc_endp.h:
 ../Core/Inc/cdc_hwcfg.h:
@@ -93,5 +93,4 @@ Core/Src/cdc_hwcfg.o: ../Core/Src/cdc_hwcfg.c ../Core/Inc/stm32f4xx_it.h \
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 ../USB_DEVICE/App/usb_device.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-../Core/Inc/usart.h:
-../Core/Inc/main.h:
+../Core/Inc/log.h:

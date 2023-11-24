@@ -1,0 +1,273 @@
+2023-11-19 00:14:15,561 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2023-11-19 00:14:15,758 [INFO] MainUpdater:2868 - connection check result : 10
+2023-11-19 00:14:15,765 [INFO] MainUpdater:2868 - connection check result : 10
+2023-11-19 00:14:15,932 [INFO] MicroXplorer:468 - Change Database Path : 
+2023-11-19 00:14:15,932 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.92
+2023-11-19 00:14:15,937 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2023-11-19 00:14:15,937 [INFO] ThirdParty:873 - entering critical section [close project]
+2023-11-19 00:14:15,952 [INFO] ThirdParty:883 - exiting critical section [close project]
+2023-11-19 00:14:15,953 [INFO] PinOutPanel:1499 - setPackage(No Configuration,No Configuration)
+2023-11-19 00:14:15,962 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 356948088 Bytes (678428672)
+2023-11-19 00:14:15,963 [INFO] MicroXplorer:468 - Change Database Path : 
+2023-11-19 00:14:15,963 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.92
+2023-11-19 00:14:15,963 [INFO] OpenFileManager:308 - Change cursor
+2023-11-19 00:14:16,024 [INFO] Mcu:1946 - Initializing MCU STM32F103V(C-D-E)Tx STM32F103VCTx STM32F103VCT6
+2023-11-19 00:14:17,256 [INFO] Context:659 - Trying to add GPIOservice into a context  which must be forbidden
+2023-11-19 00:14:17,610 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2023-11-19 00:14:17,610 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2023-11-19 00:14:17,610 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2023-11-19 00:14:17,610 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2023-11-19 00:14:17,611 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2023-11-19 00:14:17,629 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,630 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,631 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2023-11-19 00:14:17,732 [INFO] ThirdPartyModel:298 - Start build external matchings
+2023-11-19 00:14:18,034 [INFO] ThirdPartyModel:316 - End build external matchings
+2023-11-19 00:14:18,043 [INFO] ImportTextPane:194 - (OptionalMessage_ERROR) IP (RCC) : Parameter (ADCFreqValue) has invalid value (36000000)
+2023-11-19 00:14:18,044 [INFO] ImportTextPane:194 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2023-11-19 00:14:18,044 [INFO] ImportTextPane:194 - (OptionalMessage_ERROR) IP (RCC) : Parameter (MCOFreq_Value) has invalid value (72000000)
+2023-11-19 00:14:18,344 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 499606040 Bytes (678428672)
+2023-11-19 00:14:18,476 [INFO] ApiDb:581 - Connected to CubeFinder SQLite database (C:\Users\wjunh\.stmcufinder\plugins\mcufinder\mcu\cube-finder-db.db)
+2023-11-19 00:14:18,552 [INFO] ApiDb:668 - CubeFinder database Data Model version=2.1
+2023-11-19 00:14:18,552 [INFO] ApiDb:669 - CubeFinder database Configuration version=3.0.37
+2023-11-19 00:14:18,554 [INFO] ApiDb:670 - CubeFinder database generation date=2023-10-13 (1697197505)
+2023-11-19 00:14:18,554 [INFO] ApiDb:671 - CubeFinder database FW Pack versions=[FP-ATR-ASTRA1_V2.0.0, FP-SNS-FLIGHT1_V5.0.1, FP-SNS-FLIGHT1_V5.0.2, FP-SNS-MOTENV1_V4.3.1, FP-SNS-MOTENV1_V4.3.2, FP-SNS-SMARTAG2_V1.2.0, I-CUBE-ITTIADB_V8.6.3-1, STM32Cube_FW_C0_V1.1.0, STM32Cube_FW_F4_V1.27.1, STM32Cube_FW_F7_V1.17.0, STM32Cube_FW_G0_V1.6.1, STM32Cube_FW_G4_V1.5.1, STM32Cube_FW_H5_V0.5.1, STM32Cube_FW_H5_V1.1.1, STM32Cube_FW_H7_V1.11.0, STM32Cube_FW_L0_V1.12.2, STM32Cube_FW_L5_V1.5.0, STM32Cube_FW_U5_V1.3.0, STM32Cube_FW_U5_V1.3.0RC4, STM32Cube_FW_WBA_V1.0.0RC1, STM32Cube_FW_WBA_V1.1.0RC1, STM32Cube_FW_WBA_V1.1.1, STM32Cube_FW_WB_V1.15.0RC1, STM32Cube_FW_WB_V1.16.0, STM32Cube_FW_WB_V1.16.0RC2, STM32Cube_FW_WB_V1.17.3, STM32Cube_FW_WL_V1.3.0, X-CUBE-ALGOBUILD_V1.3.0, X-CUBE-ALS_V1.0.1, X-CUBE-AZRTOS-F4_V1.1.0, X-CUBE-AZRTOS-F7_V1.1.0, X-CUBE-AZRTOS-G0_V1.1.0, X-CUBE-AZRTOS-G4_V2.0.0, X-CUBE-AZRTOS-H7_V3.1.0, X-CUBE-AZRTOS-L4_V1.0.0, X-CUBE-AZRTOS-L4_V2.0.0, X-CUBE-AZRTOS-L5_V1.1.0, X-CUBE-AZRTOS-WB_V2.0.0, X-CUBE-AZRTOS-WL_V2.0.0, X-CUBE-BLE1_V7.0.0, X-CUBE-BLE2_V3.3.0, X-CUBE-BLEMGR_V2.0.0, X-CUBE-EEPRMA1_V4.1.0, X-CUBE-FREERTOS_V1.1.0, X-CUBE-GNSS1_V6.0.0, X-CUBE-MEMS1_V10.0.0, X-CUBE-MEMS1_V9.1.0, X-CUBE-MEMS1_V9.4.0, X-CUBE-MEMS1_V9.6.0, X-CUBE-NFC4_V3.0.0, X-CUBE-NFC7_V1.0.1, X-CUBE-SFXS2LP1_V4.0.0, X-CUBE-SUBG2_V5.0.0, X-CUBE-TOF1_V3.3.1]
+2023-11-19 00:14:20,797 [INFO] ApiDb:240 - Found 323 in-development CPN: [B-G473E-ZEST1S, B-WB1M-WPAN1, B-WL5M-SUBG1, NUCLEO-C031C6, NUCLEO-H503RB, NUCLEO-H563ZI, NUCLEO-U545RE-Q, NUCLEO-U5A5ZJ-Q, NUCLEO-WBA52CG, STEVAL-PROTEUS1, STEVAL-SMARTAG2, STEVAL-STWINBX1, STM320518-EVAL, STM32C0116-DK, STM32C011D6Y3TR, STM32C011D6Y6TR, STM32C011F4P3, STM32C011F4P6, STM32C011F4U3, STM32C011F4U6TR, STM32C011F6P3, STM32C011F6P6, STM32C011F6U3, STM32C011F6U6TR, STM32C011J4M3, STM32C011J4M6, STM32C011J6M3, STM32C011J6M6, STM32C0316-DK, STM32C031C4T3, STM32C031C4T6, STM32C031C4U3, STM32C031C4U6, STM32C031C6T3, STM32C031C6T6, STM32C031C6U3, STM32C031C6U6, STM32C031F4P3, STM32C031F4P6, STM32C031F6P3, STM32C031F6P6, STM32C031G4U3, STM32C031G4U6, STM32C031G6U3, STM32C031G6U6, STM32C031K4T3, STM32C031K4T6, STM32C031K4U3, STM32C031K4U6, STM32C031K6T3, STM32C031K6T6, STM32C031K6U3, STM32C031K6U6, STM32G071K8TXN, STM32G071K8UXN, STM32G081GBU6N, STM32G081KBT6N, STM32G081KBUXN, STM32G0B1CCT6N, STM32G0B1KCT6, STM32G0B1NEY6TR, STM32G0B1RCT6N, STM32G0C1CCT6, STM32G0C1CCT6N, STM32G0C1CCU6N, STM32G0C1CET6N, STM32G0C1CEU6N, STM32G0C1KCT6, STM32G0C1NEY6TR, STM32G0C1RCI6N, STM32G0C1RCT6N, STM32G0C1REI6N, STM32G0C1RET6N, STM32G0C1VCI6, STM32G0C1VEI6, STM32G471CCT6, STM32G471CCU6, STM32G471CET3, STM32G471CET6, STM32G471CEU3, STM32G471CEU6, STM32G471MCT6, STM32G471MET3, STM32G471MET6, STM32G471MEY6TR, STM32G471QCT6, STM32G471QET3, STM32G471RCT6, STM32G471RET3, STM32G471RET6, STM32G471VCH6, STM32G471VCI6, STM32G471VCT6, STM32G471VEH3, STM32G471VEH6, STM32G471VEI3, STM32G471VEI6, STM32G471VET3, STM32G471VET6, STM32G474CCT6, STM32H503CBT6, STM32H503CBU6, STM32H503EBY6TR, STM32H503KBU6, STM32H503RBT6, STM32H562AGI6, STM32H562AII6, STM32H562IGK6, STM32H562IGT6, STM32H562IIK6, STM32H562IIT6, STM32H562RGT6, STM32H562RGV6, STM32H562RIT6, STM32H562RIV6, STM32H562VGT6, STM32H562VIT6, STM32H562ZGT6, STM32H562ZIT6, STM32H563AGI6, STM32H563AII3Q, STM32H563AII6, STM32H563IGK6, STM32H563IGT6, STM32H563IIK3Q, STM32H563IIK6, STM32H563IIT3Q, STM32H563IIT6, STM32H563MIY3QTR, STM32H563RGT6, STM32H563RGV6, STM32H563RIT6, STM32H563RIV6, STM32H563VGT6, STM32H563VIT3Q, STM32H563VIT6, STM32H563ZGT6, STM32H563ZIT3Q, STM32H563ZIT6, STM32H573AII3Q, STM32H573AII6, STM32H573I-DK, STM32H573IIK3Q, STM32H573IIK6, STM32H573IIT3Q, STM32H573IIT6, STM32H573MIY3QTR, STM32H573RIT6, STM32H573RIV6, STM32H573VIT3Q, STM32H573VIT6, STM32H573ZIT3Q, STM32H573ZIT6, STM32L4R5QGI6STR, STM32MP131AAE3, STM32MP131AAF3, STM32MP131AAG3, STM32MP131CAE3, STM32MP131CAF3, STM32MP131CAG3, STM32MP131DAE7, STM32MP131DAF7, STM32MP131DAG7, STM32MP131FAE7, STM32MP131FAF7, STM32MP131FAG7, STM32MP133AAE3, STM32MP133AAF3, STM32MP133AAG3, STM32MP133CAE3, STM32MP133CAF3, STM32MP133CAG3, STM32MP133DAE7, STM32MP133DAF7, STM32MP133DAG7, STM32MP133FAE7, STM32MP133FAF7, STM32MP133FAG7, STM32MP135AAE3, STM32MP135AAF3, STM32MP135AAG3, STM32MP135CAE3, STM32MP135CAF3, STM32MP135CAG3, STM32MP135DAE7, STM32MP135DAF7, STM32MP135DAG7, STM32MP135F-DK, STM32MP135FAE7, STM32MP135FAF7, STM32MP135FAF7T, STM32MP135FAF7U, STM32MP135FAG7, STM32U535CBT6, STM32U535CBT6Q, STM32U535CBU6, STM32U535CBU6Q, STM32U535CCT6, STM32U535CCT6Q, STM32U535CCU6, STM32U535CCU6Q, STM32U535CET6, STM32U535CET6Q, STM32U535CEU6, STM32U535CEU6Q, STM32U535JEY6QTR, STM32U535NCY6QTR, STM32U535NEY6QTR, STM32U535RBI6, STM32U535RBI6Q, STM32U535RBT6, STM32U535RBT6Q, STM32U535RCI6, STM32U535RCI6Q, STM32U535RCT6, STM32U535RCT6Q, STM32U535REI6, STM32U535REI6Q, STM32U535RET6, STM32U535RET6Q, STM32U535VCI6, STM32U535VCI6Q, STM32U535VCT6, STM32U535VCT6Q, STM32U535VEI6, STM32U535VEI6Q, STM32U535VET6, STM32U535VET6Q, STM32U545CET6, STM32U545CET6Q, STM32U545CEU6, STM32U545CEU6Q, STM32U545JEY6QTR, STM32U545NEY6QTR, STM32U545REI6, STM32U545REI6Q, STM32U545RET6, STM32U545RET6Q, STM32U545VEI6, STM32U545VEI6Q, STM32U545VET6, STM32U545VET6Q, STM32U595AIH6, STM32U595AIH6Q, STM32U595AJH6, STM32U595AJH6Q, STM32U595QII6, STM32U595QII6Q, STM32U595QJI6, STM32U595QJI6Q, STM32U595RIT6, STM32U595RIT6Q, STM32U595RJT6, STM32U595RJT6Q, STM32U595VIT6, STM32U595VIT6Q, STM32U595VJT6, STM32U595VJT6Q, STM32U595ZIT6, STM32U595ZIT6Q, STM32U595ZIY6QTR, STM32U595ZJT6, STM32U595ZJT6Q, STM32U595ZJY6QTR, STM32U599BJY6QTR, STM32U599NIH6Q, STM32U599NJH6Q, STM32U599VIT6Q, STM32U599VJT6, STM32U599VJT6Q, STM32U599ZIT6Q, STM32U599ZIY6QTR, STM32U599ZJT6Q, STM32U599ZJY6QTR, STM32U5A5AJH6, STM32U5A5AJH6Q, STM32U5A5QJI6, STM32U5A5QJI6Q, STM32U5A5RJT6, STM32U5A5RJT6Q, STM32U5A5VJT6, STM32U5A5VJT6Q, STM32U5A5ZJT6, STM32U5A5ZJT6Q, STM32U5A5ZJY6QTR, STM32U5A9BJY6QTR, STM32U5A9J-DK, STM32U5A9NJH6Q, STM32U5A9VJT6Q, STM32U5A9ZJT6Q, STM32U5A9ZJY6QTR, STM32U5F7VIT6, STM32U5F7VIT6Q, STM32U5F7VJT6, STM32U5F7VJT6Q, STM32U5F9BJY6QTR, STM32U5F9NJH6Q, STM32U5F9VIT6Q, STM32U5F9VJT6Q, STM32U5F9ZIJ6QTR, STM32U5F9ZIT6Q, STM32U5F9ZJJ6QTR, STM32U5F9ZJT6Q, STM32U5G7VJT6, STM32U5G7VJT6Q, STM32U5G9BJY6QTR, STM32U5G9J-DK1, STM32U5G9J-DK2, STM32U5G9NJH6Q, STM32U5G9VJT6Q, STM32U5G9ZJJ6QTR, STM32U5G9ZJT6Q, STM32WB1MMCH6, STM32WBA52CEU6, STM32WBA52CEU6T, STM32WBA52CGU6, STM32WBA52CGU6T, STM32WBA52KEU6, STM32WBA52KEU6T, STM32WBA52KGU6, STM32WBA52KGU6T, STM32WL5MOCH6, STM32WL5MOCH6TR]
+2023-11-19 00:14:20,801 [INFO] DbMcus:217 - Found 3848 MCUs, 3848 are supported
+2023-11-19 00:14:20,806 [INFO] ApiDb:423 - Load user favorites file C:\Users\wjunh/.stm32cubeide/favorites.mcus.txt: 1 item(s)
+2023-11-19 00:14:20,806 [INFO] ApiDb:427 - User favorites MCUs=[STM32F407VET6]
+2023-11-19 00:14:20,806 [INFO] DbMcus:223 - Set 1 / 1 favorites MCUs
+2023-11-19 00:14:21,197 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2023-11-19 00:14:21,198 [INFO] ThirdParty:835 - entering critical section [change project]
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.1.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.6.3
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.2.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.8.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 4.3.2
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2023-11-19 00:14:21,198 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 2.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.3.1
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.1.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.5.1
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.3.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2023-11-19 00:14:21,199 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 10.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.1.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.22.1
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.1.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.1.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2023-11-19 00:14:21,200 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2023-11-19 00:14:21,201 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2023-11-19 00:14:21,201 [INFO] ThirdParty:841 - exiting critical section [change project]
+2023-11-19 00:14:21,537 [INFO] PinOutPanel:1499 - setPackage(No Configuration,No Configuration)
+2023-11-19 00:14:21,538 [INFO] PinOutPanel:1499 - setPackage(STM32F103VCTx,LQFP100)
+2023-11-19 00:14:22,093 [INFO] UtilMem:75 - Before build in PCC Used Memory: 476288512 Bytes (678428672)
+2023-11-19 00:14:22,926 [INFO] UtilMem:75 - After build in PCC Used Memory: 543395328 Bytes (678428672)
+2023-11-19 00:14:23,067 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-11-19 00:14:23,092 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,092 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,092 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,093 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,094 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,094 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,094 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,094 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,095 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,095 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,095 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,096 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,097 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,098 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,098 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,098 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,098 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,098 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,099 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,099 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,099 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,099 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2023-11-19 00:14:23,433 [INFO] CADModel:165 - CPN selected for project levelSTM32F103VCT6
+2023-11-19 00:14:23,434 [INFO] CADModel:114 - Register for checkConnection events
+2023-11-19 00:14:23,485 [INFO] OpenFileManager:328 - Restore cursor
+2023-11-19 00:14:40,226 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,524x175,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-19 00:14:49,154 [INFO] Gpio:273 - dependency for GPIO [FSMC, RCC, SPI1, SYS, USART1, USB]
+2023-11-19 00:16:05,821 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-19 00:16:29,576 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-19 00:16:43,304 [WARN] IpParametersView:151 - Warning: This peripheral hasn't parameters
+2023-11-19 00:17:34,627 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 478199112 Bytes (678428672)
+2023-11-19 00:17:34,848 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 505844864 Bytes (678428672)
+2023-11-19 00:17:35,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RTC
+2023-11-19 00:17:35,253 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FSMC
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: WWDG
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB_DEVICE
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USB
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-11-19 00:17:35,254 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-19 00:17:35,255 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-19 00:17:35,256 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-11-19 00:17:35,644 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\license.tmp_save
+2023-11-19 00:17:36,223 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\license.tmp
+2023-11-19 00:17:36,366 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\gpio.c_save
+2023-11-19 00:17:36,517 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\gpio.c
+2023-11-19 00:17:36,536 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\gpio.h_save
+2023-11-19 00:17:36,630 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\gpio.h
+2023-11-19 00:17:36,730 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_vars.tmp_save
+2023-11-19 00:17:36,830 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_vars.tmp
+2023-11-19 00:17:36,839 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_inc.tmp_save
+2023-11-19 00:17:36,903 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_inc.tmp
+2023-11-19 00:17:36,918 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_HalInit.tmp_save
+2023-11-19 00:17:37,017 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_HalInit.tmp
+2023-11-19 00:17:37,028 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_Msp.tmp_save
+2023-11-19 00:17:37,131 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\usb_Msp.tmp
+2023-11-19 00:17:37,419 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-19 00:17:37,446 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\fsmc.c_save
+2023-11-19 00:17:37,533 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\fsmc.c
+2023-11-19 00:17:37,551 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\fsmc.h_save
+2023-11-19 00:17:37,631 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\fsmc.h
+2023-11-19 00:17:37,654 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\rtc.c_save
+2023-11-19 00:17:37,761 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\rtc.c
+2023-11-19 00:17:37,776 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\rtc.h_save
+2023-11-19 00:17:37,852 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\rtc.h
+2023-11-19 00:17:37,865 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\spi.c_save
+2023-11-19 00:17:37,968 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\spi.c
+2023-11-19 00:17:37,973 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\spi.h_save
+2023-11-19 00:17:38,042 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\spi.h
+2023-11-19 00:17:38,055 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\usart.c_save
+2023-11-19 00:17:38,141 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\usart.c
+2023-11-19 00:17:38,145 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\usart.h_save
+2023-11-19 00:17:38,228 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\usart.h
+2023-11-19 00:17:38,234 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2023-11-19 00:17:38,255 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usb_device.c_save
+2023-11-19 00:17:38,380 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usb_device.c
+2023-11-19 00:17:38,399 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usb_device.h_save
+2023-11-19 00:17:38,458 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usb_device.h
+2023-11-19 00:17:38,476 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\Target\usbd_conf.h_save
+2023-11-19 00:17:38,543 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\Target\usbd_conf.h
+2023-11-19 00:17:38,560 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\Target\usbd_conf.c_save
+2023-11-19 00:17:38,634 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\Target\usbd_conf.c
+2023-11-19 00:17:38,651 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_desc.h_save
+2023-11-19 00:17:38,722 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_desc.h
+2023-11-19 00:17:38,741 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_desc.c_save
+2023-11-19 00:17:38,813 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_desc.c
+2023-11-19 00:17:38,830 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_cdc_if.h_save
+2023-11-19 00:17:38,886 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_cdc_if.h
+2023-11-19 00:17:38,903 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_cdc_if.c_save
+2023-11-19 00:17:38,980 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\USB_DEVICE\App\usbd_cdc_if.c
+2023-11-19 00:17:39,000 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\wwdg.c_save
+2023-11-19 00:17:39,087 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\wwdg.c
+2023-11-19 00:17:39,091 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\wwdg.h_save
+2023-11-19 00:17:39,158 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\wwdg.h
+2023-11-19 00:17:39,182 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\stm32f1xx_it.c_save
+2023-11-19 00:17:39,301 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\stm32f1xx_it.c
+2023-11-19 00:17:39,319 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\stm32f1xx_it.h_save
+2023-11-19 00:17:39,392 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\stm32f1xx_it.h
+2023-11-19 00:17:39,416 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\stm32f1xx_hal_msp.c_save
+2023-11-19 00:17:39,492 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\stm32f1xx_hal_msp.c
+2023-11-19 00:17:39,500 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\system.tmp_save
+2023-11-19 00:17:39,552 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\MXTmpFiles\system.tmp
+2023-11-19 00:17:39,572 [INFO] CodeEngine:311 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\stm32f1xx_hal_conf.h_save
+2023-11-19 00:17:39,649 [INFO] CodeEngine:335 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\stm32f1xx_hal_conf.h
+2023-11-19 00:17:39,700 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\main.h_save
+2023-11-19 00:17:39,782 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Inc\main.h
+2023-11-19 00:17:39,800 [INFO] CodeEngine:255 - oldGeneratedFile, D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\main.c_save
+2023-11-19 00:17:39,913 [INFO] CodeEngine:279 - Generated code: D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1\Core\Src\main.c
+2023-11-19 00:17:40,532 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 160mS.
+2023-11-19 00:17:40,539 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-19 00:17:40,837 [INFO] ConfigFileManager:1457 - The Die is : DIE414
+2023-11-19 00:17:40,851 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-11-19 00:17:40,866 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS

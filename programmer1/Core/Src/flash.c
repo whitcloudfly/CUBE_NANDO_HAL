@@ -19,12 +19,11 @@ int flash_page_erase(uint32_t page_addr)
 
     // 配置擦除初始化结构体
     erase_init.TypeErase = FLASH_TYPEERASE_SECTORS;
-    erase_init.Sector = page_addr; // 选择要擦除的扇区，可以根据您的需求更改
+    erase_init.Sector = FLASH_SECTOR_0; // 选择要擦除的扇区，可以根据您的需求更改
     erase_init.NbSectors = 1; // 要擦除的扇区数量
     erase_init.VoltageRange = FLASH_VOLTAGE_RANGE_3; // 选择电压范围，可以根据您的需求更改
-    uint32_t PageError = 0;
 
-    status = HAL_FLASHEx_Erase(&erase_init, &PageError); // 擦除指定页
+    status = HAL_FLASHEx_Erase(&erase_init, NULL); // 擦除指定页
 
     // 锁定Flash存储器
     HAL_FLASH_Lock();

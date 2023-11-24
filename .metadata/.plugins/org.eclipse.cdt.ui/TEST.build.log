@@ -1,25 +1,291 @@
-23:23:34 **** Incremental Build of configuration Debug for project TEST ****
+00:15:44 **** Incremental Build of configuration Debug for project TEST ****
 make -j8 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_cdc_if.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_cdc_if.d" -MT"USB_DEVICE/App/usbd_cdc_if.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "USB_DEVICE/App/usbd_cdc_if.o"
 arm-none-eabi-gcc "../Core/Src/fsmc_nand.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsmc_nand.d" -MT"Core/Src/fsmc_nand.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsmc_nand.o"
-arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
-arm-none-eabi-gcc "../Core/Src/jtag.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/jtag.d" -MT"Core/Src/jtag.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/jtag.o"
-arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/nand_bad_block.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/nand_bad_block.d" -MT"Core/Src/nand_bad_block.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/nand_bad_block.o"
 arm-none-eabi-gcc "../Core/Src/nand_programmer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/nand_programmer.d" -MT"Core/Src/nand_programmer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/nand_programmer.o"
-arm-none-eabi-gcc "../Core/Src/rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rtc.d" -MT"Core/Src/rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/rtc.o"
+arm-none-eabi-gcc "../Core/Src/spi_nand_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/spi_nand_flash.d" -MT"Core/Src/spi_nand_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi_nand_flash.o"
+arm-none-eabi-gcc "../Core/Src/spi_nor_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/spi_nor_flash.d" -MT"Core/Src/spi_nor_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/spi_nor_flash.o"
 ../Core/Src/fsmc_nand.c:26:10: fatal error: fsmc.h: No such file or directory
    26 | #include "fsmc.h"
       |          ^~~~~~~~
 compilation terminated.
 make: *** [Core/Src/subdir.mk:79: Core/Src/fsmc_nand.o] Error 1
 make: *** Waiting for unfinished jobs....
+../Core/Src/spi_nand_flash.c:7:10: fatal error: spi.h: No such file or directory
+    7 | #include "spi.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:79: Core/Src/spi_nand_flash.o] Error 1
 ../Core/Src/nand_programmer.c:46:10: fatal error: fsmc.h: No such file or directory
    46 | #include "fsmc.h"
       |          ^~~~~~~~
 compilation terminated.
 make: *** [Core/Src/subdir.mk:79: Core/Src/nand_programmer.o] Error 1
+../Core/Src/spi_nor_flash.c:53:8: error: unknown type name 'SPI_HandleTypeDef'
+   53 | extern SPI_HandleTypeDef hspi1;
+      |        ^~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_gpio_init':
+../USB_DEVICE/App/usbd_cdc_if.c: In function 'CDC_Receive_HS':
+../Core/Src/spi_nor_flash.c:74:11: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+   74 |           SPI_HandleTypeDef* spiHandle;
+      |           ^~~~~~~~~~~~~~~~~
+      |           PCD_HandleTypeDef
+../USB_DEVICE/App/usbd_cdc_if.c:460:3: warning: implicit declaration of function 'CDC_Receive_handler'; did you mean 'CDC_Receive_HS'? [-Wimplicit-function-declaration]
+  460 |   CDC_Receive_handler(Buf, Len);
+      |   ^~~~~~~~~~~~~~~~~~~
+      |   CDC_Receive_HS
+../Core/Src/spi_nor_flash.c:90:35: error: 'SPI1_SCK_Pin' undeclared (first use in this function)
+   90 |             GPIO_InitStruct.Pin = SPI1_SCK_Pin;
+      |                                   ^~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:90:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/spi_nor_flash.c:95:27: error: 'SPI1_SCK_GPIO_Port' undeclared (first use in this function)
+   95 |             HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:98:35: error: 'SPI1_MOSI_Pin' undeclared (first use in this function)
+   98 |             GPIO_InitStruct.Pin = SPI1_MOSI_Pin;
+      |                                   ^~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:103:27: error: 'SPI1_MOSI_GPIO_Port' undeclared (first use in this function)
+  103 |             HAL_GPIO_Init(SPI1_MOSI_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:106:35: error: 'SPI1_MISO_Pin' undeclared (first use in this function)
+  106 |             GPIO_InitStruct.Pin = SPI1_MISO_Pin;
+      |                                   ^~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:109:27: error: 'SPI1_MISO_GPIO_Port' undeclared (first use in this function)
+  109 |             HAL_GPIO_Init(SPI1_MISO_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:112:35: error: 'SPI1_CS_Pin' undeclared (first use in this function)
+  112 |             GPIO_InitStruct.Pin = SPI1_CS_Pin;
+      |                                   ^~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:116:27: error: 'SPI1_CS_GPIO_Port' undeclared (first use in this function); did you mean 'LED1_GPIO_Port'?
+  116 |             HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           LED1_GPIO_Port
+../Core/Src/spi_nor_flash.c:74:30: warning: unused variable 'spiHandle' [-Wunused-variable]
+   74 |           SPI_HandleTypeDef* spiHandle;
+      |                              ^~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_gpio_uninit':
+../Core/Src/spi_nor_flash.c:124:9: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+  124 |         SPI_HandleTypeDef* spiHandle;
+      |         ^~~~~~~~~~~~~~~~~
+      |         PCD_HandleTypeDef
+../Core/Src/spi_nor_flash.c:132:35: error: 'SPI1_SCK_Pin' undeclared (first use in this function)
+  132 |             GPIO_InitStruct.Pin = SPI1_SCK_Pin;
+      |                                   ^~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:137:27: error: 'SPI1_SCK_GPIO_Port' undeclared (first use in this function)
+  137 |             HAL_GPIO_Init(SPI1_SCK_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:140:35: error: 'SPI1_MOSI_Pin' undeclared (first use in this function)
+  140 |             GPIO_InitStruct.Pin = SPI1_MOSI_Pin;
+      |                                   ^~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:145:27: error: 'SPI1_MOSI_GPIO_Port' undeclared (first use in this function)
+  145 |             HAL_GPIO_Init(SPI1_MOSI_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:148:35: error: 'SPI1_MISO_Pin' undeclared (first use in this function)
+  148 |             GPIO_InitStruct.Pin = SPI1_MISO_Pin;
+      |                                   ^~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:151:27: error: 'SPI1_MISO_GPIO_Port' undeclared (first use in this function)
+  151 |             HAL_GPIO_Init(SPI1_MISO_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:154:35: error: 'SPI1_CS_Pin' undeclared (first use in this function)
+  154 |             GPIO_InitStruct.Pin = SPI1_CS_Pin;
+      |                                   ^~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:158:27: error: 'SPI1_CS_GPIO_Port' undeclared (first use in this function); did you mean 'LED1_GPIO_Port'?
+  158 |             HAL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           LED1_GPIO_Port
+../Core/Src/spi_nor_flash.c:124:28: warning: unused variable 'spiHandle' [-Wunused-variable]
+  124 |         SPI_HandleTypeDef* spiHandle;
+      |                            ^~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_select_chip':
+../Core/Src/spi_nor_flash.c:164:27: error: 'SPI1_CS_GPIO_Port' undeclared (first use in this function); did you mean 'LED1_GPIO_Port'?
+  164 |         HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           LED1_GPIO_Port
+../Core/Src/spi_nor_flash.c:34:26: error: 'SPI1_CS_Pin' undeclared (first use in this function)
+   34 | #define SPI_FLASH_CS_PIN SPI1_CS_Pin
+      |                          ^~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:164:46: note: in expansion of macro 'SPI_FLASH_CS_PIN'
+  164 |         HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_RESET);
+      |                                              ^~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_deselect_chip':
+../Core/Src/spi_nor_flash.c:170:27: error: 'SPI1_CS_GPIO_Port' undeclared (first use in this function); did you mean 'LED1_GPIO_Port'?
+  170 |         HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           LED1_GPIO_Port
+../Core/Src/spi_nor_flash.c:34:26: error: 'SPI1_CS_Pin' undeclared (first use in this function)
+   34 | #define SPI_FLASH_CS_PIN SPI1_CS_Pin
+      |                          ^~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:170:46: note: in expansion of macro 'SPI_FLASH_CS_PIN'
+  170 |         HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI_FLASH_CS_PIN, GPIO_PIN_SET);
+      |                                              ^~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_get_baud_rate_prescaler':
+../Core/Src/spi_nor_flash.c:179:16: error: 'SPI_BAUDRATEPRESCALER_2' undeclared (first use in this function)
+  179 |         return SPI_BAUDRATEPRESCALER_2;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:181:16: error: 'SPI_BAUDRATEPRESCALER_4' undeclared (first use in this function)
+  181 |         return SPI_BAUDRATEPRESCALER_4;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:183:16: error: 'SPI_BAUDRATEPRESCALER_8' undeclared (first use in this function)
+  183 |         return SPI_BAUDRATEPRESCALER_8;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:185:16: error: 'SPI_BAUDRATEPRESCALER_16' undeclared (first use in this function)
+  185 |         return SPI_BAUDRATEPRESCALER_16;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:187:16: error: 'SPI_BAUDRATEPRESCALER_32' undeclared (first use in this function)
+  187 |         return SPI_BAUDRATEPRESCALER_32;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:189:16: error: 'SPI_BAUDRATEPRESCALER_64' undeclared (first use in this function)
+  189 |         return SPI_BAUDRATEPRESCALER_64;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:191:16: error: 'SPI_BAUDRATEPRESCALER_128' undeclared (first use in this function)
+  191 |         return SPI_BAUDRATEPRESCALER_128;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:193:16: error: 'SPI_BAUDRATEPRESCALER_256' undeclared (first use in this function)
+  193 |         return SPI_BAUDRATEPRESCALER_256;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: At top level:
+../Core/Src/spi_nor_flash.c:204:15: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+  204 | void SPI_Init(SPI_HandleTypeDef* hspi, SPI_InitTypeDef* SPI_InitStruct)
+      |               ^~~~~~~~~~~~~~~~~
+      |               PCD_HandleTypeDef
+../Core/Src/spi_nor_flash.c:204:40: error: unknown type name 'SPI_InitTypeDef'; did you mean 'GPIO_InitTypeDef'?
+  204 | void SPI_Init(SPI_HandleTypeDef* hspi, SPI_InitTypeDef* SPI_InitStruct)
+      |                                        ^~~~~~~~~~~~~~~
+      |                                        GPIO_InitTypeDef
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_init':
+../Core/Src/spi_nor_flash.c:240:5: error: unknown type name 'SPI_InitTypeDef'; did you mean 'GPIO_InitTypeDef'?
+  240 |     SPI_InitTypeDef spi_init;
+      |     ^~~~~~~~~~~~~~~
+      |     GPIO_InitTypeDef
+../Core/Src/spi_nor_flash.c:252:10: error: request for member 'Instance' in something not a structure or union
+  252 |     hspi1.Instance = SPI1;
+      |          ^
+../Core/Src/spi_nor_flash.c:253:10: error: request for member 'Init' in something not a structure or union
+  253 |     hspi1.Init.Mode = SPI_MODE_MASTER;
+      |          ^
+../Core/Src/spi_nor_flash.c:253:23: error: 'SPI_MODE_MASTER' undeclared (first use in this function)
+  253 |     hspi1.Init.Mode = SPI_MODE_MASTER;
+      |                       ^~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:254:10: error: request for member 'Init' in something not a structure or union
+  254 |     hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+      |          ^
+../Core/Src/spi_nor_flash.c:254:28: error: 'SPI_DIRECTION_2LINES' undeclared (first use in this function)
+  254 |     hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+      |                            ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:255:10: error: request for member 'Init' in something not a structure or union
+  255 |     hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+      |          ^
+../Core/Src/spi_nor_flash.c:255:27: error: 'SPI_DATASIZE_8BIT' undeclared (first use in this function)
+  255 |     hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+      |                           ^~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:256:10: error: request for member 'Init' in something not a structure or union
+  256 |     hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
+      |          ^
+../Core/Src/spi_nor_flash.c:256:30: error: 'SPI_POLARITY_HIGH' undeclared (first use in this function)
+  256 |     hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
+      |                              ^~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:257:10: error: request for member 'Init' in something not a structure or union
+  257 |     hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
+      |          ^
+../Core/Src/spi_nor_flash.c:257:27: error: 'SPI_PHASE_2EDGE' undeclared (first use in this function)
+  257 |     hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
+      |                           ^~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:258:10: error: request for member 'Init' in something not a structure or union
+  258 |     hspi1.Init.NSS = SPI_NSS_SOFT;
+      |          ^
+../Core/Src/spi_nor_flash.c:258:22: error: 'SPI_NSS_SOFT' undeclared (first use in this function)
+  258 |     hspi1.Init.NSS = SPI_NSS_SOFT;
+      |                      ^~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:259:10: error: request for member 'Init' in something not a structure or union
+  259 |     hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+      |          ^
+../Core/Src/spi_nor_flash.c:259:36: error: 'SPI_BAUDRATEPRESCALER_2' undeclared (first use in this function)
+  259 |     hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:260:10: error: request for member 'Init' in something not a structure or union
+  260 |     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+      |          ^
+../Core/Src/spi_nor_flash.c:260:27: error: 'SPI_FIRSTBIT_MSB' undeclared (first use in this function)
+  260 |     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+      |                           ^~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:261:10: error: request for member 'Init' in something not a structure or union
+  261 |     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+      |          ^
+../Core/Src/spi_nor_flash.c:261:25: error: 'SPI_TIMODE_DISABLE' undeclared (first use in this function); did you mean 'SPI_TIMODE_DISABLED'?
+  261 |     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         SPI_TIMODE_DISABLED
+../Core/Src/spi_nor_flash.c:262:10: error: request for member 'Init' in something not a structure or union
+  262 |     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+      |          ^
+../Core/Src/spi_nor_flash.c:262:33: error: 'SPI_CRCCALCULATION_DISABLE' undeclared (first use in this function); did you mean 'SPI_CRCCALCULATION_DISABLED'?
+  262 |     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                 SPI_CRCCALCULATION_DISABLED
+../Core/Src/spi_nor_flash.c:263:10: error: request for member 'Init' in something not a structure or union
+  263 |     hspi1.Init.CRCPolynomial = 10;
+      |          ^
+../Core/Src/spi_nor_flash.c:264:5: warning: implicit declaration of function 'SPI_Init' [-Wimplicit-function-declaration]
+  264 |     SPI_Init(&hspi1, &spi_init);
+      |     ^~~~~~~~
+../Core/Src/spi_nor_flash.c:269:5: warning: implicit declaration of function '__HAL_SPI_ENABLE' [-Wimplicit-function-declaration]
+  269 |     __HAL_SPI_ENABLE(&hspi1);
+      |     ^~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_uninit':
+../Core/Src/spi_nor_flash.c:278:9: warning: implicit declaration of function 'HAL_SPI_MspDeInit'; did you mean 'HAL_PCD_MspDeInit'? [-Wimplicit-function-declaration]
+  278 |         HAL_SPI_MspDeInit(&hspi1);
+      |         ^~~~~~~~~~~~~~~~~
+      |         HAL_PCD_MspDeInit
+../Core/Src/spi_nor_flash.c:280:5: warning: implicit declaration of function '__HAL_SPI_DISABLE' [-Wimplicit-function-declaration]
+  280 |     __HAL_SPI_DISABLE(&hspi1);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c: At top level:
+../Core/Src/spi_nor_flash.c:283:36: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+  283 | HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                    ^~~~~~~~~~~~~~~~~
+      |                                    PCD_HandleTypeDef
+../Core/Src/spi_nor_flash.c:284:35: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+  284 | HAL_StatusTypeDef HAL_SPI_Receive(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   PCD_HandleTypeDef
+../Core/Src/spi_nor_flash.c:285:43: error: unknown type name 'SPI_HandleTypeDef'; did you mean 'PCD_HandleTypeDef'?
+  285 | HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData, uint8_t *pRxData, uint16_t Size,
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           PCD_HandleTypeDef
+../Core/Src/spi_nor_flash.c: In function 'SPI_Transmit':
+../Core/Src/spi_nor_flash.c:296:12: warning: implicit declaration of function 'HAL_SPI_Transmit'; did you mean 'SPI_Transmit'? [-Wimplicit-function-declaration]
+  296 |     return HAL_SPI_Transmit(&hspi1, send_buf, size, 100);
+      |            ^~~~~~~~~~~~~~~~
+      |            SPI_Transmit
+../Core/Src/spi_nor_flash.c: In function 'SPI_Receive':
+../Core/Src/spi_nor_flash.c:307:11: warning: implicit declaration of function 'HAL_SPI_Receive'; did you mean 'SPI_Receive'? [-Wimplicit-function-declaration]
+  307 |    return HAL_SPI_Receive(&hspi1, recv_buf, size, 100);
+      |           ^~~~~~~~~~~~~~~
+      |           SPI_Receive
+../Core/Src/spi_nor_flash.c: In function 'spi_flash_send_byte':
+../Core/Src/spi_nor_flash.c:318:12: warning: implicit declaration of function 'HAL_SPI_GetState'; did you mean 'HAL_PCD_GetState'? [-Wimplicit-function-declaration]
+  318 |     while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY);
+      |            ^~~~~~~~~~~~~~~~
+      |            HAL_PCD_GetState
+../Core/Src/spi_nor_flash.c:318:40: error: 'HAL_SPI_STATE_READY' undeclared (first use in this function); did you mean 'HAL_PCD_STATE_READY'?
+  318 |     while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY);
+      |                                        ^~~~~~~~~~~~~~~~~~~
+      |                                        HAL_PCD_STATE_READY
+At top level:
+../Core/Src/spi_nor_flash.c:305:26: warning: 'SPI_Receive' defined but not used [-Wunused-function]
+  305 | static HAL_StatusTypeDef SPI_Receive(uint8_t* recv_buf, uint16_t size)
+      |                          ^~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:294:26: warning: 'SPI_Transmit' defined but not used [-Wunused-function]
+  294 | static HAL_StatusTypeDef SPI_Transmit(uint8_t* send_buf, uint16_t size)
+      |                          ^~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:174:17: warning: 'spi_flash_get_baud_rate_prescaler' defined but not used [-Wunused-function]
+  174 | static uint16_t spi_flash_get_baud_rate_prescaler(uint32_t spi_freq_khz)
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/spi_nor_flash.c:120:13: warning: 'spi_flash_gpio_uninit' defined but not used [-Wunused-function]
+  120 | static void spi_flash_gpio_uninit()
+      |             ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:79: Core/Src/spi_nor_flash.o] Error 1
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-23:23:35 Build Failed. 5 errors, 0 warnings. (took 772ms)
+00:15:45 Build Failed. 68 errors, 14 warnings. (took 1s.478ms)
 

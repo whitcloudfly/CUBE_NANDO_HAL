@@ -1,10 +1,11 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader_fw,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:APP Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F407TEST,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TEST,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer0 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer1,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103BOOT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103Programmer Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:APP Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F407TEST,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103BOOT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103Programmer Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103Programmer1,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer0,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer0 Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:APP\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:APP\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103Programmer1/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:bootloader_fw/activeLaunchMode=run
@@ -13,4 +14,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:programmer0\ Debug/activeLaunch
 org.eclipse.launchbar.core.descriptorType.default\:F103BOOT\ Debug/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:F103BOOT\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:F103Programmer\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:firmware\ Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:programmer1\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

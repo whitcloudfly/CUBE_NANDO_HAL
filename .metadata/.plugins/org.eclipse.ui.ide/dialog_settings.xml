@@ -9,6 +9,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\CUBE_NANDO_HAL\nando\nand_programmer3.5.1\firmware"/>
+			<item value="D:\CUBE_NANDO_HAL\CUBE_NANDO_HAL\F103Programmer1"/>
 			<item value="D:\nand_programmer\firmware"/>
 			<item value="D:\CUBE_NANDO_HAL\stm32f407-ld1"/>
 			<item value="D:\CUBE_NANDO_HAL\boot"/>

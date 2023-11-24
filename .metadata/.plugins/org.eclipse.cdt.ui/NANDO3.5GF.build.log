@@ -1,0 +1,63 @@
+21:53:18 **** Build of configuration Default for project NANDO3.5GF ****
+make all 
+make -f Makefile.windows all
+make[1]: Entering directory `D:/nand_programmer/firmware'
+make -C bootloader
+make[2]: Entering directory `D:/nand_programmer/firmware/bootloader'
+make -f Makefile.windows all
+make[3]: Entering directory `D:/nand_programmer/firmware/bootloader'
+make -C ../libs/spl/
+make[4]: Entering directory `D:/nand_programmer/firmware/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/nand_programmer/firmware/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/nand_programmer/firmware/libs/spl'
+make[4]: Leaving directory `D:/nand_programmer/firmware/libs/spl'
+if not exist obj mkdir obj
+make[3]: Leaving directory `D:/nand_programmer/firmware/bootloader'
+make[2]: Leaving directory `D:/nand_programmer/firmware/bootloader'
+make -C programmer
+make[2]: Entering directory `D:/nand_programmer/firmware/programmer'
+make -f Makefile.windows all
+make[3]: Entering directory `D:/nand_programmer/firmware/programmer'
+make -C ../libs/spl/
+make[4]: Entering directory `D:/nand_programmer/firmware/libs/spl'
+make -f Makefile.windows all
+make[5]: Entering directory `D:/nand_programmer/firmware/libs/spl'
+if not exist obj mkdir obj
+make[5]: Leaving directory `D:/nand_programmer/firmware/libs/spl'
+make[4]: Leaving directory `D:/nand_programmer/firmware/libs/spl'
+if not exist obj mkdir obj
+make[3]: Leaving directory `D:/nand_programmer/firmware/programmer'
+make[2]: Leaving directory `D:/nand_programmer/firmware/programmer'
+if not exist obj mkdir obj
+copy bootloader\\obj\\bootloader_fw.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_1.hex obj\\
+已复制         1 个文件。
+copy programmer\\obj\\app_fw_2.hex obj\\
+已复制         1 个文件。
+findstr  /r /v "^:00000001FF$" obj\\bootloader_fw.hex \
+	  >> obj\\bootloader_fw.hex.tmp
+findstr  /r /v "^:00000001FF$"  obj\\app_fw_1.hex \
+	  >> obj\\app_fw_1.hex.tmp
+type obj\\bootloader_fw.hex.tmp obj\\app_fw_1.hex.tmp \
+	  obj\\app_fw_2.hex > obj\\nando_fw.hex
+
+obj\\bootloader_fw.hex.tmp
+
+
+
+obj\\app_fw_1.hex.tmp
+
+
+
+obj\\app_fw_2.hex
+
+
+arm-none-eabi-objcopy.exe --input-target=ihex --output-target=binary \
+	  obj\\nando_fw.hex obj\\nando_fw.bin
+make[1]: Leaving directory `D:/nand_programmer/firmware'
+
+21:53:19 Build Finished. 0 errors, 0 warnings. (took 1s.333ms)
+
