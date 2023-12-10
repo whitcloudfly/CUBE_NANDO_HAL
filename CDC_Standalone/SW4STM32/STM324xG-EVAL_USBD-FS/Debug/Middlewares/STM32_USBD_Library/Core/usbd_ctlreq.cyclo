@@ -1,0 +1,7 @@
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:972:6:USBD_CtlError.constprop	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:102:20:USBD_StdDevReq	56
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:165:20:USBD_StdItfReq	9
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:237:20:USBD_StdEPReq	30
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:943:6:USBD_ParseSetupRequest	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:972:6:USBD_CtlError	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c:989:6:USBD_GetString	4

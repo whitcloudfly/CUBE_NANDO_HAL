@@ -1,0 +1,5 @@
+../Core/Src/nand_bad_block.c:14:6:nand_bad_block_table_init	1
+../Core/Src/nand_bad_block.c:20:5:nand_bad_block_table_add	2
+../Core/Src/nand_bad_block.c:29:6:nand_bad_block_table_lookup	3
+../Core/Src/nand_bad_block.c:42:7:nand_bad_block_table_iter_alloc	2
+../Core/Src/nand_bad_block.c:52:7:nand_bad_block_table_iter_next	3

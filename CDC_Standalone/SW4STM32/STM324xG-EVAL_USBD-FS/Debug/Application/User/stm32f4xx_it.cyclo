@@ -1,0 +1,13 @@
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:49:6:NMI_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:58:6:HardFault_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:71:6:MemManage_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:84:6:BusFault_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:97:6:UsageFault_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:110:6:SVC_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:119:6:DebugMon_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:128:6:PendSV_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:137:6:SysTick_Handler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:155:6:OTG_FS_IRQHandler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:168:6:DMA1_Stream3_IRQHandler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:178:6:USART3_IRQHandler	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/stm32f4xx_it.c:188:6:TIM3_IRQHandler	1

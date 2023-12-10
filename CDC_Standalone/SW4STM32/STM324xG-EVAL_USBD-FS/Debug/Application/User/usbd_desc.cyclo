@@ -1,0 +1,8 @@
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:117:10:USBD_VCP_DeviceDescriptor	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:132:10:USBD_VCP_LangIDStrDescriptor	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:261:13:IntToUnicode	3
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:181:10:USBD_VCP_SerialStrDescriptor	2
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:166:10:USBD_VCP_ManufacturerStrDescriptor	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:147:10:USBD_VCP_ProductStrDescriptor	2
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:200:10:USBD_VCP_ConfigStrDescriptor	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_desc.c:219:10:USBD_VCP_InterfaceStrDescriptor	1

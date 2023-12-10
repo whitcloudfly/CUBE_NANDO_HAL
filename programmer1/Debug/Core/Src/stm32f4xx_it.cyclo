@@ -18,3 +18,4 @@
 ../Core/Src/stm32f4xx_it.c:320:6:OTG_HS_EP1_IN_IRQHandler	1
 ../Core/Src/stm32f4xx_it.c:334:6:OTG_HS_IRQHandler	1
 ../Core/Src/stm32f4xx_it.c:348:6:FPU_IRQHandler	1
+../Core/Src/stm32f4xx_it.c:364:6:TIMx_IRQHandler	1

@@ -1,0 +1,7 @@
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:98:9:BSP_IO_Init	2
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:122:9:BSP_IO_ITGetStatus	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:133:6:BSP_IO_ITClear	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:153:9:BSP_IO_ConfigPin	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:167:6:BSP_IO_WritePin	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:178:10:BSP_IO_ReadPin	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Drivers/BSP/STM324xG_EVAL/stm324xg_eval_io.c:188:6:BSP_IO_TogglePin	2

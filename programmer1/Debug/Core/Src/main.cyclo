@@ -1,4 +1,4 @@
-../Core/Src/main.c:72:5:_write	1
-../Core/Src/main.c:83:5:main	2
-../Core/Src/main.c:213:6:SystemClock_Config	3
-../Core/Src/main.c:267:6:Error_Handler	1
+../Core/Src/main.c:73:5:_write	1
+../Core/Src/main.c:84:5:main	2
+../Core/Src/main.c:215:6:SystemClock_Config	3
+../Core/Src/main.c:269:6:Error_Handler	1

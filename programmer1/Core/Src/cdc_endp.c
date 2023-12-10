@@ -2,17 +2,13 @@
  * cdc_endp.c
  *
  *  Created on: Oct 4, 2023
- *      Author: wjunh
+ *      Author: wjunhx
  */
 
 #include "cdc_endp.h"
 #include "cdc_hwcfg.h"
-#include "usbd_cdc_if.h"
-#include "usb_device.h"
 #include "usbd_cdc.h"
-#include "usbd_ioreq.h"
-#include "usart.h" // 包含USART1相关的头文件
-#include "stdio.h"
+#include "usbd_conf.h"
 
 //extern USBD_HandleTypeDef hUsbDeviceHS;
 extern USBD_HandleTypeDef hUsbDeviceFS;

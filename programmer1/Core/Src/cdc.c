@@ -43,10 +43,6 @@ CDC初始化功能 (cdc_init 函数)：
 总的来说，这段代码的主要功能是建立了一个USB CDC通信接口，使STM32F103可以通过USB连接与计算机或其他设备进行
 串行数据通信。它提供了发送和接收数据的功能，并通过回调函数来管理数据的传输和处理。这对于与计算机进行通信、调试和数据
 传输等应用非常有用。*/
-/*  Copyright (C) 2020 NANDO authors
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License version 3.
- */
 /*这段代码使用CDC进行数据通信，并提供了发送、接收和处理数据的功能。在cdc_init()函数中，它注册了一个CDC通信回调函数，以便在数据到达时进行处理。*/
 
 #include "log.h"                        // 日志库头文件

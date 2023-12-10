@@ -27,6 +27,7 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f4xx.c \
+../Core/Src/tim.c \
 ../Core/Src/usart.c 
 
 OBJS += \
@@ -52,6 +53,7 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f4xx.o \
+./Core/Src/tim.o \
 ./Core/Src/usart.o 
 
 C_DEPS += \
@@ -77,6 +79,7 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f4xx.d \
+./Core/Src/tim.d \
 ./Core/Src/usart.d 
 
 
@@ -87,7 +90,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/cdc.cyclo ./Core/Src/cdc.d ./Core/Src/cdc.o ./Core/Src/cdc.su ./Core/Src/cdc_endp.cyclo ./Core/Src/cdc_endp.d ./Core/Src/cdc_endp.o ./Core/Src/cdc_endp.su ./Core/Src/cdc_hwcfg.cyclo ./Core/Src/cdc_hwcfg.d ./Core/Src/cdc_hwcfg.o ./Core/Src/cdc_hwcfg.su ./Core/Src/clock.cyclo ./Core/Src/clock.d ./Core/Src/clock.o ./Core/Src/clock.su ./Core/Src/flash.cyclo ./Core/Src/flash.d ./Core/Src/flash.o ./Core/Src/flash.su ./Core/Src/fsmc.cyclo ./Core/Src/fsmc.d ./Core/Src/fsmc.o ./Core/Src/fsmc.su ./Core/Src/fsmc_nand.cyclo ./Core/Src/fsmc_nand.d ./Core/Src/fsmc_nand.o ./Core/Src/fsmc_nand.su ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/jtag.cyclo ./Core/Src/jtag.d ./Core/Src/jtag.o ./Core/Src/jtag.su ./Core/Src/led.cyclo ./Core/Src/led.d ./Core/Src/led.o ./Core/Src/led.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/nand_bad_block.cyclo ./Core/Src/nand_bad_block.d ./Core/Src/nand_bad_block.o ./Core/Src/nand_bad_block.su ./Core/Src/nand_programmer.cyclo ./Core/Src/nand_programmer.d ./Core/Src/nand_programmer.o ./Core/Src/nand_programmer.su ./Core/Src/rtc.cyclo ./Core/Src/rtc.d ./Core/Src/rtc.o ./Core/Src/rtc.su ./Core/Src/spi.cyclo ./Core/Src/spi.d ./Core/Src/spi.o ./Core/Src/spi.su ./Core/Src/spi_nand.cyclo ./Core/Src/spi_nand.d ./Core/Src/spi_nand.o ./Core/Src/spi_nand.su ./Core/Src/spi_nor.cyclo ./Core/Src/spi_nor.d ./Core/Src/spi_nor.o ./Core/Src/spi_nor.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/usart.cyclo ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/usart.su
+	-$(RM) ./Core/Src/cdc.cyclo ./Core/Src/cdc.d ./Core/Src/cdc.o ./Core/Src/cdc.su ./Core/Src/cdc_endp.cyclo ./Core/Src/cdc_endp.d ./Core/Src/cdc_endp.o ./Core/Src/cdc_endp.su ./Core/Src/cdc_hwcfg.cyclo ./Core/Src/cdc_hwcfg.d ./Core/Src/cdc_hwcfg.o ./Core/Src/cdc_hwcfg.su ./Core/Src/clock.cyclo ./Core/Src/clock.d ./Core/Src/clock.o ./Core/Src/clock.su ./Core/Src/flash.cyclo ./Core/Src/flash.d ./Core/Src/flash.o ./Core/Src/flash.su ./Core/Src/fsmc.cyclo ./Core/Src/fsmc.d ./Core/Src/fsmc.o ./Core/Src/fsmc.su ./Core/Src/fsmc_nand.cyclo ./Core/Src/fsmc_nand.d ./Core/Src/fsmc_nand.o ./Core/Src/fsmc_nand.su ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/jtag.cyclo ./Core/Src/jtag.d ./Core/Src/jtag.o ./Core/Src/jtag.su ./Core/Src/led.cyclo ./Core/Src/led.d ./Core/Src/led.o ./Core/Src/led.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/nand_bad_block.cyclo ./Core/Src/nand_bad_block.d ./Core/Src/nand_bad_block.o ./Core/Src/nand_bad_block.su ./Core/Src/nand_programmer.cyclo ./Core/Src/nand_programmer.d ./Core/Src/nand_programmer.o ./Core/Src/nand_programmer.su ./Core/Src/rtc.cyclo ./Core/Src/rtc.d ./Core/Src/rtc.o ./Core/Src/rtc.su ./Core/Src/spi.cyclo ./Core/Src/spi.d ./Core/Src/spi.o ./Core/Src/spi.su ./Core/Src/spi_nand.cyclo ./Core/Src/spi_nand.d ./Core/Src/spi_nand.o ./Core/Src/spi_nand.su ./Core/Src/spi_nor.cyclo ./Core/Src/spi_nor.d ./Core/Src/spi_nor.o ./Core/Src/spi_nor.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/tim.cyclo ./Core/Src/tim.d ./Core/Src/tim.o ./Core/Src/tim.su ./Core/Src/usart.cyclo ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/usart.su
 
 .PHONY: clean-Core-2f-Src
 

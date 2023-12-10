@@ -1,0 +1,9 @@
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:297:15:CDC_Itf_TransmitCplt	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:279:15:CDC_Itf_Receive	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:136:15:CDC_Itf_DeInit	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:155:15:CDC_Itf_Control	5
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:79:15:CDC_Itf_Init	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:220:6:HAL_TIM_PeriodElapsedCallback	4
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:256:6:HAL_UART_RxCpltCallback	2
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:307:6:HAL_UART_TxCpltCallback	1
+D:/CUBE_NANDO_HAL/CUBE_NANDO_HAL/CDC_Standalone/Src/usbd_cdc_interface.c:430:6:HAL_UART_ErrorCallback	1

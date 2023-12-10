@@ -8,17 +8,18 @@
 #include "stm32f4xx_it.h"
 #include "cdc_endp.h"
 #include "cdc_hwcfg.h"
-#include "usbd_cdc_if.h"
-#include "usb_device.h"
 #include "usbd_cdc.h"
-#include "usbd_ioreq.h"
-#include "log.h" // 包含USART1相关的头文件
+//#include "usbd_cdc_if.h"
+#include "usbd_conf.h"
+#include "log.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 //ErrorStatus HSEStartUpStatus;
 //EXTI_ConfigTypeDef EXTI_InitStructure;
+extern TIM_HandleTypeDef  TimHandle;
 //extern USBD_HandleTypeDef hUsbDeviceHS;
 extern USBD_HandleTypeDef hUsbDeviceFS;
 
@@ -51,7 +52,7 @@ uint32_t CDC_Send_DATA (uint8_t *ptrBuffer, uint8_t Send_length)
 	/* send  packet to PMA*/
 //    CDC_Transmit_HS((unsigned char*)ptrBuffer, Send_length);
     CDC_Transmit_FS((unsigned char*)ptrBuffer, Send_length);
-    DEBUG_PRINT("CDC_Send_DATA: %0x\r\n", Send_length);
+//    DEBUG_PRINT("CDC_Send_DATA: %d\r\n", Send_length);
   }
   else
   {
