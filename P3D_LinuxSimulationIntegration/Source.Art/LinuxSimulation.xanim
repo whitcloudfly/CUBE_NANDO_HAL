@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<AnimLib version="9.1">
+  <Anim name="RudderPosition" guid="A97A6C4C-A111-499A-87E5-B4102CAED969" length="100.000000"
+        type="Sim" typeParam="AutoPlay" typeParam2="RudderPosition">
+    <AnimStream name="Rotation" id="0" partName="Box002" length="100.000000">
+      <Keyframe time="0.000000" type="Quaternion" data="0.000000;0.000000;0.000000;1.000000"/>
+      <Keyframe time="100.000000" type="Quaternion" data="-0.087156;0.000000;0.000000;0.996195"/>
+    </AnimStream>
+  </Anim>
+  <Anim name="WingPosition" guid="6BBFCF90-5776-4245-B2E9-34F70487D06E" length="100.000000"
+        type="Sim" typeParam="AutoPlay" typeParam2="WingPosition">
+    <AnimStream name="Rotation" id="0" partName="Box001Wing_Flaps" length="100.000000">
+      <Keyframe time="0.000000" type="Quaternion" data="0.000000;0.000000;0.000000;1.000000"/>
+      <Keyframe time="50.000000" type="Quaternion" data="-0.130526;0.000000;0.000000;0.991445"/>
+      <Keyframe time="100.000000" type="Quaternion" data="-0.342020;0.000000;0.000000;0.939693"/>
+    </AnimStream>
+    <AnimStream name="Position" id="2" partName="Box001Wing_Flaps" length="100.000000">
+      <Keyframe time="0.000000" type="Vector" data="0.000000;0.000000;-0.000000;0.0"/>
+      <Keyframe time="100.000000" type="Vector" data="0.000000;0.000000;-0.000000;0.0"/>
+    </AnimStream>
+  </Anim>
+</AnimLib>

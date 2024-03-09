@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ModelInfo>
+
+    <Animation name="WingPosition" guid="6BBFCF90-5776-4245-B2E9-34F70487D06E" length="100" type="Sim" typeparam2="WingPosition" typeparam="AutoPlay" />
+    <Animation name="RudderPosition" guid="A97A6C4C-A111-499A-87E5-B4102CAED969" length="100" type="Sim" typeparam2="RudderPosition" typeparam="AutoPlay" />
+
+    <PartInfo>
+        <Name>WingPosition</Name>
+        <AnimLength>100</AnimLength>
+        <Animation>
+            <Parameter>
+                <Sim>
+                    <Variable>GetWingPosition</Variable>
+                    <Units>number</Units>
+                </Sim>
+            </Parameter>
+        </Animation>
+    </PartInfo>
+    
+    <PartInfo>
+        <Name>RudderPosition</Name>
+        <AnimLength>100</AnimLength>
+        <Animation>
+            <Parameter>
+                <Sim>
+                    <Variable>GetRudderPosition</Variable>
+                    <Units>number</Units>
+                </Sim>
+            </Parameter>
+        </Animation>
+    </PartInfo>
+    
+</ModelInfo>

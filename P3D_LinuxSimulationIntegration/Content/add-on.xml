@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AddOnXml" version="3,3" id="add-on">
+    <AddOn.Name>LinuxSimulationIntegration</AddOn.Name>
+    <AddOn.Description>Linux Simulation ISimObject Sample.</AddOn.Description>
+    <AddOn.Component>
+        <Category>SimObjects</Category>
+        <Path>SimObjects</Path>
+    </AddOn.Component>
+    <AddOn.Component>
+        <Category>DLL</Category>
+        <Path>LinuxSimulationIntegration.dll</Path>
+        <DLLType>PDK</DLLType>
+    </AddOn.Component>
+</SimBase.Document>
