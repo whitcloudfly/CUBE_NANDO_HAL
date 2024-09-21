@@ -1,0 +1,4 @@
+../nando/led.c:10:6:led_init	40	static
+../nando/led.c:40:13:led_set	16	static
+../nando/led.c:48:6:led_wr_set	16	static
+../nando/led.c:53:6:led_rd_set	16	static

@@ -1,0 +1,112 @@
+/*
+ * cdc_endp.c
+ *
+ *  Created on: Oct 4, 2023
+ *      Author: wjunh
+ */
+
+#include "cdc_endp.h"
+#include "cdc_hwcfg.h"
+#include "usbd_cdc_if.h"
+#include "usb_device.h"
+#include "usbd_cdc.h"
+#include "usbd_ioreq.h"
+#include "usart.h" // 包含USART1相关的头文件
+#include "stdio.h"
+
+//extern USBD_HandleTypeDef hUsbDeviceHS;
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
+extern __IO uint32_t packet_sent;
+uint32_t Receive_length;
+
+/*******************************************************************************
+* Function Name  : CDC_IN_Callback
+* Description    :
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+
+void CDC_IN_Callback(void)
+{
+  packet_sent = 1;
+}
+
+/*******************************************************************************
+* Function Name  : CDC_OUT_Callback
+* Description    :
+* Input          : None.
+* Output         : None.
+* Return         : None.
+*******************************************************************************/
+// 定义循环缓冲区和索引
+#define PACKET_SIZE 64
+#define CIRC_BUF_SIZE 34 /* 62 * 34 = ~2K of data (max. NAND page) */
+
+typedef uint8_t packet_buf_t[PACKET_SIZE];
+
+typedef struct {
+    packet_buf_t pbuf;
+    uint32_t len;
+} packet_t;
+
+static packet_t circ_buf[CIRC_BUF_SIZE];
+static volatile uint8_t head, size, tail = CIRC_BUF_SIZE - 1;
+
+uint32_t USB_Data_Peek(uint8_t **data)
+{
+  if (!size)
+    return 0;
+
+  *data = circ_buf[head].pbuf;
+
+  return circ_buf[head].len;
+}
+
+uint32_t USB_Data_Get(uint8_t **data)
+{
+  uint32_t len;
+
+  if (!size)
+    return 0;
+
+  *data = circ_buf[head].pbuf;
+  len = circ_buf[head].len;
+  head = (head + 1) % CIRC_BUF_SIZE;
+  __disable_irq();
+  size--;
+  __enable_irq();
+
+  return len;
+}
+
+static inline void USB_DataRx_Sched_Internal(void)
+{
+  if (size < CIRC_BUF_SIZE)
+//	  USBD_CtlReceiveStatus(&hUsbDeviceHS);
+	  USBD_CtlReceiveStatus(&hUsbDeviceFS);
+}
+
+void USB_DataRx_Sched(void)
+{
+  __disable_irq();
+  USB_DataRx_Sched_Internal();
+  __enable_irq();
+}
+
+// CDC接收数据回调函数
+void CDC_OUT_Callback(uint8_t **Buf,uint32_t *Len)
+{
+//	Receive_length = USBD_GetRxCount(&hUsbDeviceHS, CDC_OUT_EP);
+	Receive_length = USBD_GetRxCount(&hUsbDeviceFS, CDC_OUT_EP);
+    if (size < CIRC_BUF_SIZE)
+    {
+        tail = (tail + 1) % CIRC_BUF_SIZE;
+        memcpy(circ_buf[tail].pbuf, Buf, Receive_length);
+        circ_buf[tail].len = Receive_length;
+        size++;
+        USB_DataRx_Sched_Internal();
+    }
+}
+

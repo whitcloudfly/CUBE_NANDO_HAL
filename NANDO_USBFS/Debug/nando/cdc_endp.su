@@ -1,0 +1,6 @@
+../nando/cdc_endp.c:31:6:CDC_IN_Callback	4	static
+../nando/cdc_endp.c:57:10:USB_Data_Peek	16	static
+../nando/cdc_endp.c:67:10:USB_Data_Get	24	static,ignoring_inline_asm
+../nando/cdc_endp.c:84:20:USB_DataRx_Sched_Internal	8	static
+../nando/cdc_endp.c:91:6:USB_DataRx_Sched	8	static,ignoring_inline_asm
+../nando/cdc_endp.c:99:6:CDC_OUT_Callback	16	static

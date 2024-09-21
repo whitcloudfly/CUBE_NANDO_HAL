@@ -1,0 +1,5 @@
+../nando/nand_bad_block.c:14:6:nand_bad_block_table_init	8	static
+../nando/nand_bad_block.c:20:5:nand_bad_block_table_add	16	static
+../nando/nand_bad_block.c:29:6:nand_bad_block_table_lookup	24	static
+../nando/nand_bad_block.c:42:7:nand_bad_block_table_iter_alloc	16	static
+../nando/nand_bad_block.c:52:7:nand_bad_block_table_iter_next	24	static

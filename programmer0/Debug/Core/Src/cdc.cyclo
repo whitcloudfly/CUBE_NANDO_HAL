@@ -1,5 +1,0 @@
-../Core/Src/cdc.c:59:12:cdc_send	6
-../Core/Src/cdc.c:83:12:cdc_send_ready	1
-../Core/Src/cdc.c:88:17:cdc_peek	1
-../Core/Src/cdc.c:93:13:cdc_consume	1
-../Core/Src/cdc.c:109:6:cdc_init	1

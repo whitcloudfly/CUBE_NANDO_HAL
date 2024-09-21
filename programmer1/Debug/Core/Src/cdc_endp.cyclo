@@ -1,6 +1,0 @@
-../Core/Src/cdc_endp.c:27:6:EP1_IN_Callback	1
-../Core/Src/cdc_endp.c:53:10:USB_Data_Peek	2
-../Core/Src/cdc_endp.c:63:10:USB_Data_Get	2
-../Core/Src/cdc_endp.c:80:20:USB_DataRx_Sched_Internal	2
-../Core/Src/cdc_endp.c:87:6:USB_DataRx_Sched	1
-../Core/Src/cdc_endp.c:94:6:EP3_OUT_Callback	2

@@ -1,0 +1,5 @@
+../nando/cdc_hwcfg.c:50:10:CDC_Send_DATA	16	static
+../nando/cdc_hwcfg.c:78:10:CDC_Receive_DATA	8	static
+../nando/cdc_hwcfg.c:92:10:CDC_ReceiveDataLen	4	static
+../nando/cdc_hwcfg.c:104:6:CDC_ReceiveDataAck	4	static
+../nando/cdc_hwcfg.c:116:5:CDC_IsPacketSent	4	static

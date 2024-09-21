@@ -1,5 +1,0 @@
-../Core/Src/cdc_hwcfg.c:45:10:CDC_Send_DATA	16	static
-../Core/Src/cdc_hwcfg.c:71:10:CDC_Receive_DATA	8	static
-../Core/Src/cdc_hwcfg.c:85:10:CDC_ReceiveDataLen	4	static
-../Core/Src/cdc_hwcfg.c:97:6:CDC_ReceiveDataAck	4	static
-../Core/Src/cdc_hwcfg.c:109:5:CDC_IsPacketSent	4	static
